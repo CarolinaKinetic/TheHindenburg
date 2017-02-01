@@ -1,0 +1,111 @@
+{
+  "Events": [
+    {
+      "Name": "Knoxville",
+      "Location": "Knoxville, TS",
+      "Matches": [
+        {
+          "Match #": 1
+        },
+        {
+          "Match #": 2
+        }
+      ],
+      "Teams": [
+        {
+          "Number": 3489,
+          "Name": "Category 5",
+          "Ranking": 1
+        },
+        {
+          "Number": 342,
+          "Name": "Burning Magnetos",
+          "Ranking": 2
+        },
+        {
+          "Number": 3490,
+          "Name": "Viper Drive",
+          "Ranking": 3
+        }
+      ]
+    },
+    {
+      "Name": "Palmetto",
+      "Location": "Myrtle Beach",
+      "Matches": [
+        {
+          "Match #": 1
+        },
+        {
+          "Match #": 2
+        },
+        {},
+        {}
+      ],
+      "Teams": [
+        {
+          "Number": 3489,
+          "Name": "Category 5",
+          "Ranking": 1
+        },
+        {
+          "Number": 342,
+          "Name": "Burning Magnetos",
+          "Ranking": 2
+        },
+        {
+          "Number": 3490,
+          "Name": "Viper Drive",
+          "Ranking": 3
+        }
+      ]
+    }
+  ],
+  "Questions": [
+    {
+      "Name": "Pit Questions",
+      "Description": "Questions to ask teams in the Pit"
+    },
+    {
+      "Name": "Match Questions",
+      "Description": "Questions you awnser in the stand during the match",
+      "Autonomous Questions": [
+        {"Question1": "Does the robot have Autonomous?","Type": "Numerical Value (1-10)", "Order": 1},
+        {"Question2": "Does your robot place gears?","Type": "Y/N", "Order": 2},
+        {"Question3": "Does your robot scale?","Type": "Y/N", "Order": 3},
+        {"Question": "Did the robot score high boiler","Type": "Y/N", "Order": 4},
+        {"Question": "Did the robot score low boiler?","Type": "Y/N", "Order": 5},
+        {"Question": "Did the robot activate the hopper?","Type": "Y/N", "Order": 6},
+        {"Question": "What starting peices did they start out with?","Type": "Dropdown(Gear,Fuel,Both,None)", "Order": 7},
+        {"Question": "Which position did they start off in?","Type": "Checkbox(1,2,3)", "Order": 8},
+        {"Question": "How many Penalites did they accumulate?","Type": "Numerical Value", "Order": 9},
+        {"Question": "Did they get a Yellow Card?","Type": "Y/N", "Order": 10},
+        {"Question": "Did they get a Red Card?","Type": "Y/N", "Order": 11}
+      ],
+      "Tele-op Questions": [
+        {"Question": "How many Gears did they score?", "Type": "Numerical Value", "Order": 1},
+        {"Question": "Did they attempt to score high boiler?", "Type": "Y/N", "Order": 2, "Comment": "If they attempt to score, show the next question"},
+        {"Question": "How many times did they score high boiler?", "Type": "Numerical Value", "Order": 3},
+        {"Question": "Did they attempt to score the low boiler?", "Type": "Y/N", "Order": 4, "Comment": "If they do attempt to score low boiler, show the next question"},
+        {"Question": "How many times did they score in low boiler?", "Type": "Numerical Value", "Order": 5},
+        {"Question": "Did they recieve a technical foul?", "Type": "Y/N", "Order": 6, "Comment": "We're not exatcly sure if there is such thing"},
+        {"Question": "Did they play defensively or offensively?", "Type": "Dropdown(Defensively,Offensively,Broken/Disaled)", "Order ": 7}
+        ],
+        "End-Game Questions":[
+          {"Question": "How well did they maneuver?", "Type": "Dropdown(Well,Poorly,None)", "Order": 1},
+          {"Question": "How well did they get Fuel from the Hopper?", "Type": "Dropdown(Well,Poorly,None)", "Order": 2},
+          {"Question": "How well did they get Fuel from the floor?", "Type": "Dropdown(Well,Poorly,None)", "Order": 3},
+          {"Question": "How well did they get Fuel from the feeder?", "Type": "Dropdown(Well,Poorly,None)", "Order": 4},
+          {"Question": "How well did they get Gears from the floor?", "Type": "Dropdown(Well,Poorly,None)", "Order": 5},
+          {"Question": "How well did they get Gears from the feeder?", "Type": "Dropdown(Well,Poorly,None)", "Order": 6},
+          {"Question": "How well did they put the Gear on the hook?", "Type": "Dropdown(Well,Poorly,None)", "Order": 7},
+          {"Question": "Did they attempt to scale?", "Type": "Y/N", "Order": 8},
+          {"Question": "How well did they scale?", "Type": "Dropdown(Grabbed rope, partially scaled, scaled but didnt stay, scaled successfully)", "Order": 9},
+          {"Question": "Did their robot break?", "Type": "Y/N", "Order": 10},
+          {"Question": "If they got penalties, how badly did it affect their score?", "Type": "Free-text field", "Order": 11},
+          {"Question": "How accurately can they fire?", "Type": "Dropdown(Well,Poorly,None)", "Order": 12},
+          {"Question": "Did their alliance gain a Ranking Point?", "Type": "Y/N", "Order": 13}
+          ]
+    }
+  ]
+}
