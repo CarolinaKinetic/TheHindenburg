@@ -64,7 +64,95 @@
   "Questions": [
     {
       "Name": "Pit Questions",
-      "Description": "Questions to ask teams in the Pit"
+      "Description": "Questions to ask teams in the Pit",
+      "Pit Questions": [{"Question": "What chassis type is your robot?",
+        "Type": "Text field",
+        "Order" : 1
+      },{"Question": "How tall is your chassis?",
+        "Type": "Number field",
+        "Order" : 2
+      },{"Question": "What is your primary objective? ",
+        "Type": "Drop down list box",
+        "Order" : 3
+      },{"Question": "What is your secondary objective?",
+        "Type": "Drop down list box",
+        "Order" : 4
+      },{"Question": "Where can your robot shoot fuel?",
+        "Type": "Checkbox list",
+        "Order" : 5
+      },{"Question": "Can your robot climb the rope?",
+        "Type": "Y/N",
+        "Order" : 6
+      },{"Question": "Does your robot stay up when it goes up?",
+        "Type": "Y/N",
+        "Order" : 7
+      },{"Question": "Do you use your own rope?",
+        "Type": "Y/N",
+        "Order" : 8
+      },{"Question": "Do you have to be right on top of the rope to climb?",
+        "Type": "Y/N",
+        "Order" : 9
+      },{"Question": "Does your robot place gears?",
+        "Type": "Y/N",
+        "Order" : 10
+      },{"Question": "How do you pick up fuel?",
+        "Type": "Drop down list box",
+        "Order" : 11
+      },{"Question": "Where can you put your human players?",
+        "Type": "Checkbox list",
+        "Order" : 12
+      },{"Question": "Do you have autonomous?",
+        "Type": "Y/N",
+        "Order" : 13
+      },{"Question": "Where do you score from in autonomous?",
+        "Type": "Checkbox list",
+        "Order" : 14
+      },{"Question": "Where can you pick up gears?",
+        "Type": "Drop down list box",
+        "Order" : 15
+      },{"Question": "Where can you pick up fuel?",
+        "Type": "Drop down list box",
+        "Order" : 16
+      },{"Question": "How is your team willing to play?",
+        "Type": "Drop down list box",
+        "Order" : 17
+      },{"Question": "What are your strengths?",
+        "Type": "Text field",
+        "Order" : 18
+      },{"Question": "What are your weaknesses?",
+        "Type": "Text field",
+        "Order" : 19
+      },{"Question": "On a scale of 1 to 10 what is your robots manuverability?",
+        "Type": "Drop down list box",
+        "Order" : 20
+      },{"Question": "How many feet per second can your robot travel?",
+        "Type": "Number field",
+        "Order" : 21
+      },{"Question": "How many years has your driver been driving?",
+        "Type": "Number field",
+        "Order" : 22
+      },{"Question": "How many years has your manipulator been manipulating your robot?",
+        "Type": "Number field",
+        "Order" : 23
+      },{"Question": "How quickly can you do a full cycle?",
+        "Type": "Number field",
+        "Order" : 24
+      },{"Question": "Fuel firing?",
+        "Type": "Checkbox list",
+        "Order" : 25
+      },{"Question": "What drivetrain do you have?",
+        "Type": "Text field",
+        "Order" : 26
+      },{"Question": "What position does your team start at?",
+        "Type": "Drop down list box",
+        "Order" : 27
+      },{"Question": "How expereienced is your Drive Team? (How many years of Drive team do they have)?",
+        "Type": "Slider",
+        "Order" : 28
+      },{"Question": "What type of shooter does your robot have?",
+        "Type": "Text field",
+        "Order" : 29
+      }]
     },
     {
       "Name": "Match Questions",
