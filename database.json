@@ -576,16 +576,6 @@
           "Question": "How many Penalties did they accumulate?",
           "Type": "Numerical Value",
           "Order": 9
-        },
-        {
-          "Question": "Did they get a Yellow Card?",
-          "Type": "Y/N",
-          "Order": 10
-        },
-        {
-          "Question": "Did they get a Red Card?",
-          "Type": "Y/N",
-          "Order": 11
         }
       ],
       "Tele-op Questions": [
@@ -601,7 +591,7 @@
           "Comment": "If they attempt to score, show the next question"
         },
         {
-          "Question": "How many times did they score high boiler?",
+          "Question": "How many trips did they take to score in the high boiler?",
           "Type": "Numerical Value",
           "Order": 3
         },
@@ -612,7 +602,7 @@
           "Comment": "If they do attempt to score low boiler, show the next question"
         },
         {
-          "Question": "How many times did they score in low boiler?",
+          "Question": "How many trips did they take to score in the low boiler?",
           "Type": "Numerical Value",
           "Order": 5
         },
@@ -623,9 +613,20 @@
           "Comment": "We're not exactly sure if there is such thing"
         },
         {
+          "Question": "Did they receive a Yellow Card?",
+          "Type": "Y/N",
+          "Order": 7,
+          "Comment": ""
+        },
+        {
+          "Question": "Did they receive a Red Card?",
+          "Type": "Y/N",
+          "Order": 8
+        },
+        {
           "Question": "Did they play defensively or offensively?",
           "Type": "Dropdown(Defensively,Offensively,Broken/Disabled)",
-          "Order ": 7
+          "Order": 9
         }
       ],
       "End-Game Questions": [
@@ -665,34 +666,54 @@
           "Order": 7
         },
         {
-          "Question": "Did they attempt to scale?",
-          "Type": "Y/N",
+          "Question": "Roughly what percentage of the high shots succeeded?",
+          "Type": "Dropdown(<25%, <50%, <75%, >75%)",
           "Order": 8
         },
         {
-          "Question": "How well did they scale?",
-          "Type": "Dropdown(Grabbed rope, partially scaled, scaled but didn't stay, scaled successfully)",
+          "Question": "Roughly what percentage of the low shots succeeded?",
+          "Type": "Dropdown(<25%, <50%, <75%, >75%)",
           "Order": 9
+        },
+        {
+          "Question": "Roughly what percentage of the gears succeeded?",
+          "Type": "Dropdown(<25%, <50%, <75%, >75%)",
+          "Order": 10
+        },
+        {
+          "Question": "Did they attempt to scale?",
+          "Type": "Dropdown(Successful, Attempted, Didn't attempt)",
+          "Order": 11
         },
         {
           "Question": "Did their robot break?",
           "Type": "Y/N",
-          "Order": 10
-        },
-        {
-          "Question": "If they got penalties, how badly did it affect their score?",
-          "Type": "Free-text field",
-          "Order": 11
-        },
-        {
-          "Question": "How accurately can they fire?",
-          "Type": "Dropdown(Well,Poorly,None)",
           "Order": 12
+        },
+        {
+          "Question": "Number of points lost to penalties?",
+          "Type": "Numeric field",
+          "Order": 13
+        },
+        {
+          "Question": "Number of points lost to fouls?",
+          "Type": "Numeric field",
+          "Order": 14
+        },
+        {
+          "Question": "Did the airship launch?",
+          "Type": "Y/N",
+          "Order": 15
         },
         {
           "Question": "Did their alliance gain a Ranking Point?",
           "Type": "Y/N",
-          "Order": 13
+          "Order": 16
+        },
+        {
+          "Question": "Notes",
+          "Type": "Text",
+          "Order": 17
         }
       ],
       "Human player Questions": [
@@ -712,37 +733,43 @@
           "Order": 3
         },
         {
-          "Question": "Did the human player get a foul",
+          "Question": "Did the human player get a foul?",
           "Type": "Y/N",
           "Order": 4
         },
         {
-          "Question": "Which team does the airship human 1 belong to?",
-          "Type": "Drop down list box of team numbers",
+          "Question": "How did the airship (1) human player from the team I'm watching do?",
+          "Type": "Dropdown(Exceptional, Well, Poorly, N/A)",
           "Order": 5
         },
         {
-          "Question": "Which team does the airship human 2 belong to?",
-          "Type": "Drop down list box of team numbers",
+          "Question": "How did the airship (2) human player from the team I'm watching do?",
+          "Type": "Dropdown(Exceptional, Well, Poorly, N/A)",
           "Order": 6
         },
         {
-          "Question": "Which team does the runner human belong to?",
-          "Type": "Drop down list box of team numbers",
+          "Question": "How did the runner human player from the team I'm watching do?",
+          "Type": "Dropdown(Exceptional, Well, Poorly, N/A)",
           "Order": 7
         },
         {
           "Question": "Number of props spinning",
           "Type": "0,1,2,3,4",
-          "Order": 8
+          "Order": 8,
+          "Comment": "This is at the alliance level"
         }
       ]
     }
   ],
-  "Configuration" : {
-    "Bluetooth Connections" : [
-      {"Connection ID" : ""},{"Connection ID" : ""}
-      ],
-      "Import file name" : "import.txt"
+  "Configuration": {
+    "Bluetooth Connections": [
+      {
+        "Connection ID": ""
+      },
+      {
+        "Connection ID": ""
+      }
+    ],
+    "Import file name": "import.txt"
   }
 }
