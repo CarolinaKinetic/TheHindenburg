@@ -122,7 +122,7 @@
       },{"Question": "What are your weaknesses?",
         "Type": "Text field",
         "Order" : 19
-      },{"Question": "On a scale of 1 to 10 what is your robots manuverability?",
+      },{"Question": "On a scale of 1 to 10 what is your robot's maneuverability?",
         "Type": "Drop down list box",
         "Order" : 20
       },{"Question": "How many feet per second can your robot travel?",
@@ -146,7 +146,7 @@
       },{"Question": "What position does your team start at?",
         "Type": "Drop down list box",
         "Order" : 27
-      },{"Question": "How expereienced is your Drive Team? (How many years of Drive team do they have)?",
+      },{"Question": "How experienced is your Drive Team? (How many years of Drive team do they have)?",
         "Type": "Slider",
         "Order" : 28
       },{"Question": "What type of shooter does your robot have?",
@@ -154,9 +154,10 @@
         "Order" : 29
       }]
     },
+
     {
       "Name": "Match Questions",
-      "Description": "Questions you awnser in the stand during the match",
+      "Description": "Questions you answer in the stand during the match",
       "Autonomous Questions": [
         {"Question1": "Does the robot have Autonomous?","Type": "Numerical Value (1-10)", "Order": 1},
         {"Question2": "Does your robot place gears?","Type": "Y/N", "Order": 2},
@@ -164,9 +165,9 @@
         {"Question": "Did the robot score high boiler","Type": "Y/N", "Order": 4},
         {"Question": "Did the robot score low boiler?","Type": "Y/N", "Order": 5},
         {"Question": "Did the robot activate the hopper?","Type": "Y/N", "Order": 6},
-        {"Question": "What starting peices did they start out with?","Type": "Dropdown(Gear,Fuel,Both,None)", "Order": 7},
+        {"Question": "What starting pieces did they start out with?","Type": "Dropdown(Gear,Fuel,Both,None)", "Order": 7},
         {"Question": "Which position did they start off in?","Type": "Checkbox(1,2,3)", "Order": 8},
-        {"Question": "How many Penalites did they accumulate?","Type": "Numerical Value", "Order": 9},
+        {"Question": "How many Penalties did they accumulate?","Type": "Numerical Value", "Order": 9},
         {"Question": "Did they get a Yellow Card?","Type": "Y/N", "Order": 10},
         {"Question": "Did they get a Red Card?","Type": "Y/N", "Order": 11}
       ],
@@ -176,8 +177,8 @@
         {"Question": "How many times did they score high boiler?", "Type": "Numerical Value", "Order": 3},
         {"Question": "Did they attempt to score the low boiler?", "Type": "Y/N", "Order": 4, "Comment": "If they do attempt to score low boiler, show the next question"},
         {"Question": "How many times did they score in low boiler?", "Type": "Numerical Value", "Order": 5},
-        {"Question": "Did they recieve a technical foul?", "Type": "Y/N", "Order": 6, "Comment": "We're not exatcly sure if there is such thing"},
-        {"Question": "Did they play defensively or offensively?", "Type": "Dropdown(Defensively,Offensively,Broken/Disaled)", "Order ": 7}
+        {"Question": "Did they receive a technical foul?", "Type": "Y/N", "Order": 6, "Comment": "We're not exactly sure if there is such thing"},
+        {"Question": "Did they play defensively or offensively?", "Type": "Dropdown(Defensively,Offensively,Broken/Disabled)", "Order ": 7}
         ],
         "End-Game Questions":[
           {"Question": "How well did they maneuver?", "Type": "Dropdown(Well,Poorly,None)", "Order": 1},
@@ -188,12 +189,23 @@
           {"Question": "How well did they get Gears from the feeder?", "Type": "Dropdown(Well,Poorly,None)", "Order": 6},
           {"Question": "How well did they put the Gear on the hook?", "Type": "Dropdown(Well,Poorly,None)", "Order": 7},
           {"Question": "Did they attempt to scale?", "Type": "Y/N", "Order": 8},
-          {"Question": "How well did they scale?", "Type": "Dropdown(Grabbed rope, partially scaled, scaled but didnt stay, scaled successfully)", "Order": 9},
+          {"Question": "How well did they scale?", "Type": "Dropdown(Grabbed rope, partially scaled, scaled but didn't stay, scaled successfully)", "Order": 9},
           {"Question": "Did their robot break?", "Type": "Y/N", "Order": 10},
           {"Question": "If they got penalties, how badly did it affect their score?", "Type": "Free-text field", "Order": 11},
           {"Question": "How accurately can they fire?", "Type": "Dropdown(Well,Poorly,None)", "Order": 12},
           {"Question": "Did their alliance gain a Ranking Point?", "Type": "Y/N", "Order": 13}
-          ]
+          ],
+          "Human player Questions" : [
+            {"Question":"How did they pull up the gears?", "Type": "Dropdown(Well,Poorly,None)", "Order": 1}, 
+            {"Question": "Did they put the gears in the right order?", "Type": "Y/N", "Order": 2}, 
+            {"Question": "Did they drop rope early?", "Type": "Y/N", "Order": 3},
+            {"Question": "Did the human player get a foul", "Type": "Y/N", "Order": 4},
+            {"Question": "Which team does the airship human 1 belong to?", "Type": "Drop down list box of team numbers", "Order": 5},
+            {"Question": "Which team does the airship human 2 belong to?", "Type": "Drop down list box of team numbers", "Order": 6},
+            {"Question": "Which team does the runner human belong to?", "Type": "Drop down list box of team numbers", "Order": 7},
+            {"Question": "Number of props spinning", "Type": "0,1,2,3,4", "Order": 8}
+            ]
     }
   ]
 }
+
