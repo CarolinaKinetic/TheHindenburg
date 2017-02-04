@@ -1,46 +1,335 @@
 {
   "Events": [
     {
-      "Name": "Knoxville",
-      "Location": "Knoxville, TS",
-      "Matches": [
-        {
-          "Match #": 1
-        },
-        {
-          "Match #": 2
-        }
-      ],
-      "Teams": [
-        {
-          "Number": 3489,
-          "Name": "Category 5",
-          "Ranking": 1
-        },
-        {
-          "Number": 342,
-          "Name": "Burning Magnetos",
-          "Ranking": 2
-        },
-        {
-          "Number": 3490,
-          "Name": "Viper Drive",
-          "Ranking": 3
-        }
-      ]
-    },
-    {
       "Name": "Palmetto",
       "Location": "Myrtle Beach",
       "Matches": [
         {
-          "Match #": 1
+          "Match Number": 1,
+          "Teams": [
+            {
+              "Team Number": 3489,
+              "Student": "Nathan Fontenot",
+              "AQ1": 1,
+              "AQ2": 0,
+              "AQ3": 1,
+              "AQ4": 0,
+              "AQ5": 1,
+              "AQ6": 0,
+              "AQ7": 1,
+              "AQ8": 0,
+              "AQ9": 1,
+              "AQ10": 0,
+              "AQ11": 1,
+              "TQ1": 0,
+              "TQ2": 1,
+              "TQ3": 0,
+              "TQ4": 1,
+              "TQ5": 0,
+              "TQ6": 1,
+              "TQ7": 0,
+              "EQ1": 1,
+              "EQ2": 0,
+              "EQ3": 1,
+              "EQ4": 0,
+              "EQ5": 1,
+              "EQ6": 0,
+              "EQ7": 1,
+              "EQ8": 0,
+              "EQ9": 1,
+              "EQ10": 0,
+              "EQ11": 1,
+              "EQ12": 0,
+              "EQ13": 1,
+              "HQ1": 0,
+              "HQ2": 1,
+              "HQ3": 0,
+              "HQ4": 1,
+              "HQ5": 0,
+              "HQ6": 1,
+              "HQ7": 0,
+              "HQ8": 1
+            },
+            {
+              "Team Number": 342,
+              "Student": "Jayson McAmis",
+              "AQ1": 1,
+              "AQ2": 0,
+              "AQ3": 1,
+              "AQ4": 0,
+              "AQ5": 1,
+              "AQ6": 0,
+              "AQ7": 1,
+              "AQ8": 0,
+              "AQ9": 1,
+              "AQ10": 0,
+              "AQ11": 1,
+              "TQ1": 0,
+              "TQ2": 1,
+              "TQ3": 0,
+              "TQ4": 1,
+              "TQ5": 0,
+              "TQ6": 1,
+              "TQ7": 0,
+              "EQ1": 1,
+              "EQ2": 0,
+              "EQ3": 1,
+              "EQ4": 0,
+              "EQ5": 1,
+              "EQ6": 0,
+              "EQ7": 1,
+              "EQ8": 0,
+              "EQ9": 1,
+              "EQ10": 0,
+              "EQ11": 1,
+              "EQ12": 0,
+              "EQ13": 1,
+              "HQ1": 0,
+              "HQ2": 1,
+              "HQ3": 0,
+              "HQ4": 1,
+              "HQ5": 0,
+              "HQ6": 1,
+              "HQ7": 0,
+              "HQ8": 1
+            },
+            {
+              "Team Number": 3490,
+              "Student": "Jared Andraszek",
+              "AQ1": 1,
+              "AQ2": 0,
+              "AQ3": 1,
+              "AQ4": 0,
+              "AQ5": 1,
+              "AQ6": 0,
+              "AQ7": 1,
+              "AQ8": 0,
+              "AQ9": 1,
+              "AQ10": 0,
+              "AQ11": 1,
+              "TQ1": 0,
+              "TQ2": 1,
+              "TQ3": 0,
+              "TQ4": 1,
+              "TQ5": 0,
+              "TQ6": 1,
+              "TQ7": 0,
+              "EQ1": 1,
+              "EQ2": 0,
+              "EQ3": 1,
+              "EQ4": 0,
+              "EQ5": 1,
+              "EQ6": 0,
+              "EQ7": 1,
+              "EQ8": 0,
+              "EQ9": 1,
+              "EQ10": 0,
+              "EQ11": 1,
+              "EQ12": 0,
+              "EQ13": 1,
+              "HQ1": 0,
+              "HQ2": 1,
+              "HQ3": 0,
+              "HQ4": 1,
+              "HQ5": 0,
+              "HQ6": 1,
+              "HQ7": 0,
+              "HQ8": 1
+            },
+            {
+              "Team Number": 179,
+              "Student": "Christopher Castro",
+              "AQ1": 1,
+              "AQ2": 0,
+              "AQ3": 1,
+              "AQ4": 0,
+              "AQ5": 1,
+              "AQ6": 0,
+              "AQ7": 1,
+              "AQ8": 0,
+              "AQ9": 1,
+              "AQ10": 0,
+              "AQ11": 1,
+              "TQ1": 0,
+              "TQ2": 1,
+              "TQ3": 0,
+              "TQ4": 1,
+              "TQ5": 0,
+              "TQ6": 1,
+              "TQ7": 0,
+              "EQ1": 1,
+              "EQ2": 0,
+              "EQ3": 1,
+              "EQ4": 0,
+              "EQ5": 1,
+              "EQ6": 0,
+              "EQ7": 1,
+              "EQ8": 0,
+              "EQ9": 1,
+              "EQ10": 0,
+              "EQ11": 1,
+              "EQ12": 0,
+              "EQ13": 1,
+              "HQ1": 0,
+              "HQ2": 1,
+              "HQ3": 0,
+              "HQ4": 1,
+              "HQ5": 0,
+              "HQ6": 1,
+              "HQ7": 0,
+              "HQ8": 1
+            },
+            {
+              "Team Number": 2614,
+              "Student": "Sabrina Linke",
+              "AQ1": 1,
+              "AQ2": 0,
+              "AQ3": 1,
+              "AQ4": 0,
+              "AQ5": 1,
+              "AQ6": 0,
+              "AQ7": 1,
+              "AQ8": 0,
+              "AQ9": 1,
+              "AQ10": 0,
+              "AQ11": 1,
+              "TQ1": 0,
+              "TQ2": 1,
+              "TQ3": 0,
+              "TQ4": 1,
+              "TQ5": 0,
+              "TQ6": 1,
+              "TQ7": 0,
+              "EQ1": 1,
+              "EQ2": 0,
+              "EQ3": 1,
+              "EQ4": 0,
+              "EQ5": 1,
+              "EQ6": 0,
+              "EQ7": 1,
+              "EQ8": 0,
+              "EQ9": 1,
+              "EQ10": 0,
+              "EQ11": 1,
+              "EQ12": 0,
+              "EQ13": 1,
+              "HQ1": 0,
+              "HQ2": 1,
+              "HQ3": 0,
+              "HQ4": 1,
+              "HQ5": 0,
+              "HQ6": 1,
+              "HQ7": 0,
+              "HQ8": 1
+            },
+            {
+              "Team Number": 281,
+              "Student": "Ryan Mallett",
+              "AQ1": 1,
+              "AQ2": 0,
+              "AQ3": 1,
+              "AQ4": 0,
+              "AQ5": 1,
+              "AQ6": 0,
+              "AQ7": 1,
+              "AQ8": 0,
+              "AQ9": 1,
+              "AQ10": 0,
+              "AQ11": 1,
+              "TQ1": 0,
+              "TQ2": 1,
+              "TQ3": 0,
+              "TQ4": 1,
+              "TQ5": 0,
+              "TQ6": 1,
+              "TQ7": 0,
+              "EQ1": 1,
+              "EQ2": 0,
+              "EQ3": 1,
+              "EQ4": 0,
+              "EQ5": 1,
+              "EQ6": 0,
+              "EQ7": 1,
+              "EQ8": 0,
+              "EQ9": 1,
+              "EQ10": 0,
+              "EQ11": 1,
+              "EQ12": 0,
+              "EQ13": 1,
+              "HQ1": 0,
+              "HQ2": 1,
+              "HQ3": 0,
+              "HQ4": 1,
+              "HQ5": 0,
+              "HQ6": 1,
+              "HQ7": 0,
+              "HQ8": 1
+            }
+          ]
         },
         {
-          "Match #": 2
-        },
-        {},
-        {}
+          "Match Number": 2,
+          "Teams": [
+            {
+              "Team Number": 1,
+              "Student": "Nathan Fontenot"
+            },
+            {
+              "Team Number": 2,
+              "Student": "Jayson McAmis"
+            },
+            {
+              "Team Number": 3,
+              "Student": "Jared Andraszek"
+            },
+            {
+              "Team Number": 4,
+              "Student": "Christopher Castro"
+            },
+            {
+              "Team Number": 5,
+              "Student": "Sabrina Linke"
+            },
+            {
+              "Team Number": 6,
+              "Student": "Ryan Mallett"
+            }
+          ]
+        }
+      ],
+      "Pit Scouting": [
+        {
+          "Team": 3489,
+          "Q1": "",
+          "Q2": "",
+          "Q3": "",
+          "Q4": "",
+          "Q5": "",
+          "Q6": "",
+          "Q7": "",
+          "Q8": "",
+          "Q9": "",
+          "Q10": "",
+          "Q11": "",
+          "Q12": "",
+          "Q13": "",
+          "Q14": "",
+          "Q15": "",
+          "Q16": "",
+          "Q17": "",
+          "Q18": "",
+          "Q19": "",
+          "Q20": "",
+          "Q21": "",
+          "Q22": "",
+          "Q23": "",
+          "Q24": "",
+          "Q25": "",
+          "Q26": "",
+          "Q27": "",
+          "Q28": "",
+          "Q29": ""
+        }
       ],
       "Teams": [
         {
@@ -57,6 +346,32 @@
           "Number": 3490,
           "Name": "Viper Drive",
           "Ranking": 3
+        },
+        {
+          "Number": 179,
+          "Name": "Children of the Swamp",
+          "Ranking": 4
+        },
+        {
+          "Number": 2614,
+          "Name": "MARS",
+          "Ranking": 5
+        },
+        {
+          "Number": 281,
+          "Name": "The GreenVillains",
+          "Ranking": 6
+        }
+      ],
+      "Students": [
+        {
+          "Name": "Jayson McAmis"
+        },
+        {
+          "Name": "Nathan Fontenot"
+        },
+        {
+          "Name": "Christopher Castro"
         }
       ]
     }
@@ -65,147 +380,369 @@
     {
       "Name": "Pit Questions",
       "Description": "Questions to ask teams in the Pit",
-      "Pit Questions": [{"Question": "What chassis type is your robot?",
-        "Type": "Text field",
-        "Order" : 1
-      },{"Question": "How tall is your chassis?",
-        "Type": "Number field",
-        "Order" : 2
-      },{"Question": "What is your primary objective? ",
-        "Type": "Drop down list box",
-        "Order" : 3
-      },{"Question": "What is your secondary objective?",
-        "Type": "Drop down list box",
-        "Order" : 4
-      },{"Question": "Where can your robot shoot fuel?",
-        "Type": "Checkbox list",
-        "Order" : 5
-      },{"Question": "Can your robot climb the rope?",
-        "Type": "Y/N",
-        "Order" : 6
-      },{"Question": "Does your robot stay up when it goes up?",
-        "Type": "Y/N",
-        "Order" : 7
-      },{"Question": "Do you use your own rope?",
-        "Type": "Y/N",
-        "Order" : 8
-      },{"Question": "Do you have to be right on top of the rope to climb?",
-        "Type": "Y/N",
-        "Order" : 9
-      },{"Question": "Does your robot place gears?",
-        "Type": "Y/N",
-        "Order" : 10
-      },{"Question": "How do you pick up fuel?",
-        "Type": "Drop down list box",
-        "Order" : 11
-      },{"Question": "Where can you put your human players?",
-        "Type": "Checkbox list",
-        "Order" : 12
-      },{"Question": "Do you have autonomous?",
-        "Type": "Y/N",
-        "Order" : 13
-      },{"Question": "Where do you score from in autonomous?",
-        "Type": "Checkbox list",
-        "Order" : 14
-      },{"Question": "Where can you pick up gears?",
-        "Type": "Drop down list box",
-        "Order" : 15
-      },{"Question": "Where can you pick up fuel?",
-        "Type": "Drop down list box",
-        "Order" : 16
-      },{"Question": "How is your team willing to play?",
-        "Type": "Drop down list box",
-        "Order" : 17
-      },{"Question": "What are your strengths?",
-        "Type": "Text field",
-        "Order" : 18
-      },{"Question": "What are your weaknesses?",
-        "Type": "Text field",
-        "Order" : 19
-      },{"Question": "On a scale of 1 to 10 what is your robot's maneuverability?",
-        "Type": "Drop down list box",
-        "Order" : 20
-      },{"Question": "How many feet per second can your robot travel?",
-        "Type": "Number field",
-        "Order" : 21
-      },{"Question": "How many years has your driver been driving?",
-        "Type": "Number field",
-        "Order" : 22
-      },{"Question": "How many years has your manipulator been manipulating your robot?",
-        "Type": "Number field",
-        "Order" : 23
-      },{"Question": "How quickly can you do a full cycle?",
-        "Type": "Number field",
-        "Order" : 24
-      },{"Question": "Fuel firing?",
-        "Type": "Checkbox list",
-        "Order" : 25
-      },{"Question": "What drivetrain do you have?",
-        "Type": "Text field",
-        "Order" : 26
-      },{"Question": "What position does your team start at?",
-        "Type": "Drop down list box",
-        "Order" : 27
-      },{"Question": "How experienced is your Drive Team? (How many years of Drive team do they have)?",
-        "Type": "Slider",
-        "Order" : 28
-      },{"Question": "What type of shooter does your robot have?",
-        "Type": "Text field",
-        "Order" : 29
-      }]
+      "Pit Questions": [
+        {
+          "Question": "What chassis type is your robot?",
+          "Type": "Text field",
+          "Order": 1
+        },
+        {
+          "Question": "How tall is your chassis?",
+          "Type": "Number field",
+          "Order": 2
+        },
+        {
+          "Question": "What is your primary objective? ",
+          "Type": "Drop down list box",
+          "Order": 3
+        },
+        {
+          "Question": "What is your secondary objective?",
+          "Type": "Drop down list box",
+          "Order": 4
+        },
+        {
+          "Question": "Where can your robot shoot fuel?",
+          "Type": "Checkbox list",
+          "Order": 5
+        },
+        {
+          "Question": "Can your robot climb the rope?",
+          "Type": "Y/N",
+          "Order": 6
+        },
+        {
+          "Question": "Does your robot stay up when it goes up?",
+          "Type": "Y/N",
+          "Order": 7
+        },
+        {
+          "Question": "Do you use your own rope?",
+          "Type": "Y/N",
+          "Order": 8
+        },
+        {
+          "Question": "Do you have to be right on top of the rope to climb?",
+          "Type": "Y/N",
+          "Order": 9
+        },
+        {
+          "Question": "Does your robot place gears?",
+          "Type": "Y/N",
+          "Order": 10
+        },
+        {
+          "Question": "How do you pick up fuel?",
+          "Type": "Drop down list box",
+          "Order": 11
+        },
+        {
+          "Question": "Where can you put your human players?",
+          "Type": "Checkbox list",
+          "Order": 12
+        },
+        {
+          "Question": "Do you have autonomous?",
+          "Type": "Y/N",
+          "Order": 13
+        },
+        {
+          "Question": "Where do you score from in autonomous?",
+          "Type": "Checkbox list",
+          "Order": 14
+        },
+        {
+          "Question": "Where can you pick up gears?",
+          "Type": "Drop down list box",
+          "Order": 15
+        },
+        {
+          "Question": "Where can you pick up fuel?",
+          "Type": "Drop down list box",
+          "Order": 16
+        },
+        {
+          "Question": "How is your team willing to play?",
+          "Type": "Drop down list box",
+          "Order": 17
+        },
+        {
+          "Question": "What are your strengths?",
+          "Type": "Text field",
+          "Order": 18
+        },
+        {
+          "Question": "What are your weaknesses?",
+          "Type": "Text field",
+          "Order": 19
+        },
+        {
+          "Question": "On a scale of 1 to 10 what is your robot's maneuverability?",
+          "Type": "Drop down list box",
+          "Order": 20
+        },
+        {
+          "Question": "How many feet per second can your robot travel?",
+          "Type": "Number field",
+          "Order": 21
+        },
+        {
+          "Question": "How many years has your driver been driving?",
+          "Type": "Number field",
+          "Order": 22
+        },
+        {
+          "Question": "How many years has your manipulator been manipulating your robot?",
+          "Type": "Number field",
+          "Order": 23
+        },
+        {
+          "Question": "How quickly can you do a full cycle?",
+          "Type": "Number field",
+          "Order": 24
+        },
+        {
+          "Question": "Fuel firing?",
+          "Type": "Checkbox list",
+          "Order": 25
+        },
+        {
+          "Question": "What drivetrain do you have?",
+          "Type": "Text field",
+          "Order": 26
+        },
+        {
+          "Question": "What position does your team start at?",
+          "Type": "Drop down list box",
+          "Order": 27
+        },
+        {
+          "Question": "How experienced is your Drive Team? (How many years of Drive team do they have)?",
+          "Type": "Slider",
+          "Order": 28
+        },
+        {
+          "Question": "What type of shooter does your robot have?",
+          "Type": "Text field",
+          "Order": 29
+        }
+      ]
     },
-
     {
       "Name": "Match Questions",
       "Description": "Questions you answer in the stand during the match",
       "Autonomous Questions": [
-        {"Question1": "Does the robot have Autonomous?","Type": "Numerical Value (1-10)", "Order": 1},
-        {"Question2": "Does your robot place gears?","Type": "Y/N", "Order": 2},
-        {"Question3": "Does your robot scale?","Type": "Y/N", "Order": 3},
-        {"Question": "Did the robot score high boiler","Type": "Y/N", "Order": 4},
-        {"Question": "Did the robot score low boiler?","Type": "Y/N", "Order": 5},
-        {"Question": "Did the robot activate the hopper?","Type": "Y/N", "Order": 6},
-        {"Question": "What starting pieces did they start out with?","Type": "Dropdown(Gear,Fuel,Both,None)", "Order": 7},
-        {"Question": "Which position did they start off in?","Type": "Checkbox(1,2,3)", "Order": 8},
-        {"Question": "How many Penalties did they accumulate?","Type": "Numerical Value", "Order": 9},
-        {"Question": "Did they get a Yellow Card?","Type": "Y/N", "Order": 10},
-        {"Question": "Did they get a Red Card?","Type": "Y/N", "Order": 11}
+        {
+          "Question1": "Does the robot have Autonomous?",
+          "Type": "Numerical Value (1-10)",
+          "Order": 1
+        },
+        {
+          "Question2": "Does your robot place gears?",
+          "Type": "Y/N",
+          "Order": 2
+        },
+        {
+          "Question3": "Does your robot scale?",
+          "Type": "Y/N",
+          "Order": 3
+        },
+        {
+          "Question": "Did the robot score high boiler",
+          "Type": "Y/N",
+          "Order": 4
+        },
+        {
+          "Question": "Did the robot score low boiler?",
+          "Type": "Y/N",
+          "Order": 5
+        },
+        {
+          "Question": "Did the robot activate the hopper?",
+          "Type": "Y/N",
+          "Order": 6
+        },
+        {
+          "Question": "What starting pieces did they start out with?",
+          "Type": "Dropdown(Gear,Fuel,Both,None)",
+          "Order": 7
+        },
+        {
+          "Question": "Which position did they start off in?",
+          "Type": "Checkbox(1,2,3)",
+          "Order": 8
+        },
+        {
+          "Question": "How many Penalties did they accumulate?",
+          "Type": "Numerical Value",
+          "Order": 9
+        },
+        {
+          "Question": "Did they get a Yellow Card?",
+          "Type": "Y/N",
+          "Order": 10
+        },
+        {
+          "Question": "Did they get a Red Card?",
+          "Type": "Y/N",
+          "Order": 11
+        }
       ],
       "Tele-op Questions": [
-        {"Question": "How many Gears did they score?", "Type": "Numerical Value", "Order": 1},
-        {"Question": "Did they attempt to score high boiler?", "Type": "Y/N", "Order": 2, "Comment": "If they attempt to score, show the next question"},
-        {"Question": "How many times did they score high boiler?", "Type": "Numerical Value", "Order": 3},
-        {"Question": "Did they attempt to score the low boiler?", "Type": "Y/N", "Order": 4, "Comment": "If they do attempt to score low boiler, show the next question"},
-        {"Question": "How many times did they score in low boiler?", "Type": "Numerical Value", "Order": 5},
-        {"Question": "Did they receive a technical foul?", "Type": "Y/N", "Order": 6, "Comment": "We're not exactly sure if there is such thing"},
-        {"Question": "Did they play defensively or offensively?", "Type": "Dropdown(Defensively,Offensively,Broken/Disabled)", "Order ": 7}
-        ],
-        "End-Game Questions":[
-          {"Question": "How well did they maneuver?", "Type": "Dropdown(Well,Poorly,None)", "Order": 1},
-          {"Question": "How well did they get Fuel from the Hopper?", "Type": "Dropdown(Well,Poorly,None)", "Order": 2},
-          {"Question": "How well did they get Fuel from the floor?", "Type": "Dropdown(Well,Poorly,None)", "Order": 3},
-          {"Question": "How well did they get Fuel from the feeder?", "Type": "Dropdown(Well,Poorly,None)", "Order": 4},
-          {"Question": "How well did they get Gears from the floor?", "Type": "Dropdown(Well,Poorly,None)", "Order": 5},
-          {"Question": "How well did they get Gears from the feeder?", "Type": "Dropdown(Well,Poorly,None)", "Order": 6},
-          {"Question": "How well did they put the Gear on the hook?", "Type": "Dropdown(Well,Poorly,None)", "Order": 7},
-          {"Question": "Did they attempt to scale?", "Type": "Y/N", "Order": 8},
-          {"Question": "How well did they scale?", "Type": "Dropdown(Grabbed rope, partially scaled, scaled but didn't stay, scaled successfully)", "Order": 9},
-          {"Question": "Did their robot break?", "Type": "Y/N", "Order": 10},
-          {"Question": "If they got penalties, how badly did it affect their score?", "Type": "Free-text field", "Order": 11},
-          {"Question": "How accurately can they fire?", "Type": "Dropdown(Well,Poorly,None)", "Order": 12},
-          {"Question": "Did their alliance gain a Ranking Point?", "Type": "Y/N", "Order": 13}
-          ],
-          "Human player Questions" : [
-            {"Question":"How did they pull up the gears?", "Type": "Dropdown(Well,Poorly,None)", "Order": 1}, 
-            {"Question": "Did they put the gears in the right order?", "Type": "Y/N", "Order": 2}, 
-            {"Question": "Did they drop rope early?", "Type": "Y/N", "Order": 3},
-            {"Question": "Did the human player get a foul", "Type": "Y/N", "Order": 4},
-            {"Question": "Which team does the airship human 1 belong to?", "Type": "Drop down list box of team numbers", "Order": 5},
-            {"Question": "Which team does the airship human 2 belong to?", "Type": "Drop down list box of team numbers", "Order": 6},
-            {"Question": "Which team does the runner human belong to?", "Type": "Drop down list box of team numbers", "Order": 7},
-            {"Question": "Number of props spinning", "Type": "0,1,2,3,4", "Order": 8}
-            ]
+        {
+          "Question": "How many Gears did they score?",
+          "Type": "Numerical Value",
+          "Order": 1
+        },
+        {
+          "Question": "Did they attempt to score high boiler?",
+          "Type": "Y/N",
+          "Order": 2,
+          "Comment": "If they attempt to score, show the next question"
+        },
+        {
+          "Question": "How many times did they score high boiler?",
+          "Type": "Numerical Value",
+          "Order": 3
+        },
+        {
+          "Question": "Did they attempt to score the low boiler?",
+          "Type": "Y/N",
+          "Order": 4,
+          "Comment": "If they do attempt to score low boiler, show the next question"
+        },
+        {
+          "Question": "How many times did they score in low boiler?",
+          "Type": "Numerical Value",
+          "Order": 5
+        },
+        {
+          "Question": "Did they receive a technical foul?",
+          "Type": "Y/N",
+          "Order": 6,
+          "Comment": "We're not exactly sure if there is such thing"
+        },
+        {
+          "Question": "Did they play defensively or offensively?",
+          "Type": "Dropdown(Defensively,Offensively,Broken/Disabled)",
+          "Order ": 7
+        }
+      ],
+      "End-Game Questions": [
+        {
+          "Question": "How well did they maneuver?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 1
+        },
+        {
+          "Question": "How well did they get Fuel from the Hopper?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 2
+        },
+        {
+          "Question": "How well did they get Fuel from the floor?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 3
+        },
+        {
+          "Question": "How well did they get Fuel from the feeder?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 4
+        },
+        {
+          "Question": "How well did they get Gears from the floor?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 5
+        },
+        {
+          "Question": "How well did they get Gears from the feeder?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 6
+        },
+        {
+          "Question": "How well did they put the Gear on the hook?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 7
+        },
+        {
+          "Question": "Did they attempt to scale?",
+          "Type": "Y/N",
+          "Order": 8
+        },
+        {
+          "Question": "How well did they scale?",
+          "Type": "Dropdown(Grabbed rope, partially scaled, scaled but didn't stay, scaled successfully)",
+          "Order": 9
+        },
+        {
+          "Question": "Did their robot break?",
+          "Type": "Y/N",
+          "Order": 10
+        },
+        {
+          "Question": "If they got penalties, how badly did it affect their score?",
+          "Type": "Free-text field",
+          "Order": 11
+        },
+        {
+          "Question": "How accurately can they fire?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 12
+        },
+        {
+          "Question": "Did their alliance gain a Ranking Point?",
+          "Type": "Y/N",
+          "Order": 13
+        }
+      ],
+      "Human player Questions": [
+        {
+          "Question": "How did they pull up the gears?",
+          "Type": "Dropdown(Well,Poorly,None)",
+          "Order": 1
+        },
+        {
+          "Question": "Did they put the gears in the right order?",
+          "Type": "Y/N",
+          "Order": 2
+        },
+        {
+          "Question": "Did they drop rope early?",
+          "Type": "Y/N",
+          "Order": 3
+        },
+        {
+          "Question": "Did the human player get a foul",
+          "Type": "Y/N",
+          "Order": 4
+        },
+        {
+          "Question": "Which team does the airship human 1 belong to?",
+          "Type": "Drop down list box of team numbers",
+          "Order": 5
+        },
+        {
+          "Question": "Which team does the airship human 2 belong to?",
+          "Type": "Drop down list box of team numbers",
+          "Order": 6
+        },
+        {
+          "Question": "Which team does the runner human belong to?",
+          "Type": "Drop down list box of team numbers",
+          "Order": 7
+        },
+        {
+          "Question": "Number of props spinning",
+          "Type": "0,1,2,3,4",
+          "Order": 8
+        }
+      ]
     }
-  ]
+  ],
+  "Configuration" : {
+    "Bluetooth Connections" : [
+      {"Connection ID" : ""},{"Connection ID" : ""}
+      ],
+      "Import file name" : "import.txt"
+  }
 }
-
