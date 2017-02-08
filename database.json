@@ -785,7 +785,8 @@
           "ID": "HQ1",
           "Question": "How did they pull up the gears?",
           "Type": "Dropdown(Well,Poorly,None)",
-          "Order": 1
+          "Order": 1,
+          "Comment": "All HQ questions are answered from the Human Player scouting tablet"
         },
         {
           "ID": "HQ2",
@@ -829,6 +830,24 @@
           "Type": "0,1,2,3,4",
           "Order": 8,
           "Comment": "This is at the alliance level"
+        },
+        {
+          "ID": "HQ9",
+          "Question": "Which team is Airship Human Player 1 from?",
+          "Type": "List of team names/numbers",
+          "Order": 9
+        },
+        {
+          "ID": "HQ10",
+          "Question": "Which team is Airship Human Player 2 from?",
+          "Type": "List of team names/numbers",
+          "Order": 10
+        },
+        {
+          "ID": "HQ11",
+          "Question": "Which team is Runner Human Player from?",
+          "Type": "List of team names/numbers",
+          "Order": 11
         }
       ]
     }
