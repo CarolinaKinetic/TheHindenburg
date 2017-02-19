@@ -1,7 +1,18 @@
 <ion-view title="Match Scouting" id="page3">
   <ion-content padding="true" class="has-header">
-    <form id="matchScouting-form2" class="list">
-      <label class="item item-select" id="matchScouting-select18" name="MatchNum">
+    <div ng-controller="matchScoutingCtrl" class="padding">
+      <form id="matchScouting-form2" class="list">
+        <label class="item item-select" id="Team Number" name="Team Number">
+          <span class="input-label">Team Number</span>
+          <select 
+            name="team" 
+            id="team" 
+            ng-options="option.number + ' - ' + option.name for option in data.teams track by option.number"
+            ng-model="team"
+            ng-change="selectTeam()"></select>
+            </label>
+          
+        <label class="item item-select" id="matchScouting-select18" name="MatchNum">
         <span class="input-label">Match Number</span>
         <select>
           <option>1</option>
@@ -25,7 +36,7 @@
           <option>David</option>
         </select>
       </label>
-    </form>
+      
     <div id="matchScouting-button-bar1" class="button-bar">
       <button id="matchScouting-button4" class="button button-positive  button-block">Autonomous</button>
       <button id="matchScouting-button5" class="button button-positive  button-block">Teleop</button>
@@ -33,355 +44,468 @@
       <button id="matchScouting-button7" class="button button-positive  button-block">Human Player</button>
     </div>
     <h1 id="matchScouting-heading1" style="color:#000000;text-align:center;">Autonomous</h1>
-    <form id="matchScouting-form3" class="list">
-      <label class="item item-select" id="matchScouting-select21" name="AQ1">
+    
+      <label class="item item-select" id="AQ1" name="AQ1">
         <span class="input-label">Did the robot have Autonomous?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          ng-model="AQ1"> 
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select22" name="AQ2">
+      
+      <label class="item item-select" id="AQ2" name="AQ2">
         <span class="input-label">Did the robot place gears?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          ng-model="AQ2">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select23" name="AQ3">
-        <span class="input-label"> Did the robot cross the line?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+      
+      <label class="item item-select" id="AQ3" name="AQ3">
+        <span class="input-label">Did the robot cross the line?</span>
+        <select
+          id="AQ3"
+          ng-model="AQ3">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select24" name="AQ4">
+      
+      <label class="item item-select" id="AQ4" name="AQ4">
         <span class="input-label">Did the robot score high boiler?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="AQ4"
+          ng-model="AQ4">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select25" name="AQ6">
+      
+      <label class="item item-select" id="AQ5" name="AQ5">
         <span class="input-label">Did the robot score low boiler?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="AQ5"
+          ng-model="AQ5">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select26" name="AQ6">
+      
+      <label class="item item-select" id="AQ6" name="AQ6">
         <span class="input-label">Did the robot activate the hopper?</span>
-        <select>
-          <option>Unknown</option>
-          <option>No</option>
-          <option></option>
+        <select
+          id="AQ6"
+          ng-model="AQ6">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select27" name="AQ7">
+      
+      <label class="item item-select" id="AQ7" name="AQ7">
         <span class="input-label">What starting pieces did they start out with?</span>
-        <select>
+        <select
+          id="AQ7"
+          ng-model="AQ7">
           <option>Gear</option>
           <option>Fuel</option>
           <option>Both</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select28" name="AQ8">
+      
+      <label class="item item-select" id="AQ8" name="AQ8">
         <span class="input-label">Which position did they start off in?</span>
-        <select>
-          <option>Unknown</option>
+        <select
+          id="AQ8"
+          ng-model="AQ8">
+          <option value="0"></option>
           <option>Pit Side</option>
           <option>Middle</option>
           <option>Stand Side</option>
         </select>
       </label>
-      <label class="item item-input" id="matchScouting-input5" name="AQ9">
+      
+      <label class="item item-input" id="AQ9" name="AQ9">
         <span class="input-label">How many penalties did they accumulate?</span>
-        <input type="number" placeholder="">
+        <input ng-model="AQ9" id="AQ9" type="number" placeholder="">
       </label>
+      
       <h1 id="matchScouting-heading2" style="color:#000000;text-align:center;">Teleop</h1>
-      <label class="item item-input" id="matchScouting-input12" name="TQ1">
+      
+      <label class="item item-input" id="TQ1" name="TQ1">
         <span class="input-label">How many gears did they score?</span>
-        <input type="number" placeholder="">
+        <input ng-model="TQ1" id="TQ1" type="number" placeholder="">
       </label>
-      <label class="item item-select" id="matchScouting-select29" name="TQ2">
+      
+      <label class="item item-select" id="TQ2" name="TQ2">
         <span class="input-label">Did they attempt to score high boiler?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="TQ2"
+          ng-model="TQ2">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-input" id="matchScouting-input13" name="TQ3">
+      
+      <label class="item item-input" id="TQ3" name="TQ3">
         <span class="input-label">If so how many trips did they take to score in the high boiler?</span>
-        <input type="number" placeholder="">
+        <input ng-model="TQ3" id="TQ3" type="number" placeholder="">
       </label>
-      <label class="item item-select" id="matchScouting-select30" name="TQ4">
+      
+      <label class="item item-select" id="TQ4" name="TQ4">
         <span class="input-label">Did they attempt to score low boiler?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="TQ4"
+          ng-model="TQ4"
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-input" id="matchScouting-input14" name="TQ5">
+      
+      <label class="item item-input" id="TQ5" name="TQ5">
         <span class="input-label">If so how many trips did they take to score in the low boiler?</span>
-        <input type="number" placeholder="">
+        <input ng-model="TQ5" id="TQ5" type="number" placeholder="">
       </label>
-      <label class="item item-select" id="matchScouting-select31" name="TQ6">
+      
+      <label class="item item-select" id="TQ6" name="TQ6">
         <span class="input-label">Did they receive a technical foul?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="TQ6"
+          ng-model="TQ6">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select32" name="TQ7">
+      
+      <label class="item item-select" id="TQ7" name="TQ7">
         <span class="input-label">Did they receive a Yellow Card?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="TQ7"
+          ng-model="TQ7">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select33" name="TQ8">
+      
+      <label class="item item-select" id="TQ8" name="TQ8">
         <span class="input-label">Did they receive a Red Card?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+        <select
+          id="TQ8"
+          ng-model="TQ8">
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select34" name="TQ9">
+      
+      <label class="item item-select" id="TQ9" name="TQ9">
         <span class="input-label">Did they play defensively or offensively?</span>
-        <select>
-          <option>Defense</option>
-          <option>Offense</option>
-          <option>Both</option>
+        <select
+          id="TQ9"
+          ng-model="TQ9">
+          <option value="0"></option>
+          <option value="1">Defense</option>
+          <option value="2">Offense</option>
+          <option value="3">Both</option>
         </select>
       </label>
+      
       <h1 id="matchScouting-heading3" style="color:#000000;text-align:center;">Post-Game</h1>
-      <label class="item item-select" id="matchScouting-select35" name="EQ1">
+      
+      <label class="item item-select" id="EQ1" name="EQ1">
         <span class="input-label">How well did they manuver?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Low</option>
-          <option>Medium</option>
-          <option>High</option>
+        <select
+          id="EQ1"
+          ng-model="EQ1">
+          <option value="0"></option>
+          <option value="1">Low</option>
+          <option value="2">Medium</option>
+          <option value="3">High</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select36" name="EQ2">
+      
+      <label class="item item-select" id="EQ2" name="EQ2">
         <span class="input-label">How well did they get Fuel from the Hopper?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+        <select
+          id="EQ2"
+          ng-model="EQ2">
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select37" name="EQ3">
+      
+      <label class="item item-select" id="EQ3" name="EQ3">
         <span class="input-label">How well did they get Fuel from the floor?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+        <select
+          id="EQ3"
+          ng-model="EQ3">
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select38" name="EQ4">
+      
+      <label class="item item-select" id="EQ4" name="EQ4">
         <span class="input-label">How well did they get Fuel from the feeder?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+        <select
+          id="EQ4"
+          ng-model="EQ4">
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select39" name="EQ5">
+      
+      <label class="item item-select" id="EQ5" name="EQ5">
         <span class="input-label">How well did they get Gears from the floor?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+        <select
+          id="EQ5"
+          ng-model="TQ5">
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select19" name="TQ6">
+      
+      <label class="item item-select" id="EQ6" name="EQ6">
         <span class="input-label">How well did they get Gears from the feeder?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+        <select
+          id="EQ6"
+          ng-model="EQ6">
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select20" name="TQ7">
+      
+      <label class="item item-select" id="EQ7" name="EQ7">
         <span class="input-label">How well did they put the Gear on the hook?</span>
-        <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+        <select
+          id="EQ7"
+          ng-model="EQ7">
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select40" name="EQ8">
+      
+      <label class="item item-select" id="EQ8" name="EQ8">
         <span class="input-label">Roughly what percentage of the high shots succeeded?</span>
-        <select>
-          <option>Unknown</option>
-          <option>&lt;25%</option>
-          <option>&lt;50%</option>
-          <option>&lt;75%</option>
-          <option>&gt;75%</option>
+        <select
+          id="EQ8"
+          ng-model="EQ8">
+          <option value="0"></option>
+          <option value="1">&lt;30%</option>
+          <option value="2">&lt;60%</option>
+          <option value="3">&lt;90%</option>
+          <option value="4">&gt;90%</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select41" name="EQ9">
+      
+      <label class="item item-select" id="EQ9" name="EQ9">
         <span class="input-label">Roughly what percentage of the low shots succeeded?</span>
-        <select>
-          <option>Unknown</option>
-          <option>&lt;25%</option>
-          <option>&lt;50%</option>
-          <option>&lt;75%</option>
-          <option>&gt;75%</option>
+        <select
+          id="EQ9"
+          ng-model="EQ9">
+          <option value="0"></option>
+          <option value="1">&lt;<30%</option>
+          <option value="2">&lt;<60%</option>
+          <option value="3">&lt;<90%</option>
+          <option value="4">&gt;>90%</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select42" name="EQ10">
+      
+      <label class="item item-select" id="EQ10" name="EQ10">
         <span class="input-label">Roughly what percentage of the gears succeeded?</span>
-        <select>
-          <option>Unknown</option>
-          <option>&lt;25%</option>
-          <option>&lt;50%</option>
-          <option>&lt;75%</option>
-          <option>&gt;75%</option>
+        <select
+          id="EQ10"
+          ng-model="EQ10">
+          <option value="0"></option>
+          <option value="1">&lt;<30%</option>
+          <option value="2">&lt;<60%</option>
+          <option value="3">&lt;<90%</option>
+          <option value="4">&gt;>90%</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select43" name="EQ11">
+      
+      <label class="item item-select" id="EQ11" name="EQ11">
         <span class="input-label">Did they attempt to scale?</span>
-        <select>
+        <select
+          id="EQ11"
+          ng-model="EQ11">
           <option>Didn't attempt</option>
           <option>Attempted</option>
           <option>Successful</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select44" name="EQ12">
+      
+      <label class="item item-select" id="EQ12" name="EQ12">
         <span class="input-label">Did their robot break?</span>
         <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-input" id="matchScouting-input6" name="EQ13">
+
+      <label class="item item-input" id="EQ13" name="EQ13">
         <span class="input-label">Number of points lost to penalties?</span>
         <input type="number" placeholder="">
       </label>
-      <label class="item item-input" id="matchScouting-input7" name="EQ14">
+
+      <label class="item item-input" id="EQ14" name="EQ14">
         <span class="input-label">Number of points lost to fouls?</span>
         <input type="number" placeholder="">
       </label>
-      <label class="item item-select" id="matchScouting-select45" name="EQ15">
+
+      <label class="item item-select" id="EQ15" name="EQ15">
         <span class="input-label">Did the airship launch?</span>
         <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select46" name="EQ16">
+
+      <label class="item item-select" id="EQ16" name="EQ16">
         <span class="input-label">Did their alliance gain a Ranking Point?</span>
         <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-input" id="matchScouting-textarea6" name="EQ17">
-        <span class="input-label">Notes</span><textarea placeholder=""></textarea></label>
+
+      <label class="item item-input" id="EQ17" name="EQ17">
+        <span class="input-label">Notes</span><textarea placeholder=""></textarea>
+      </label>
+
       <h1 id="matchScouting-heading4" style="color:#000000;text-align:center;">Human Player</h1>
-      <label class="item item-select" id="matchScouting-select47" name="HQ1">
+      
+      <label class="item item-select" id="HQ1" name="HQ1">
         <span class="input-label">How did they pull up the gears?</span>
         <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select48" name="HQ2">
+      
+      <label class="item item-select" id="HQ2" name="HQ2">
         <span class="input-label">Did they put the gears in the right order?</span>
         <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select49" name="HQ3">
+      
+      <label class="item item-select" id="HQ3" name="HQ3">
         <span class="input-label">Did they drop rope early?</span>
         <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select50" name="HQ4">
+
+      <label class="item item-select" id="HQ4" name="HQ4">
         <span class="input-label">Did the human player get a foul?</span>
         <select>
-          <option>Unknown</option>
-          <option>Yes</option>
-          <option>No</option>
+          <option value="0"></option>
+          <option value="1">No</option>
+          <option value="2">Yes</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select51" name="HQ5">
+
+      <label class="item item-select" id="HQ5" name="HQ5">
         <span class="input-label">From which team was the airship (1) human player?</span>
         <select>
           <option>Team Number - Name</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select52" name="HQ6">
+
+      <label class="item item-select" id="HQ6" name="HQ6">
         <span class="input-label">From which team was the airship (2) human player?</span>
         <select>
           <option>Team Number - Name</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select53" name="HQ7">
+
+      <label class="item item-select" id="HQ7" name="HQ7">
         <span class="input-label">From which team was the runner human player?</span>
         <select>
           <option>Team Number - Name</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select54" name="HQ8">
+
+      <label class="item item-select" id="HQ8" name="HQ8">
         <span class="input-label">How did the airship (1) human player do?</span>
         <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select55" name="HQ9">
+
+      <label class="item item-select" id="HQ9" name="HQ9">
         <span class="input-label">How did the airship (2) human player do?</span>
         <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <label class="item item-select" id="matchScouting-select56" name="HQ10">
+
+      <label class="item item-select" id="HQ10" name="HQ10">
         <span class="input-label">How did the runner human player do?</span>
         <select>
-          <option>Unknown</option>
-          <option>Poorly</option>
-          <option>Well</option>
-          <option>Exceptional</option>
+          <option value="0"></option>
+          <option value="1">Poorly</option>
+          <option value="2">Well</option>
+          <option value="3">Exceptional</option>
+          <option value="4">No attempt</option>
         </select>
       </label>
-      <ion-item class="range range-positive" id="matchScouting-range5">Number of rotors spinning
+
+      <ion-item class="range range-positive" id="HQ1">Number of rotors spinning
         <input type="range" value="2" min="1" max="4" step="1" name="HQ11">
       </ion-item>
+
+      <button
+        class="button button-balanced button-block"
+        ng-click="submitMatch()">Submit</button>
     </form>
+    </div>
   </ion-content>
-</ion-view>
+</ion-view> 

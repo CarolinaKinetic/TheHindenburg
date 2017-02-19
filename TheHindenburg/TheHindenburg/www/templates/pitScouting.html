@@ -3,12 +3,10 @@
     <form id="pitScouting-form4" class="list">
       <label class="item item-select" id="pitScouting-select58" name="Team Number">
         <span class="input-label">Team Number</span>
-        <select 
-          name="team" 
-          id="team" 
-          ng-options="option.number + ' - ' + option.name for option in data.teams track by option.number"
-          ng-model="team"
-          ng-change="selectTeam()"></select>
+        <select>
+          <option>[None]</option>
+          <option>Team 3489 - Category 5</option>
+        </select>
       </label>
       <label class="item item-input" id="pitScouting-textarea7" name="PQ1">
         <span class="input-label">What chassis type is your robot?</span><textarea placeholder=""></textarea></label>
