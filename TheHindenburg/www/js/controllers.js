@@ -45,11 +45,7 @@ function ($scope, $stateParams) {
         {
             'number': 8101,
             'name': 'Rookies'
-        },
-        {
-            'number': 420,
-            'name': 'Blaze it'
-        },
+        }
       ]
     };
   };
