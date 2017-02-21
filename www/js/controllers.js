@@ -26,57 +26,79 @@ function ($scope, $stateParams) {
     };
   };
   
+  
+  $scope.loadTeamsIntoMemory2 = function() {
+    $scope.teams = {
+        'teams': [
+        {
+            'number': 3489,
+            'name': 'Category 5'
+        },
+        {
+            'number': 3490,
+            'name': 'Viper Drive'
+        },
+        {
+            'number': 342,
+            'name': 'Burning Magnetos'
+        },
+        {
+            'number': 8101,
+            'name': 'Rookies'
+        },
+      ]
+    };
+  };
   $scope.loadTeamsIntoMemory();
 
 /*
-    Clear all fields and hide all of those except the team and match after a match
-    concludes
-  */
+    Clear all fields and hide all of those except the team question after the 
+    questioning is finished
+*/
 
     $scope.submitPit = function() {
-        $scope.PQ1 = "";
-        $scope.PQ2 = 0;
-        $scope.PQ3 = 0;
-        $scope.PQ4 = 0;
-        $scope.PQ5 = 0;
-        $scope.PQ6 = 0;
-        $scope.PQ7 = 0;
-        $scope.PQ8 = 0;
-        $scope.PQ9 = 0;
-        $scope.PQ10 = 0;
-        $scope.PQ11A = "false";
-        $scope.PQ11B = "false";
-        $scope.PQ11C = "false";
-        $scope.PQ12A = "false";
-        $scope.PQ12B = "false";
-        $scope.PQ12C = "false";
-        $scope.PQ12D = "false";
-        $scope.PQ13 = 0;
-        $scope.PQ14A = "false";
-        $scope.PQ14B = "false";
-        $scope.PQ14C = "false";
-        $scope.PQ15 = 0;
-        $scope.PQ16 = 0;
-        $scope.PQ17 = 0;
-        $scope.PQ18 = "";
-        $scope.PQ19 = "";
-        $scope.PQ20 = 1;
-        $scope.PQ21 = 0;
-        $scope.PQ22 = 0;
-        $scope.PQ23 = 0;
-        $scope.PQ24 = 0;
-        $scope.PQ25A = "false";
-        $scope.PQ25B = "false";
-        $scope.PQ25C = "false";
-        $scope.PQ25D = "false";
-        $scope.PQ26 = "";
-        $scope.PQ27A = "false";
-        $scope.PQ27B = "false";
-        $scope.PQ27C = "false";
-        $scope.PQ28 = 0;
-        $scope.PQ29 = "";
-    };
-
+    $scope.PQ1 = "";
+    $scope.PQ2 = 0;
+    $scope.PQ3 = 0;
+    $scope.PQ4 = 0;
+    $scope.PQ5 = 0;
+    $scope.PQ6 = 0;
+    $scope.PQ7 = 0;
+    $scope.PQ8 = 0;
+    $scope.PQ9 = 0;
+    $scope.PQ10 = 0;
+    $scope.PQ11A = "false";
+    $scope.PQ11B = "false";
+    $scope.PQ11C = "false";
+    $scope.PQ12A = "false";
+    $scope.PQ12B = "false";
+    $scope.PQ12C = "false";
+    $scope.PQ12D = "false";
+    $scope.PQ13 = 0;
+    $scope.PQ14A = "false";
+    $scope.PQ14B = "false";
+    $scope.PQ14C = "false";
+    $scope.PQ15 = 0;
+    $scope.PQ16 = 0;
+    $scope.PQ17 = 0;
+    $scope.PQ18 = "";
+    $scope.PQ19 = "";
+    $scope.PQ20 = 1;
+    $scope.PQ21 = 0;
+    $scope.PQ22 = 0;
+    $scope.PQ23 = 0;
+    $scope.PQ24 = 0;
+    $scope.PQ25A = "false";
+    $scope.PQ25B = "false";
+    $scope.PQ25C = "false";
+    $scope.PQ25D = "false";
+    $scope.PQ26 = "";
+    $scope.PQ27A = "false";
+    $scope.PQ27B = "false";
+    $scope.PQ27C = "false";
+    $scope.PQ28 = 0;
+    $scope.PQ29 = "";
+   };
 }])
    
 .controller('matchScoutingCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -107,8 +129,7 @@ function ($scope, $stateParams) {
   
   $scope.loadTeamsIntoMemory();
   
-  
-    
+   
    /*
     Clear all fields and hide all of those except the team and match after a match
     concludes

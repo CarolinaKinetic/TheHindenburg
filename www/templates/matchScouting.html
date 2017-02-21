@@ -107,8 +107,8 @@
           id="AQ6"
           ng-model="AQ6">
           <option value="0"></option>
-          <option value="1">No</option>
-          <option value="2">Yes</option>
+          <option value="1">Yes</option>
+          <option value="2">No</option>
         </select>
       </label>
       <label class="item item-select" id="AQ7" name="AQ7">
@@ -167,7 +167,7 @@
         
         <select
           id="TQ4"
-          ng-model="TQ4"
+          ng-model="TQ4">
           <option value="0"></option>
           <option value="2">Yes</option>
           <option value="1">No</option>
@@ -321,10 +321,10 @@
           id="EQ8"
           ng-model="EQ8">
           <option value="0"></option>
-          <option value="1">&lt;<30%</option>
-          <option value="2">&lt;<60%</option>
-          <option value="3">&lt;<90%</option>
-          <option value="4">&gt;>90%</option>
+          <option value="1"><30%</option>
+          <option value="2"><60%</option>
+          <option value="3"><90%</option>
+          <option value="4">>90%</option>
         </select>
       </label>
       <label class="item item-select" id="EQ9" name="EQ9">
@@ -334,10 +334,10 @@
           id="EQ9"
           ng-model="EQ9">
           <option value="0"></option>
-          <option value="1">&lt;<30%</option>
-          <option value="2">&lt;<60%</option>
-          <option value="3">&lt;<90%</option>
-          <option value="4">&gt;>90%</option>
+          <option value="1"><30%</option>
+          <option value="2"><60%</option>
+          <option value="3"><90%</option>
+          <option value="4">>90%</option>
         </select>
       </label>
       <label class="item item-select" id="EQ10" name="EQ10">
@@ -347,10 +347,10 @@
           id="EQ10"
           ng-model="EQ10">
           <option value="0"></option>
-          <option value="1">&lt;<30%</option>
-          <option value="2">&lt;<60%</option>
-          <option value="3">&lt;<90%</option>
-          <option value="4">&gt;>90%</option>
+          <option value="1"><30%</option>
+          <option value="2"><60%</option>
+          <option value="3"><90%</option>
+          <option value="4">>90%</option>
         </select>
       </label>
       <label class="item item-select" id="EQ11" name="EQ11">
@@ -406,7 +406,7 @@
         
       </label>
       <label class="item item-input" id="EQ17" name="EQ17">
-        <span ng-model="EQ17" id="EQ17" class="input-label">Notes</span><textarea placeholder=""></textarea></label>
+        <span class="input-label">Notes</span><textarea ng-model="EQ17" id="EQ17" placeholder=""></textarea></label>
       <h1 id="matchScouting-heading4" style="color:#000000;text-align:center;">Human Player</h1>
       <label class="item item-select" id="HQ1" name="HQ1">
         <span class="input-label">How did they pull up the gears?</span>
@@ -452,30 +452,30 @@
       </label>
       <label class="item item-select" id="HQ5" name="HQ5">
         <span class="input-label">From which team was the airship (1) human player?</span>
-        <select
-          id="HQ5"
-          ng-model="HQ5">
-          <option value="0"></option>
-          <option>Team Number - Name</option>
-        </select>
+        <select 
+            name="team" 
+            id="team" 
+            ng-options="option.number + ' - ' + option.name for option in data.teams track by option.number"
+            ng-model="team"
+            ng-change="selectTeam()"></select>
       </label>
       <label class="item item-select" id="HQ6" name="HQ6">
         <span class="input-label">From which team was the airship (2) human player?</span>
-        <select
-          id="HQ6"
-          ng-model="HQ6">
-          <option value="0"></option>
-          <option>Team Number - Name</option>
-        </select>
+        <select 
+            name="team" 
+            id="team" 
+            ng-options="option.number + ' - ' + option.name for option in data.teams track by option.number"
+            ng-model="team"
+            ng-change="selectTeam()"></select>
       </label>
       <label class="item item-select" id="HQ7" name="HQ7">
         <span class="input-label">From which team was the runner human player?</span>
-        <select
-          id="HQ7"
-          ng-model="HQ7">
-          <option value="0"></option>
-          <option>Team Number - Name</option>
-        </select>
+        <select 
+            name="team" 
+            id="team" 
+            ng-options="option.number + ' - ' + option.name for option in data.teams track by option.number"
+            ng-model="team"
+            ng-change="selectTeam()"></select>
       </label>
       <label class="item item-select" id="HQ8" name="HQ8">
         <span class="input-label">How did the airship (1) human player do?</span>
@@ -517,7 +517,7 @@
         </select>
       </label>
       <ion-item class="range range-positive">Number of rotors spinning
-        <input type="range" value="0" min="1" max="4" step="1" ng-model="HQ11" id="HQ11">
+        <input ng-model="HQ11" id="HQ11" type="range" value="1" min="0" max="4" step="1">
       </ion-item>
       <button
         class="button button-balanced button-block"
