@@ -3,8 +3,8 @@ angular.module('app.controllers', [])
 .controller('pitScoutingCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 function ($scope, $stateParams) {
 
-  $scope.loadTeamsIntoMemory = function() {
-    $scope.teams = {
+ $scope.loadTeamsIntoMemory = function() {
+    $scope.data = {
         'teams': [
         {
             'number': 3489,
@@ -26,29 +26,6 @@ function ($scope, $stateParams) {
     };
   };
   
-  
-  $scope.loadTeamsIntoMemory2 = function() {
-    $scope.teams = {
-        'teams': [
-        {
-            'number': 3489,
-            'name': 'Category 5'
-        },
-        {
-            'number': 3490,
-            'name': 'Viper Drive'
-        },
-        {
-            'number': 342,
-            'name': 'Burning Magnetos'
-        },
-        {
-            'number': 8101,
-            'name': 'Rookies'
-        }
-      ]
-    };
-  };
   $scope.loadTeamsIntoMemory();
 
 /*
@@ -56,7 +33,7 @@ function ($scope, $stateParams) {
     questioning is finished
 */
 
-    $scope.submitPit = function() {
+  $scope.submitPit = function() {
     $scope.PQ1 = "";
     $scope.PQ2 = 0;
     $scope.PQ3 = 0;
