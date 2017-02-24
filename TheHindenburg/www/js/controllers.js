@@ -1,9 +1,10 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['firebase'])
   
-.controller('pitScoutingCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-function ($scope, $stateParams) {
+.controller('pitScoutingCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
  $scope.loadTeamsIntoMemory = function() {
+   
+   
     $scope.data = {
         'teams': [
         {
@@ -78,8 +79,7 @@ function ($scope, $stateParams) {
    };
 }])
    
-.controller('matchScoutingCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-function ($scope, $stateParams) {
+.controller('matchScoutingCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
  $scope.loadTeamsIntoMemory = function() {
     $scope.data = {
@@ -165,13 +165,15 @@ function ($scope, $stateParams) {
   };
 }])
    
-.controller('synchronizeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-function ($scope, $stateParams) {
+.controller('synchronizeCtrl', ['$scope', '$stateParams', '$firebaseArray', function ($scope, $stateParams, $firebaseArray) {
+  
+  $scope.importTeams = function() {
+    
+  }
 
 }])
    
-.controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-function ($scope, $stateParams) {
+.controller('menuCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
 
 }]);

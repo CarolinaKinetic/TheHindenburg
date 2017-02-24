@@ -1914,14 +1914,6 @@
     }
   ],
   "Configuration": {
-    "Bluetooth Connections": [
-      {
-        "Connection ID": ""
-      },
-      {
-        "Connection ID": ""
-      }
-    ],
     "Team list import file name": "teams-import.txt",
     "Bluetooth import file name": "bt-import.txt",
     "Scout data export file name": "export.txt",

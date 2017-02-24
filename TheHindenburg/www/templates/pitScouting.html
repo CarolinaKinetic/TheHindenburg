@@ -12,7 +12,8 @@
             ng-change="selectTeam()"></select>
         </label>
         <label class="item item-input" id="PQ1" name="PQ1">
-          <span class="input-label">What chassis type is your robot?</span><textarea ng-model="PQ1" id="PQ1" placeholder=""></textarea></label>
+          <span class="input-label">What chassis type is your robot?</span>
+          <textarea ng-model="PQ1" id="PQ1" placeholder=""></textarea></label>
         <label class="item item-input" id="PQ2" name="PQ2">
           <span class="input-label">How tall is your chassis?</span>
           <input ng-model="PQ2" id="PQ2" type="number" placeholder="">
@@ -156,9 +157,13 @@
           </select>
         </label>
         <label class="item item-input" id="PQ18" name="PQ18">
-          <span class="input-label">What are your strengths?</span><textarea ng-model="PQ18" id="PQ18" placeholder=""></textarea></label>
+          <span class="input-label">What are your strengths?</span>
+          <textarea ng-model="PQ18" id="PQ18" placeholder=""></textarea>
+        </label>
         <label class="item item-input" id="PQ19" name="PQ19">
-          <span class="input-label">What are your weaknesses?</span><textarea ng-model="PQ19" id="PQ19" placeholder=""></textarea></label>
+          <span class="input-label">What are your weaknesses?</span>
+          <textarea ng-model="PQ19" id="PQ19" placeholder=""></textarea>
+        </label>
         <label class="item item-input" id="PQ20" name="PQ20">
           <span class="input-label">On a scale of 1 to 10 what is your robots manuverability?</span>
           <input ng-model="PQ20" id="PQ20" type="number" placeholder="">
@@ -185,7 +190,9 @@
         <ion-checkbox ng-model="PQ25C" id="PQ25C" name="PQ25C">Single</ion-checkbox>
         <ion-checkbox ng-model="PQ25D" id="PQ25D" name="PQ25D">Multi</ion-checkbox>
         <label class="item item-input" id="PQ26" name="PQ26">
-          <span class="input-label">What drivetrain do you have?</span><textarea ng-model="PQ26" id="PQ26" placeholder=""></textarea></label>
+          <span class="input-label">What drivetrain do you have?</span>
+          <textarea ng-model="PQ26" id="PQ26" placeholder=""></textarea>
+        </label>
       <h1 id="pitScouting-heading5" style="color:#000000;text-align:center;">What position can your team start from?</h1>
         <ion-checkbox ng-model="PQ27A" id="PQ27A" name="PQ27A">Closest stands</ion-checkbox>
         <ion-checkbox ng-model="PQ27B" id="PC27B" name="PC27B">Middle</ion-checkbox>
@@ -195,8 +202,10 @@
           <input ng-model="PQ28" id="PQ28" type="number" placeholder="">
         </label>
         <label class="item item-input" id="PQ29" name="PQ29">
-          <span class="input-label">What type of shooter does your robot have?</span><textarea ng-model="PQ29" id="PQ29" placeholder=""></textarea></label>
-         <button
+          <span class="input-label">What type of shooter does your robot have?</span>
+          <textarea ng-model="PQ29" id="PQ29" placeholder=""></textarea>
+        </label>
+        <button
           class="button button-balanced button-block"
           ng-click="submitPit()">Submit</button>
       </form>
