@@ -39,7 +39,7 @@
         <button id="matchScouting-button7" class="button button-positive  button-block" ng-click="buttonClick('human')">Human Player</button>
       </div>
     
-      <form id="matchScouting-autonomous" class="list">
+      <form id="matchScouting-autonomous" class="list" ng-show="showIfButtonClicked('autonomous')">
         <h1 id="matchScouting-heading1" style="color:#000000;text-align:center;">Autonomous</h1>
         
         <label class="item item-select" id="AQ1" name="AQ1">
@@ -139,7 +139,7 @@
         
       </form>
         
-      <form id="matchScouting-teleop" class="list">
+      <form id="matchScouting-teleop" class="list" ng-show="showIfButtonClicked('teleop')">
         <h1 id="matchScouting-heading2" style="color:#000000;text-align:center;">Teleop</h1>
       
         <label class="item item-input" id="TQ1" name="TQ1">
@@ -225,7 +225,7 @@
         </label>
       </form>
       
-      <form id="matchScouting-postgame" class="list">
+      <form id="matchScouting-postgame" class="list" ng-show="showIfButtonClicked('postgame')">
         <h1 id="matchScouting-heading3" style="color:#000000;text-align:center;">Post-Game</h1>
         
         <label class="item item-select" id="EQ1" name="EQ1">
@@ -418,7 +418,7 @@
         </label>
       </form>
           
-      <form id="matchScouting-human" class="list">
+      <form id="matchScouting-human" class="list" ng-show="showIfButtonClicked('human')">
         <h1 id="matchScouting-heading4" style="color:#000000;text-align:center;">Human Player</h1>
         
         <label class="item item-select" id="HQ1" name="HQ1">
