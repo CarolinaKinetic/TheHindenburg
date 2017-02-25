@@ -1,6 +1,7 @@
 angular.module('app.controllers', ['firebase', 'ngCordova'])
   
-.controller('pitScoutingCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+.controller('pitScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray',
+function ($scope, $stateParams, $firebaseArray) {
 
   $scope.loadTeamsIntoMemory = function() {
     var refTeams = firebase.database().ref().child("Events/0/Teams/");
@@ -58,13 +59,19 @@ angular.module('app.controllers', ['firebase', 'ngCordova'])
    };
 }])
    
-.controller('matchScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebase', function ($scope, $stateParams, $firebaseArray, $firebase) {
+.controller('matchScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject', 
+function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
-  //START TEST
-  alert("Setting number of matches to " + $scope.numMatches);
-  var refMatchNum = firebase.database().ref().child("Events/0/");
-  refMatchNum.set({"numMatches" : $scope.numMatches});
-  //END TEST
+  $scope.loadNumMatches = function() {
+    var ref = firebase.database().ref().child("Events/0/");
+    var obj = $firebaseObject(ref);
+    obj.$loaded().then(function() {
+      $scope.numMatches = new Array(obj.numMatches);
+    }).catch(function(error) {
+      console.log("Error:", error);
+    });
+  }
+  $scope.loadNumMatches();
 
   $scope.loadTeamsIntoMemory = function() {
     var refTeams = firebase.database().ref().child("Events/0/Teams/");
@@ -72,12 +79,22 @@ angular.module('app.controllers', ['firebase', 'ngCordova'])
   };
   $scope.loadTeamsIntoMemory();
   
+  $scope.showIfButtonClicked = function(sectionName) {
+    if (sectionName == $scope.buttonClicked) {
+      return true;
+    }
+    return false;
+  }
+    
+  $scope.buttonClick = function(buttonName) {
+      $scope.buttonClicked = buttonName;
+  }
+  
    
-   /*
+  /*
     Clear all fields and hide all of those except the team and match after a match
     concludes
   */
-  
   $scope.submitMatch = function() {
     $scope.team = null;
     $scope.selectedRobot = null;
@@ -143,7 +160,9 @@ angular.module('app.controllers', ['firebase', 'ngCordova'])
   }
   
   $scope.setNumMatches = function() {
-    
+    alert("Setting number of matches to " + $scope.numMatches);
+    var refMatchNum = firebase.database().ref().child("Events/0");
+    refMatchNum.update({"numMatches" : $scope.numMatches});
   }
 }])
    
