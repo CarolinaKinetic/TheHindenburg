@@ -1915,7 +1915,6 @@
   ],
   "Configuration": {
     "Team list import file name": "teams-import.txt",
-    "Bluetooth import file name": "bt-import.txt",
     "Scout data export file name": "export.txt",
     "Scout data import file name": "import.txt"
   }

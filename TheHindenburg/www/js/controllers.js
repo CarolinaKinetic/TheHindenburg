@@ -1,32 +1,11 @@
-angular.module('app.controllers', ['firebase'])
+angular.module('app.controllers', ['firebase', 'ngCordova'])
   
 .controller('pitScoutingCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
 
- $scope.loadTeamsIntoMemory = function() {
-   
-   
-    $scope.data = {
-        'teams': [
-        {
-            'number': 3489,
-            'name': 'Category 5'
-        },
-        {
-            'number': 3490,
-            'name': 'Viper Drive'
-        },
-        {
-            'number': 342,
-            'name': 'Burning Magnetos'
-        },
-        {
-            'number': 8101,
-            'name': 'Rookies'
-        },
-      ]
-    };
+  $scope.loadTeamsIntoMemory = function() {
+    var refTeams = firebase.database().ref().child("Events/0/Teams/");
+    $scope.teams = $firebaseArray(refTeams);   
   };
-  
   $scope.loadTeamsIntoMemory();
 
 /*
@@ -79,31 +58,18 @@ angular.module('app.controllers', ['firebase'])
    };
 }])
    
-.controller('matchScoutingCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
-
- $scope.loadTeamsIntoMemory = function() {
-    $scope.data = {
-        'teams': [
-        {
-            'number': 3489,
-            'name': 'Category 5'
-        },
-        {
-            'number': 3490,
-            'name': 'Viper Drive'
-        },
-        {
-            'number': 342,
-            'name': 'Burning Magnetos'
-        },
-        {
-            'number': 8101,
-            'name': 'Rookies'
-        },
-      ]
-    };
-  };
+.controller('matchScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebase', function ($scope, $stateParams, $firebaseArray, $firebase) {
   
+  //START TEST
+  alert("Setting number of matches to " + $scope.numMatches);
+  var refMatchNum = firebase.database().ref().child("Events/0/");
+  refMatchNum.set({"numMatches" : $scope.numMatches});
+  //END TEST
+
+  $scope.loadTeamsIntoMemory = function() {
+    var refTeams = firebase.database().ref().child("Events/0/Teams/");
+    $scope.teams = $firebaseArray(refTeams);
+  };
   $scope.loadTeamsIntoMemory();
   
    
@@ -165,16 +131,21 @@ angular.module('app.controllers', ['firebase'])
   };
 }])
    
-.controller('synchronizeCtrl', ['$scope', '$stateParams', '$firebaseArray', function ($scope, $stateParams, $firebaseArray) {
+.controller('synchronizeCtrl', ['$scope', '$stateParams', '$firebaseArray', '$cordovaFile', '$cordovaToast', 
+  function ($scope, $stateParams, $firebaseArray, $cordovaFile, $cordovaToast) {
+    
+  $scope.importScouts = function() {
+    alert("The scout-importing function is not available, yet");
+  }
   
   $scope.importTeams = function() {
+    alert("The team-importing function is not available, yet");
+  }
+  
+  $scope.setNumMatches = function() {
     
   }
-
 }])
    
-.controller('menuCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
-
-
-}]);
+.controller('menuCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) { }]);
  

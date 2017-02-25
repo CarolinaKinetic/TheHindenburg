@@ -7,7 +7,7 @@
           <select 
             name="team" 
             id="team" 
-            ng-options="option.number + ' - ' + option.name for option in data.teams track by option.number"
+            ng-options="team.number + ' - ' + team.name for team in teams track by team.name"
             ng-model="team"
             ng-change="selectTeam()"></select>
             </label>
@@ -15,14 +15,7 @@
         <label class="item item-select" id="matchScouting-select18" name="MatchNum">
         <span class="input-label">Match Number</span>
         <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option></option>
-          <option></option>
-          <option></option>
+          <option ng-repeat="i in data.numMatches">{{ i }}</option>
         </select>
       </label>
       <label class="item item-select" id="matchScouting-select17">
