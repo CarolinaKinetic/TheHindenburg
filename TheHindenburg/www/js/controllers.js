@@ -267,6 +267,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     //Create file name that includes the date the file was created
     var pitFilename = "PitExportFromHindenburg.csv";
     var filePath = "file:///storage/emulated/0/";
+    var filePath = "file:///storage/emulated/0/";
     
     //create the file to write to
     //create the header row
@@ -297,62 +298,315 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
       angular.forEach(matches, function(match) {
         var robotMatches = match["Teams"];
         angular.forEach(robotMatches, function(robotMatch) {
-          if (robotMatch["Team Number"]) exportMatchData += robotMatch["Team Number"];
-          if (robotMatch["Match Number"]) exportMatchData += robotMatch["Match Number"];
-          if (robotMatch["Student"]) exportMatchData += robotMatch["Student"] + "\t";
-          if (robotMatch["AQ1"]) exportMatchData += robotMatch["AQ1"] + "\t";
-          if (robotMatch["AQ2"]) exportMatchData += robotMatch["AQ2"] + "\t";
-          if (robotMatch["AQ3"]) exportMatchData += robotMatch["AQ3"] + "\t";
-          if (robotMatch["AQ4"]) exportMatchData += robotMatch["AQ4"] + "\t";
-          if (robotMatch["AQ5"]) exportMatchData += robotMatch["AQ5"] + "\t";
-          if (robotMatch["AQ6"]) exportMatchData += robotMatch["AQ6"] + "\t";
-          if (robotMatch["AQ7"]) exportMatchData += robotMatch["AQ7"] + "\t";
-          if (robotMatch["AQ8"]) exportMatchData += robotMatch["AQ8"] + "\t";
-          if (robotMatch["AQ9"]) exportMatchData += robotMatch["AQ9"] + "\t";
-          if (robotMatch["TQ1"]) exportMatchData += robotMatch["TQ1"] + "\t";
-          if (robotMatch["TQ2"]) exportMatchData += robotMatch["TQ2"] + "\t";
-          if (robotMatch["TQ3"]) exportMatchData += robotMatch["TQ3"] + "\t";
-          if (robotMatch["TQ4"]) exportMatchData += robotMatch["TQ4"] + "\t";
-          if (robotMatch["TQ5"]) exportMatchData += robotMatch["TQ5"] + "\t";
-          if (robotMatch["TQ6"]) exportMatchData += robotMatch["TQ6"] + "\t";
-          if (robotMatch["TQ7"]) exportMatchData += robotMatch["TQ7"] + "\t";
-          if (robotMatch["TQ8"]) exportMatchData += robotMatch["TQ8"] + "\t";
-          if (robotMatch["TQ9"]) exportMatchData += robotMatch["TQ9"] + "\t";
-          if (robotMatch["EQ1"]) exportMatchData += robotMatch["EQ1"] + "\t";
-          if (robotMatch["EQ2"]) exportMatchData += robotMatch["EQ2"] + "\t";
-          if (robotMatch["EQ3"]) exportMatchData += robotMatch["EQ3"] + "\t";
-          if (robotMatch["EQ4"]) exportMatchData += robotMatch["EQ4"] + "\t";
-          if (robotMatch["EQ5"]) exportMatchData += robotMatch["EQ5"] + "\t";
-          if (robotMatch["EQ6"]) exportMatchData += robotMatch["EQ6"] + "\t";
-          if (robotMatch["EQ7"]) exportMatchData += robotMatch["EQ7"] + "\t";
-          if (robotMatch["EQ8"]) exportMatchData += robotMatch["EQ8"] + "\t";
-          if (robotMatch["EQ9"]) exportMatchData += robotMatch["EQ9"] + "\t";
-          if (robotMatch["EQ10"]) exportMatchData += robotMatch["EQ10"] + "\t";
-          if (robotMatch["EQ11"]) exportMatchData += robotMatch["EQ11"] + "\t";
-          if (robotMatch["EQ12"]) exportMatchData += robotMatch["EQ12"] + "\t";
-          if (robotMatch["EQ13"]) exportMatchData += robotMatch["EQ13"] + "\t";
-          if (robotMatch["EQ14"]) exportMatchData += robotMatch["EQ14"] + "\t";
-          if (robotMatch["EQ15"]) exportMatchData += robotMatch["EQ15"] + "\t";
-          if (robotMatch["EQ16"]) exportMatchData += robotMatch["EQ16"] + "\t";
-          if (robotMatch["EQ17"]) exportMatchData += robotMatch["EQ17"] + "\t";
-          if (robotMatch["HQ1"]) exportMatchData += robotMatch["HQ1"] + "\t";
-          if (robotMatch["HQ2"]) exportMatchData += robotMatch["HQ2"] + "\t";
-          if (robotMatch["HQ3"]) exportMatchData += robotMatch["HQ3"] + "\t";
-          if (robotMatch["HQ4"]) exportMatchData += robotMatch["HQ4"] + "\t";
-          if (robotMatch["HQ5"]) exportMatchData += robotMatch["HQ5"] + "\t";
-          if (robotMatch["HQ6"]) exportMatchData += robotMatch["HQ6"] + "\t";
-          if (robotMatch["HQ7"]) exportMatchData += robotMatch["HQ7"] + "\t";
-          if (robotMatch["HQ8"]) exportMatchData += robotMatch["HQ8"] + "\t";
-          if (robotMatch["HQ9"]) exportMatchData += robotMatch["HQ9"] + "\t";
-          if (robotMatch["HQ10"]) exportMatchData += robotMatch["HQ10"] + "\t";
-          if (robotMatch["HQ11"]) exportMatchData += robotMatch["HQ11"] + "\t";
+          
+          if (robotMatch["Team Number"]) {
+            exportMatchData += robotMatch["Team Number"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+            
+          if (robotMatch["Match Number"]) {
+            exportMatchData += robotMatch["Match Number"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["Student"]) {
+            exportMatchData += robotMatch["Student"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ1"]) {
+            exportMatchData += robotMatch["AQ1"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ2"]) {
+            exportMatchData += robotMatch["AQ2"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ3"]) {
+            exportMatchData += robotMatch["AQ3"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ4"]) {
+            exportMatchData += robotMatch["AQ4"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ5"]) {
+            exportMatchData += robotMatch["AQ5"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ6"]) {
+            exportMatchData += robotMatch["AQ6"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ7"]) {
+            exportMatchData += robotMatch["AQ7"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ8"]) {
+            exportMatchData += robotMatch["AQ8"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["AQ9"]) {
+            exportMatchData += robotMatch["AQ9"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ1"]) {
+            exportMatchData += robotMatch["TQ1"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ2"]) {
+            exportMatchData += robotMatch["TQ2"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ3"]) {
+            exportMatchData += robotMatch["TQ3"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ4"]) {
+            exportMatchData += robotMatch["TQ4"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ5"]) {
+            exportMatchData += robotMatch["TQ5"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ6"]) {
+            exportMatchData += robotMatch["TQ6"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ7"]) {
+            exportMatchData += robotMatch["TQ7"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ8"]) {
+            exportMatchData += robotMatch["TQ8"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["TQ9"]) {
+            exportMatchData += robotMatch["TQ9"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ1"]) {
+            exportMatchData += robotMatch["EQ1"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ2"]) {
+            exportMatchData += robotMatch["EQ2"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ3"]) {
+            exportMatchData += robotMatch["EQ3"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ4"]) {
+            exportMatchData += robotMatch["EQ4"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ5"]) {
+            exportMatchData += robotMatch["EQ5"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ6"]) {
+            exportMatchData += robotMatch["EQ6"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ7"]) {
+            exportMatchData += robotMatch["EQ7"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ8"]) {
+            exportMatchData += robotMatch["EQ8"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ9"]) {
+            exportMatchData += robotMatch["EQ9"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ10"]) {
+            exportMatchData += robotMatch["EQ10"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ11"]) {
+            exportMatchData += robotMatch["EQ11"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ12"]) {
+            exportMatchData += robotMatch["EQ12"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ13"]) {
+            exportMatchData += robotMatch["EQ13"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ14"]) {
+            exportMatchData += robotMatch["EQ14"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ15"]) {
+            exportMatchData += robotMatch["EQ15"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ16"]) {
+            exportMatchData += robotMatch["EQ16"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["EQ17"]) {
+            exportMatchData += robotMatch["EQ17"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ1"]) {
+            exportMatchData += robotMatch["HQ1"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ2"]) {
+            exportMatchData += robotMatch["HQ2"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ3"]) {
+            exportMatchData += robotMatch["HQ3"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ4"]) {
+            exportMatchData += robotMatch["HQ4"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ5"]) {
+            exportMatchData += robotMatch["HQ5"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ6"]) {
+            exportMatchData += robotMatch["HQ6"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ7"]) {
+            exportMatchData += robotMatch["HQ7"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ8"]) {
+            exportMatchData += robotMatch["HQ8"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ9"]) {
+            exportMatchData += robotMatch["HQ9"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ10"]) {
+            exportMatchData += robotMatch["HQ10"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          if (robotMatch["HQ11"]) {
+            exportMatchData += robotMatch["HQ11"] + "\t";
+          } else {
+            exportMatchData += "\t";
+          }
+          
+          exportMatchData += "\r\n";
         })
       })
+    })
+    .then(function() {
+      //load the export data into the text field
+      //$scope.exportPitData = exportPitData;
+      $scope.exportMatchData = exportMatchData;
     })
     .catch(function(error) {
       console.log("Error:", error);
     });
     
+    /*
     var matchFilename = "MatchExportFromHindenburg.csv";
     $cordovaFile.writeFile(filePath, matchFilename, exportMatchData, true)
       .then(function (success) {
@@ -362,57 +616,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         console.log("Error message: " + JSON.stringify(error));
       }
     );
+    */
   }
-  
-  /*
-  $scope.exportDataCat5 = function() {
-    Robot.all().then(function(robots) {
-      for (var i=0; i<robots.length; i++) {          
-        exportData1 += robots[i].name;
-        exportData1 += "\t";
-        exportData1 += robots[i].teamId;
-        exportData1 += "\t";
-        exportData1 += robots[i].spy;
-        exportData1 += "\r\n";
-      }
-    }).then(function() {
-      $cordovaFile.writeFile(filePath, pitFilename, exportData1, true)
-        .then(function (success) {
-          console.log("Text successfully written to Pit file");
-        }, function (error) {
-          console.log("Problem writing text to Pit file");
-          console.log("Error message: " + JSON.stringify(error));
-        });       
-    });
-
-    //Create the exported Robot Match data to write to a file
-    var exportData2 = "match ID\trobot ID\tteam ID\t# boulders thru low goal in Auto\t";
-    RobotMatch.all().then(function(matches) {
-      for (var i=0; i<matches.length; i++) {
-        exportData2 += matches[i].matchId;
-        exportData2 += "\t";
-        exportData2 += matches[i].spyComm1;
-        exportData2 += "\r\n";
-      }
-    }).then(function() {
-      var matchFilename = "MatchExportFromHindenburg.csv";
-      $cordovaFile.writeFile(filePath, matchFilename, exportData2, true)
-        .then(function (success) {
-          console.log("Text successfully written to Match file");
-        }, function (error) {
-          console.log("Problem writing text to Match file");
-          console.log("Error message: " + JSON.stringify(error));
-        });
-    })
-  }
-  */
-  
-  
-  
-  
-  
-  
-  
   
   $scope.setNumMatches = function() {
     alert("Setting number of matches to " + $scope.numMatches);
