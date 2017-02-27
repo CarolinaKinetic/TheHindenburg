@@ -8,6 +8,75 @@ function ($scope, $stateParams, $firebaseArray) {
     $scope.teams = $firebaseArray(refTeams);   
   };
   $scope.loadTeamsIntoMemory();
+  
+  $scope.areFieldsDisabled = function() {
+    return $scope.fieldsDisabled;
+  }
+  
+  $scope.disableFields = function() {
+    $scope.fieldsDisabled = true;
+  }
+
+  $scope.enableFields = function() {
+    $scope.fieldsDisabled = false;
+  }
+  
+  $scope.updateField = function(fieldName) {
+    var refInterviews = firebase.database().ref().child("Events/0/Pit Scouting/" + $scope.team.number);
+    var interviews = $firebaseArray(refInterviews);
+    interviews.$loaded().then(function() {
+      if (interviews.length < 1) {
+        $scope.disableFields();
+        interviews.$add({"Team Number" : $scope.team.number}).then(function() {
+          $scope.enableFields();
+        })
+      }
+      
+      if (fieldName == "PQ1") interviews[0].PQ1 = $scope.PQ1;
+      if (fieldName == "PQ2") interviews[0].PQ2 = $scope.PQ2;
+      if (fieldName == "PQ3") interviews[0].PQ3 = $scope.PQ3;
+      if (fieldName == "PQ4") interviews[0].PQ4 = $scope.PQ4;
+      if (fieldName == "PQ5") interviews[0].PQ5 = $scope.PQ5;
+      if (fieldName == "PQ6") interviews[0].PQ6 = $scope.PQ6;
+      if (fieldName == "PQ7") interviews[0].PQ7 = $scope.PQ7;
+      if (fieldName == "PQ8") interviews[0].PQ8 = $scope.PQ8;
+      if (fieldName == "PQ9") interviews[0].PQ9 = $scope.PQ9;
+      if (fieldName == "PQ10") interviews[0].PQ10 = $scope.PQ10;
+      if (fieldName == "PQ11A") interviews[0].PQ11A = $scope.PQ11A;
+      if (fieldName == "PQ11B") interviews[0].PQ11B = $scope.PQ11B;
+      if (fieldName == "PQ11C") interviews[0].PQ11C = $scope.PQ11C;
+      if (fieldName == "PQ12A") interviews[0].PQ12A = $scope.PQ12A;
+      if (fieldName == "PQ12B") interviews[0].PQ12B = $scope.PQ12B;
+      if (fieldName == "PQ12C") interviews[0].PQ12C = $scope.PQ12C;
+      if (fieldName == "PQ12D") interviews[0].PQ12D = $scope.PQ12D;
+      if (fieldName == "PQ13") interviews[0].PQ13 = $scope.PQ13;
+      if (fieldName == "PQ14A") interviews[0].PQ14A = $scope.PQ14A;
+      if (fieldName == "PQ14B") interviews[0].PQ14B = $scope.PQ14B;
+      if (fieldName == "PQ14C") interviews[0].PQ14C = $scope.PQ14C;
+      if (fieldName == "PQ15") interviews[0].PQ15 = $scope.PQ15;
+      if (fieldName == "PQ16") interviews[0].PQ16 = $scope.PQ16;
+      if (fieldName == "PQ17") interviews[0].PQ17 = $scope.PQ17;
+      if (fieldName == "PQ18") interviews[0].PQ18 = $scope.PQ18;
+      if (fieldName == "PQ19") interviews[0].PQ19 = $scope.PQ19;
+      if (fieldName == "PQ20") interviews[0].PQ20 = $scope.PQ20;
+      if (fieldName == "PQ21") interviews[0].PQ21 = $scope.PQ21;
+      if (fieldName == "PQ22") interviews[0].PQ22 = $scope.PQ22;
+      if (fieldName == "PQ23") interviews[0].PQ23 = $scope.PQ23;
+      if (fieldName == "PQ24") interviews[0].PQ24 = $scope.PQ24;
+      if (fieldName == "PQ25A") interviews[0].PQ25A = $scope.PQ25A;
+      if (fieldName == "PQ25B") interviews[0].PQ25B = $scope.PQ25B;
+      if (fieldName == "PQ25C") interviews[0].PQ25C = $scope.PQ25C;
+      if (fieldName == "PQ25D") interviews[0].PQ25D = $scope.PQ25D;
+      if (fieldName == "PQ26") interviews[0].PQ26 = $scope.PQ26;
+      if (fieldName == "PQ27A") interviews[0].PQ27A = $scope.PQ27A;
+      if (fieldName == "PQ27B") interviews[0].PQ27B = $scope.PQ27B;
+      if (fieldName == "PQ27C") interviews[0].PQ27C = $scope.PQ27C;
+      if (fieldName == "PQ28") interviews[0].PQ28 = $scope.PQ28;
+      if (fieldName == "PQ29") interviews[0].PQ29 = $scope.PQ29;
+      
+      interviews.$save(0);
+    })
+  }
 
 /*
     Clear all fields and hide all of those except the team question after the 
@@ -15,6 +84,7 @@ function ($scope, $stateParams, $firebaseArray) {
 */
 
   $scope.submitPit = function() {
+    $scope.team = 0;
     $scope.PQ1 = "";
     $scope.PQ2 = 0;
     $scope.PQ3 = 0;
@@ -72,6 +142,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     });
   }
   $scope.loadNumMatches();
+  
+  
 
   $scope.loadTeamsIntoMemory = function() {
     var refTeams = firebase.database().ref().child("Events/0/Teams/");
@@ -79,11 +151,15 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   };
   $scope.loadTeamsIntoMemory();
   
+  
+  
   $scope.loadScoutsIntoMemory = function() {
     var refScouts = firebase.database().ref().child("Events/0/Scouts/");
     $scope.scouts = $firebaseArray(refScouts);
   }
   $scope.loadScoutsIntoMemory();
+  
+  
   
   $scope.showIfButtonClicked = function(sectionName) {
     if (sectionName == $scope.buttonClicked) {
@@ -94,13 +170,19 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     return false;
   }
     
+    
+    
   $scope.buttonClick = function(buttonName) {
       $scope.buttonClicked = buttonName;
   }
   
+  
+  
   $scope.allIdFieldsSelected = function() {
     return (($scope.teamSelected == true) && ($scope.scoutSelected == true) && ($scope.matchNumSelected == true));
   }
+  
+  
   
   $scope.updateField = function(fieldName) {
     var refTeams = firebase.database().ref().child("Events/0/Matches/" + $scope.matchNum + "/Teams/");
@@ -261,30 +343,107 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   }
   
   $scope.exportData = function() {
-    //let the user know that data is exporting
-    //$cordovaToast.showShortTop('Hang on... data is exporting');      
+    var exportPitData = "Team #\tPQ1\tPQ2\tPQ3\tPQ4\tPQ5\tPQ6\tPQ7\tPQ8\tPQ9\t";
+    exportPitData += "PQ10\tPQ11A\tPQ11B\tPQ11C\tPQ12A\tPQ12B\tPQ12C\tPQ12D\t";
+    exportPitData += "PQ13\tPQ14A\tPQ14B\tPQ14C\tPQ15\tPQ16\tPQ17\tPQ18\t";
+    exportPitData += "PQ19\tPQ20\tPQ21\tPQ22\tPQ23\tPQ24\tPQ25A\tPQ25B\tPQ25C\t";
+    exportPitData += "PQ25D\tPQ26\tPQ27A\tPQ27B\tPQ27C\tPQ28\tPQ29\r\n";
     
-    //Create file name that includes the date the file was created
-    var pitFilename = "PitExportFromHindenburg.csv";
-    var filePath = "file:///storage/emulated/0/";
-    var filePath = "file:///storage/emulated/0/";
+    var refPitScouting = firebase.database().ref().child("Events/0/Pit Scouting");
+    var pitScouting = $firebaseArray(refPitScouting);
+    pitScouting.$loaded().then(function(pitScouting) {
+      angular.forEach(pitScouting, function(interviews) {
+        angular.forEach(interviews, function(interview) {
+          if (interview) {
+            if (interview["Team Number"]) exportPitData += interview["Team Number"];
+            exportPitData += "\t";
+            if (interview.PQ1) exportPitData += interview.PQ1;
+            exportPitData += "\t";
+            if (interview.PQ2) exportPitData += interview.PQ2;
+            exportPitData += "\t";
+            if (interview.PQ3) exportPitData += interview.PQ3;
+            exportPitData += "\t";
+            if (interview.PQ4) exportPitData += interview.PQ4;
+            exportPitData += "\t";
+            if (interview.PQ5) exportPitData += interview.PQ5;
+            exportPitData += "\t";
+            if (interview.PQ6) exportPitData += interview.PQ6;
+            exportPitData += "\t";
+            if (interview.PQ7) exportPitData += interview.PQ7;
+            exportPitData += "\t";
+            if (interview.PQ8) exportPitData += interview.PQ8;
+            exportPitData += "\t";
+            if (interview.PQ9) exportPitData += interview.PQ9;
+            exportPitData += "\t";
+            if (interview.PQ10) exportPitData += interview.PQ10;
+            exportPitData += "\t";
+            if (interview.PQ11A) exportPitData += interview.PQ11A;
+            exportPitData += "\t";
+            if (interview.PQ11B) exportPitData += interview.PQ11B;
+            exportPitData += "\t";
+            if (interview.PQ11C) exportPitData += interview.PQ11C;
+            exportPitData += "\t";
+            if (interview.PQ12A) exportPitData += interview.PQ12A;
+            exportPitData += "\t";
+            if (interview.PQ12B) exportPitData += interview.PQ12B;
+            exportPitData += "\t";
+            if (interview.PQ12C) exportPitData += interview.PQ12C;
+            exportPitData += "\t";
+            if (interview.PQ12D) exportPitData += interview.PQ12D;
+            exportPitData += "\t";
+            if (interview.PQ13) exportPitData += interview.PQ13;
+            exportPitData += "\t";
+            if (interview.PQ14A) exportPitData += interview.PQ14A;
+            exportPitData += "\t";
+            if (interview.PQ14B) exportPitData += interview.PQ14B;
+            exportPitData += "\t";
+            if (interview.PQ14C) exportPitData += interview.PQ14C;
+            exportPitData += "\t";
+            if (interview.PQ15) exportPitData += interview.PQ15;
+            exportPitData += "\t";
+            if (interview.PQ16) exportPitData += interview.PQ16;
+            exportPitData += "\t";
+            if (interview.PQ17) exportPitData += interview.PQ17;
+            exportPitData += "\t";
+            if (interview.PQ18) exportPitData += interview.PQ18;
+            exportPitData += "\t";
+            if (interview.PQ19) exportPitData += interview.PQ19;
+            exportPitData += "\t";
+            if (interview.PQ20) exportPitData += interview.PQ20;
+            exportPitData += "\t";
+            if (interview.PQ21) exportPitData += interview.PQ21;
+            exportPitData += "\t";
+            if (interview.PQ22) exportPitData += interview.PQ22;
+            exportPitData += "\t";
+            if (interview.PQ23) exportPitData += interview.PQ23;
+            exportPitData += "\t";
+            if (interview.PQ24) exportPitData += interview.PQ24;
+            exportPitData += "\t";
+            if (interview.PQ25A) exportPitData += interview.PQ25A;
+            exportPitData += "\t";
+            if (interview.PQ25B) exportPitData += interview.PQ25B;
+            exportPitData += "\t";
+            if (interview.PQ25C) exportPitData += interview.PQ25C;
+            exportPitData += "\t";
+            if (interview.PQ25D) exportPitData += interview.PQ25D;
+            exportPitData += "\t";
+            if (interview.PQ26) exportPitData += interview.PQ26;
+            exportPitData += "\t";
+            if (interview.PQ27A) exportPitData += interview.PQ27A;
+            exportPitData += "\t";
+            if (interview.PQ27B) exportPitData += interview.PQ27B;
+            exportPitData += "\t";
+            if (interview.PQ27C) exportPitData += interview.PQ27C;
+            exportPitData += "\t";
+            if (interview.PQ28) exportPitData += interview.PQ28;
+            exportPitData += "\t";
+            if (interview.PQ29) exportPitData += interview.PQ29;
+            exportPitData += "\r\n";
+          }
+        })
+      })
+    });
     
-    //create the file to write to
-    //create the header row
-    /*
-    var exportPitData = "PQ1\tPQ2\tPQ3\tPQ4\tPQ5\tPQ6\tPQ7\tPQ8\tPQ9\tPQ10\t";
-    exportPitData += "PQ11A\tPQ11B\tPQ11C\tPQ12A\tPQ12B\tPQ12C\tPQ12D\tPQ13\t";
-    exportPitData += "PQ14A\tPQ14B\tPQ14C\tPQ15\tPQ16\tPQ17\tPQ18\tPQ19\tPQ20\t";
-    exportPitData += "PQ21\tPQ22\tPQ23\tPQ24\tPQ25A\tPQ25B\tPQ25C\tPQ25D\t";
-    exportPitData += "PQ26\tPQ27A\tPQ27B\tPQ27C\tPQ28\tPQ29\r\n";
-    
-    var refTeams = firebase.database().ref().child("Events/0/Pit%20Scouting");
-    var matches = $firebaseArray(refTeams);
-    */
-    
-    /*
-    
-    */
     
     var exportMatchData = "Team #\tMatch #\tScout\tAQ1\tAQ2\tAQ3\tAQ4\tAQ5\t";
     exportMatchData += "AQ6\tAQ7\tAQ8\tAQ9\tTQ1\tTQ2\tTQ3\tTQ4\tTQ5\tTQ6\tTQ7\t";
@@ -299,324 +458,115 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         var robotMatches = match["Teams"];
         angular.forEach(robotMatches, function(robotMatch) {
           
-          if (robotMatch["Team Number"]) {
-            exportMatchData += robotMatch["Team Number"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-            
-          if (robotMatch["Match Number"]) {
-            exportMatchData += robotMatch["Match Number"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["Student"]) {
-            exportMatchData += robotMatch["Student"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ1"]) {
-            exportMatchData += robotMatch["AQ1"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ2"]) {
-            exportMatchData += robotMatch["AQ2"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ3"]) {
-            exportMatchData += robotMatch["AQ3"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ4"]) {
-            exportMatchData += robotMatch["AQ4"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ5"]) {
-            exportMatchData += robotMatch["AQ5"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ6"]) {
-            exportMatchData += robotMatch["AQ6"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ7"]) {
-            exportMatchData += robotMatch["AQ7"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ8"]) {
-            exportMatchData += robotMatch["AQ8"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["AQ9"]) {
-            exportMatchData += robotMatch["AQ9"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ1"]) {
-            exportMatchData += robotMatch["TQ1"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ2"]) {
-            exportMatchData += robotMatch["TQ2"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ3"]) {
-            exportMatchData += robotMatch["TQ3"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ4"]) {
-            exportMatchData += robotMatch["TQ4"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ5"]) {
-            exportMatchData += robotMatch["TQ5"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ6"]) {
-            exportMatchData += robotMatch["TQ6"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ7"]) {
-            exportMatchData += robotMatch["TQ7"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ8"]) {
-            exportMatchData += robotMatch["TQ8"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["TQ9"]) {
-            exportMatchData += robotMatch["TQ9"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ1"]) {
-            exportMatchData += robotMatch["EQ1"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ2"]) {
-            exportMatchData += robotMatch["EQ2"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ3"]) {
-            exportMatchData += robotMatch["EQ3"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ4"]) {
-            exportMatchData += robotMatch["EQ4"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ5"]) {
-            exportMatchData += robotMatch["EQ5"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ6"]) {
-            exportMatchData += robotMatch["EQ6"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ7"]) {
-            exportMatchData += robotMatch["EQ7"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ8"]) {
-            exportMatchData += robotMatch["EQ8"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ9"]) {
-            exportMatchData += robotMatch["EQ9"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ10"]) {
-            exportMatchData += robotMatch["EQ10"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ11"]) {
-            exportMatchData += robotMatch["EQ11"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ12"]) {
-            exportMatchData += robotMatch["EQ12"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ13"]) {
-            exportMatchData += robotMatch["EQ13"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ14"]) {
-            exportMatchData += robotMatch["EQ14"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ15"]) {
-            exportMatchData += robotMatch["EQ15"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ16"]) {
-            exportMatchData += robotMatch["EQ16"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["EQ17"]) {
-            exportMatchData += robotMatch["EQ17"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ1"]) {
-            exportMatchData += robotMatch["HQ1"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ2"]) {
-            exportMatchData += robotMatch["HQ2"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ3"]) {
-            exportMatchData += robotMatch["HQ3"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ4"]) {
-            exportMatchData += robotMatch["HQ4"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ5"]) {
-            exportMatchData += robotMatch["HQ5"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ6"]) {
-            exportMatchData += robotMatch["HQ6"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ7"]) {
-            exportMatchData += robotMatch["HQ7"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ8"]) {
-            exportMatchData += robotMatch["HQ8"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ9"]) {
-            exportMatchData += robotMatch["HQ9"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ10"]) {
-            exportMatchData += robotMatch["HQ10"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
-          if (robotMatch["HQ11"]) {
-            exportMatchData += robotMatch["HQ11"] + "\t";
-          } else {
-            exportMatchData += "\t";
-          }
-          
+          if (robotMatch["Team Number"]) exportMatchData += robotMatch["Team Number"];
+          exportMatchData += "\t";
+          if (robotMatch["Match Number"]) exportMatchData += robotMatch["Match Number"];
+          exportMatchData += "\t";
+          if (robotMatch["Student"]) exportMatchData += robotMatch["Student"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ1"]) exportMatchData += robotMatch["AQ1"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ2"]) exportMatchData += robotMatch["AQ2"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ3"]) exportMatchData += robotMatch["AQ3"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ4"]) exportMatchData += robotMatch["AQ4"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ5"]) exportMatchData += robotMatch["AQ5"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ6"]) exportMatchData += robotMatch["AQ6"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ7"]) exportMatchData += robotMatch["AQ7"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ8"]) exportMatchData += robotMatch["AQ8"];
+          exportMatchData += "\t";
+          if (robotMatch["AQ9"]) exportMatchData += robotMatch["AQ9"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ1"]) exportMatchData += robotMatch["TQ1"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ2"]) exportMatchData += robotMatch["TQ2"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ3"]) exportMatchData += robotMatch["TQ3"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ4"]) exportMatchData += robotMatch["TQ4"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ5"]) exportMatchData += robotMatch["TQ5"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ6"]) exportMatchData += robotMatch["TQ6"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ7"]) exportMatchData += robotMatch["TQ7"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ8"]) exportMatchData += robotMatch["TQ8"];
+          exportMatchData += "\t";
+          if (robotMatch["TQ9"]) exportMatchData += robotMatch["TQ9"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ1"]) exportMatchData += robotMatch["EQ1"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ2"]) exportMatchData += robotMatch["EQ2"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ3"]) exportMatchData += robotMatch["EQ3"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ4"]) exportMatchData += robotMatch["EQ4"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ5"]) exportMatchData += robotMatch["EQ5"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ6"]) exportMatchData += robotMatch["EQ6"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ7"]) exportMatchData += robotMatch["EQ7"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ8"]) exportMatchData += robotMatch["EQ8"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ9"]) exportMatchData += robotMatch["EQ9"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ10"]) exportMatchData += robotMatch["EQ10"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ11"]) exportMatchData += robotMatch["EQ11"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ12"]) exportMatchData += robotMatch["EQ12"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ13"]) exportMatchData += robotMatch["EQ13"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ14"]) exportMatchData += robotMatch["EQ14"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ15"]) exportMatchData += robotMatch["EQ15"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ16"]) exportMatchData += robotMatch["EQ16"];
+          exportMatchData += "\t";
+          if (robotMatch["EQ17"]) exportMatchData += robotMatch["EQ17"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ1"]) exportMatchData += robotMatch["HQ1"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ2"]) exportMatchData += robotMatch["HQ2"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ3"]) exportMatchData += robotMatch["HQ3"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ4"]) exportMatchData += robotMatch["HQ4"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ5"]) exportMatchData += robotMatch["HQ5"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ6"]) exportMatchData += robotMatch["HQ6"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ7"]) exportMatchData += robotMatch["HQ7"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ8"]) exportMatchData += robotMatch["HQ8"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ9"]) exportMatchData += robotMatch["HQ9"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ10"]) exportMatchData += robotMatch["HQ10"];
+          exportMatchData += "\t";
+          if (robotMatch["HQ11"]) exportMatchData += robotMatch["HQ11"];
           exportMatchData += "\r\n";
         })
       })
     })
     .then(function() {
       //load the export data into the text field
-      //$scope.exportPitData = exportPitData;
+      $scope.exportPitData = exportPitData;
       $scope.exportMatchData = exportMatchData;
     })
     .catch(function(error) {
       console.log("Error:", error);
     });
-    
-    /*
-    var matchFilename = "MatchExportFromHindenburg.csv";
-    $cordovaFile.writeFile(filePath, matchFilename, exportMatchData, true)
-      .then(function (success) {
-        console.log("Text successfully written to Match file");
-      }, function (error) {
-        console.log("Problem writing text to Match file");
-        console.log("Error message: " + JSON.stringify(error));
-      }
-    );
-    */
   }
   
   $scope.setNumMatches = function() {
