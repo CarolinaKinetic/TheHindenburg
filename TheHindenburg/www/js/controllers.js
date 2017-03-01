@@ -8,19 +8,85 @@ function ($scope, $stateParams, $firebaseArray) {
     $scope.teams = $firebaseArray(refTeams);   
   };
   $scope.loadTeamsIntoMemory();
+
+
   
   $scope.areFieldsDisabled = function() {
     return $scope.fieldsDisabled;
   }
+
+
   
   $scope.disableFields = function() {
     $scope.fieldsDisabled = true;
   }
 
+
+
   $scope.enableFields = function() {
     $scope.fieldsDisabled = false;
   }
   
+  
+  
+  $scope.teamSelected = function() {
+    $scope.updateField('Team');
+    
+    var refTeams = firebase.database().ref().child("Events/0/Pit Scouting/" + $scope.team.number);
+    var teams = $firebaseArray(refTeams);
+    teams.$loaded().then(function() {
+      angular.forEach(teams, function(team) {
+        angular.forEach(team, function(interview) {
+          if (interview["Team Number"] == $scope.team) {
+            $scope.PQ1 = interview.PQ1;
+            $scope.PQ2 = interview.PQ2;
+            $scope.PQ3 = interview.PQ3;
+            $scope.PQ4 = interview.PQ4;
+            $scope.PQ5 = interview.PQ5;
+            $scope.PQ6 = interview.PQ6;
+            $scope.PQ7 = interview.PQ7;
+            $scope.PQ8 = interview.PQ8;
+            $scope.PQ9 = interview.PQ9;
+            $scope.PQ10 = interview.PQ10;
+            $scope.PQ11A = interview.PQ11A;
+            $scope.PQ11B = interview.PQ11B;
+            $scope.PQ11C = interview.PQ11C;
+            $scope.PQ12A = interview.PQ12A;
+            $scope.PQ12B = interview.PQ12B;
+            $scope.PQ12C = interview.PQ12C;
+            $scope.PQ12D = interview.PQ12D;
+            $scope.PQ13 = interview.PQ13;
+            $scope.PQ14A = interview.PQ14A;
+            $scope.PQ14B = interview.PQ14B;
+            $scope.PQ14C = interview.PQ14C;
+            $scope.PQ15 = interview.PQ15;
+            $scope.PQ16 = interview.PQ16;
+            $scope.PQ17 = interview.PQ17;
+            $scope.PQ18 = interview.PQ18;
+            $scope.PQ19 = interview.PQ19;
+            $scope.PQ20 = interview.PQ20;
+            $scope.PQ21 = interview.PQ21;
+            $scope.PQ22 = interview.PQ22;
+            $scope.PQ23 = interview.PQ23;
+            $scope.PQ24 = interview.PQ24;
+            $scope.PQ25A = interview.PQ25A;
+            $scope.PQ25B = interview.PQ25B;
+            $scope.PQ25C = interview.PQ25C;
+            $scope.PQ25D = interview.PQ25D;
+            $scope.PQ26 = interview.PQ26;
+            $scope.PQ27A = interview.PQ27A;
+            $scope.PQ27B = interview.PQ27B;
+            $scope.PQ27C = interview.PQ27C;
+            $scope.PQ28 = interview.PQ28;
+            $scope.PQ29 = interview.PQ29;
+          }
+        })
+      })
+    })
+  }  
+
+
+
   $scope.updateField = function(fieldName) {
     var refInterviews = firebase.database().ref().child("Events/0/Pit Scouting/" + $scope.team.number);
     var interviews = $firebaseArray(refInterviews);
@@ -78,11 +144,12 @@ function ($scope, $stateParams, $firebaseArray) {
     })
   }
 
+
+
 /*
     Clear all fields and hide all of those except the team question after the 
     questioning is finished
 */
-
   $scope.submitPit = function() {
     $scope.team = 0;
     $scope.PQ1 = "";
@@ -128,6 +195,8 @@ function ($scope, $stateParams, $firebaseArray) {
     $scope.PQ29 = "";
    };
 }])
+
+
    
 .controller('matchScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject', 
 function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
@@ -181,6 +250,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   $scope.allIdFieldsSelected = function() {
     return (($scope.teamSelected == true) && ($scope.scoutSelected == true) && ($scope.matchNumSelected == true));
   }
+
   
   
   

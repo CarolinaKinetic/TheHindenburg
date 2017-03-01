@@ -9,7 +9,7 @@
             id="team" 
             ng-options="option.number + ' - ' + option.name for option in teams track by option.number"
             ng-model="team"
-            ng-change="updateField('Team')"></select>
+            ng-change="teamSelected()"></select>
         </label>
         <label class="item item-input">
           <span class="input-label">What chassis type is your robot?</span>
