@@ -266,62 +266,65 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     var matches = $firebaseArray(refTeams);
     matches.$loaded().then(function() {
       if ((matches.length < 1) && $scope.allIdFieldsSelected() ) {
-      //if ($scope.allIdFieldsSelected()) {
-        matches.$add({"Student" : $scope.scout.name, "Team Number" : $scope.team.number, "Match Number" : $scope.matchNum});
+        if (fieldName == "AQ1") {
+          matches.$add({"Student" : $scope.scout.name, "Team Number" : $scope.team.number, "Match Number" : $scope.matchNum, "AQ1" : $scope.AQ1});
+        } else {
+          matches.$add({"Student" : $scope.scout.name, "Team Number" : $scope.team.number, "Match Number" : $scope.matchNum});
+        }
+      } else {
+      
+        if (fieldName == "Scout" && $scope.allIdFieldsSelected()) matches[0].Student = $scope.scout.name;
+        
+        if (fieldName == "AQ1") matches[0].AQ1 = $scope.AQ1;
+        if (fieldName == "AQ2") matches[0].AQ2 = $scope.AQ2;
+        if (fieldName == "AQ3") matches[0].AQ3 = $scope.AQ3;
+        if (fieldName == "AQ4") matches[0].AQ4 = $scope.AQ4;
+        if (fieldName == "AQ5") matches[0].AQ5 = $scope.AQ5;
+        if (fieldName == "AQ6") matches[0].AQ6 = $scope.AQ6;
+        if (fieldName == "AQ7") matches[0].AQ7 = $scope.AQ7;
+        if (fieldName == "AQ8") matches[0].AQ8 = $scope.AQ8;
+        if (fieldName == "AQ9") matches[0].AQ9 = $scope.AQ9;
+  
+        if (fieldName == "TQ1") matches[0].TQ1 = $scope.TQ1;
+        if (fieldName == "TQ2") matches[0].TQ2 = $scope.TQ2;
+        if (fieldName == "TQ3") matches[0].TQ3 = $scope.TQ3;
+        if (fieldName == "TQ4") matches[0].TQ4 = $scope.TQ4;
+        if (fieldName == "TQ5") matches[0].TQ5 = $scope.TQ5;
+        if (fieldName == "TQ6") matches[0].TQ6 = $scope.TQ6;
+        if (fieldName == "TQ7") matches[0].TQ7 = $scope.TQ7;
+        if (fieldName == "TQ8") matches[0].TQ8 = $scope.TQ8;
+        if (fieldName == "TQ9") matches[0].TQ9 = $scope.TQ9;
+  
+        if (fieldName == "EQ1") matches[0].EQ1 = $scope.EQ1;
+        if (fieldName == "EQ2") matches[0].EQ2 = $scope.EQ2;
+        if (fieldName == "EQ3") matches[0].EQ3 = $scope.EQ3;
+        if (fieldName == "EQ4") matches[0].EQ4 = $scope.EQ4;
+        if (fieldName == "EQ5") matches[0].EQ5 = $scope.EQ5;
+        if (fieldName == "EQ6") matches[0].EQ6 = $scope.EQ6;
+        if (fieldName == "EQ7") matches[0].EQ7 = $scope.EQ7;
+        if (fieldName == "EQ8") matches[0].EQ8 = $scope.EQ8;
+        if (fieldName == "EQ9") matches[0].EQ9 = $scope.EQ9;
+        if (fieldName == "EQ10") matches[0].EQ10 = $scope.EQ10;
+        if (fieldName == "EQ11") matches[0].EQ11 = $scope.EQ11;
+        if (fieldName == "EQ12") matches[0].EQ12 = $scope.EQ12;
+        if (fieldName == "EQ13") matches[0].EQ13 = $scope.EQ13;
+        if (fieldName == "EQ14") matches[0].EQ14 = $scope.EQ14;
+        if (fieldName == "EQ15") matches[0].EQ15 = $scope.EQ15;
+        if (fieldName == "EQ16") matches[0].EQ16 = $scope.EQ16;
+        if (fieldName == "EQ17") matches[0].EQ17 = $scope.EQ17;
+  
+        if (fieldName == "HQ1") matches[0].HQ1 = $scope.HQ1;
+        if (fieldName == "HQ2") matches[0].HQ2 = $scope.HQ2;
+        if (fieldName == "HQ3") matches[0].HQ3 = $scope.HQ3;
+        if (fieldName == "HQ4") matches[0].HQ4 = $scope.HQ4;
+        if (fieldName == "HQ5") matches[0].HQ5 = $scope.HQ5.number;
+        if (fieldName == "HQ6") matches[0].HQ6 = $scope.HQ6.number;
+        if (fieldName == "HQ7") matches[0].HQ7 = $scope.HQ7.number;
+        if (fieldName == "HQ8") matches[0].HQ8 = $scope.HQ8;
+        if (fieldName == "HQ9") matches[0].HQ9 = $scope.HQ9;
+        if (fieldName == "HQ10") matches[0].HQ10 = $scope.HQ10;
+        if (fieldName == "HQ11") matches[0].HQ11 = $scope.HQ11;
       }
-      
-      if (fieldName == "Scout" && $scope.allIdFieldsSelected()) matches[0].Student = $scope.scout.name;
-      
-      if (fieldName == "AQ1") matches[0].AQ1 = $scope.AQ1;
-      if (fieldName == "AQ2") matches[0].AQ2 = $scope.AQ2;
-      if (fieldName == "AQ3") matches[0].AQ3 = $scope.AQ3;
-      if (fieldName == "AQ4") matches[0].AQ4 = $scope.AQ4;
-      if (fieldName == "AQ5") matches[0].AQ5 = $scope.AQ5;
-      if (fieldName == "AQ6") matches[0].AQ6 = $scope.AQ6;
-      if (fieldName == "AQ7") matches[0].AQ7 = $scope.AQ7;
-      if (fieldName == "AQ8") matches[0].AQ8 = $scope.AQ8;
-      if (fieldName == "AQ9") matches[0].AQ9 = $scope.AQ9;
-
-      if (fieldName == "TQ1") matches[0].TQ1 = $scope.TQ1;
-      if (fieldName == "TQ2") matches[0].TQ2 = $scope.TQ2;
-      if (fieldName == "TQ3") matches[0].TQ3 = $scope.TQ3;
-      if (fieldName == "TQ4") matches[0].TQ4 = $scope.TQ4;
-      if (fieldName == "TQ5") matches[0].TQ5 = $scope.TQ5;
-      if (fieldName == "TQ6") matches[0].TQ6 = $scope.TQ6;
-      if (fieldName == "TQ7") matches[0].TQ7 = $scope.TQ7;
-      if (fieldName == "TQ8") matches[0].TQ8 = $scope.TQ8;
-      if (fieldName == "TQ9") matches[0].TQ9 = $scope.TQ9;
-
-      if (fieldName == "EQ1") matches[0].EQ1 = $scope.EQ1;
-      if (fieldName == "EQ2") matches[0].EQ2 = $scope.EQ2;
-      if (fieldName == "EQ3") matches[0].EQ3 = $scope.EQ3;
-      if (fieldName == "EQ4") matches[0].EQ4 = $scope.EQ4;
-      if (fieldName == "EQ5") matches[0].EQ5 = $scope.EQ5;
-      if (fieldName == "EQ6") matches[0].EQ6 = $scope.EQ6;
-      if (fieldName == "EQ7") matches[0].EQ7 = $scope.EQ7;
-      if (fieldName == "EQ8") matches[0].EQ8 = $scope.EQ8;
-      if (fieldName == "EQ9") matches[0].EQ9 = $scope.EQ9;
-      if (fieldName == "EQ10") matches[0].EQ10 = $scope.EQ10;
-      if (fieldName == "EQ11") matches[0].EQ11 = $scope.EQ11;
-      if (fieldName == "EQ12") matches[0].EQ12 = $scope.EQ12;
-      if (fieldName == "EQ13") matches[0].EQ13 = $scope.EQ13;
-      if (fieldName == "EQ14") matches[0].EQ14 = $scope.EQ14;
-      if (fieldName == "EQ15") matches[0].EQ15 = $scope.EQ15;
-      if (fieldName == "EQ16") matches[0].EQ16 = $scope.EQ16;
-      if (fieldName == "EQ17") matches[0].EQ17 = $scope.EQ17;
-
-      if (fieldName == "HQ1") matches[0].HQ1 = $scope.HQ1;
-      if (fieldName == "HQ2") matches[0].HQ2 = $scope.HQ2;
-      if (fieldName == "HQ3") matches[0].HQ3 = $scope.HQ3;
-      if (fieldName == "HQ4") matches[0].HQ4 = $scope.HQ4;
-      if (fieldName == "HQ5") matches[0].HQ5 = $scope.HQ5.number;
-      if (fieldName == "HQ6") matches[0].HQ6 = $scope.HQ6.number;
-      if (fieldName == "HQ7") matches[0].HQ7 = $scope.HQ7.number;
-      if (fieldName == "HQ8") matches[0].HQ8 = $scope.HQ8;
-      if (fieldName == "HQ9") matches[0].HQ9 = $scope.HQ9;
-      if (fieldName == "HQ10") matches[0].HQ10 = $scope.HQ10;
-      if (fieldName == "HQ11") matches[0].HQ11 = $scope.HQ11;
-      
       matches.$save(0);
     }).catch(function(error) {
       console.log("Error:", error);

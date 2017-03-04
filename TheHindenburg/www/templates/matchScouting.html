@@ -607,17 +607,19 @@
           </select>
         </label>
   
-        <ion-item class="range range-positive">Number of rotors spinning
-          <input 
-            ng-model="HQ11" 
+        <label class="item item-select">
+          <span class="input-label">Number of rotors spinning</span>
+          <select
             id="HQ11" 
-            type="range" 
-            value="1" 
-            min="0" 
-            max="4" 
-            step="1"
+            ng-model="HQ11" 
             ng-blur="updateField('HQ11')">
-        </ion-item>
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+            <option value="1">4</option>
+          </select>
+        </label>
   
         <button
           class="button button-balanced button-block"
