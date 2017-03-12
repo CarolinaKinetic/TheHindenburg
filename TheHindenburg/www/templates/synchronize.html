@@ -1,11 +1,11 @@
-<ion-view title="Synchronize " id="page4">
+<ion-view title="Configuration" id="page4">
   <ion-content padding="true" class="has-header">
     <div ng-controller="synchronizeCtrl" class="padding">
       <!--button id="synchronize-button8" class="button button-positive  button-block" ng-click="importTeams()">Import Team List</button-->
       <!--button id="synchronize-button9" class="button button-positive  button-block" ng-click="importScouts()">Import Scout List</button-->
       <button id="synchronize-button10" class="button button-positive  button-block" ng-click="exportData()">Export Data</button>
       <form id="synchronize-form5" class="list">
-        <label class="item item-input">
+        <!--label class="item item-input">
           <span class="input-label">Firebase apiKey</span>
           <input type="text" placeholder="" ng-model="apiKey">
         </label>
@@ -24,7 +24,7 @@
         <label class="item item-input">
           <span class="input-label">Firebase messagingSenderId</span>
           <input type="text" placeholder="" ng-model="messagingSenderId">
-        </label>
+        </label-->
         <label class="item item-input">
           <span class="input-label">Number of Matches</span>
           <input type="number" placeholder="0" ng-model="numMatches" ng-blur="setNumMatches()">

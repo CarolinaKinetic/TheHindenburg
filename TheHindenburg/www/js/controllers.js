@@ -275,7 +275,22 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
       
         if (fieldName == "Scout" && $scope.allIdFieldsSelected()) matches[0].Student = $scope.scout.name;
         
-        if (fieldName == "AQ1") matches[0].AQ1 = $scope.AQ1;
+        if (fieldName == "AQ1") {
+          matches[0].AQ1 = $scope.AQ1;
+          if (matches[0].AQ1 == 1) {
+            //if the answer to AQ1 is no, then the same is true for AQ2-6
+            matches[0].AQ2 = "1";
+            matches[0].AQ3 = "1";
+            matches[0].AQ4 = "1";
+            matches[0].AQ5 = "1";
+            matches[0].AQ6 = "1";
+            $scope.AQ2 = "1";
+            $scope.AQ3 = "1";
+            $scope.AQ4 = "1";
+            $scope.AQ5 = "1";
+            $scope.AQ6 = "1";
+          }
+        }
         if (fieldName == "AQ2") matches[0].AQ2 = $scope.AQ2;
         if (fieldName == "AQ3") matches[0].AQ3 = $scope.AQ3;
         if (fieldName == "AQ4") matches[0].AQ4 = $scope.AQ4;
@@ -286,9 +301,23 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         if (fieldName == "AQ9") matches[0].AQ9 = $scope.AQ9;
   
         if (fieldName == "TQ1") matches[0].TQ1 = $scope.TQ1;
-        if (fieldName == "TQ2") matches[0].TQ2 = $scope.TQ2;
+        if (fieldName == "TQ2") {
+          matches[0].TQ2 = $scope.TQ2;
+          if (matches[0].TQ2 == 1) {
+            //if the answer to TQ2 is no, then the TQ3 = 0
+            matches[0].TQ3 = 0;
+            $scope.TQ3 = 0;
+          }
+        }
         if (fieldName == "TQ3") matches[0].TQ3 = $scope.TQ3;
-        if (fieldName == "TQ4") matches[0].TQ4 = $scope.TQ4;
+        if (fieldName == "TQ4") {
+          matches[0].TQ4 = $scope.TQ4;
+          if (matches[0].TQ4 == 1) {
+            //if the answer to TQ4 is no, then the TQ5 = 0
+            matches[0].TQ5 = 0;
+            $scope.TQ5 = 0;
+          }
+        }
         if (fieldName == "TQ5") matches[0].TQ5 = $scope.TQ5;
         if (fieldName == "TQ6") matches[0].TQ6 = $scope.TQ6;
         if (fieldName == "TQ7") matches[0].TQ7 = $scope.TQ7;
@@ -362,7 +391,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   $scope.submitMatch = function() {
     $scope.team = null;
     $scope.selectedRobot = null;
-    $scope.match = null;
+    $scope.matchNum = null;
     $scope.AQ1 = 0;
     $scope.AQ2 = 0;
     $scope.AQ3 = 0;
@@ -653,11 +682,87 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   }
   
   $scope.setNumMatches = function() {
-    alert("Setting number of matches to " + $scope.numMatches);
     var refMatchNum = firebase.database().ref().child("Events/0");
     refMatchNum.update({"numMatches" : $scope.numMatches});
   }
   
+}])
+
+.controller('burgerMinderCtrl', ['$scope', '$stateParams', '$firebaseArray', '$cordovaFile', '$cordovaToast', 
+  function ($scope, $stateParams, $firebaseArray, $cordovaFile, $cordovaToast) {
+    
+  /* This method will pull together an overview for each match, including the
+   * match number, team number, scout name, and the % of the following questions
+   * that have been answered: AQ1, AQ2, AQ3, AQ4, AQ6, AQ7, AQ8, AQ9, TQ1, TQ2,
+   * TQ3, TQ6, TQ7, TQ8, TQ9, and EQ11
+   */
+  $scope.refresh = function() {
+    var refMatches = firebase.database().ref().child("Events/0/Matches");
+    var matches = $firebaseArray(refMatches);
+    $scope.matchOverviews = [];
+    var thisMatchOverview = {};
+    
+    matches.$loaded().then(function(matches) { 
+      angular.forEach(matches, function(match) { 
+        var robotMatches = match["Teams"];
+        angular.forEach(robotMatches, function(robotMatchWrapper) { 
+          angular.forEach(robotMatchWrapper, function(robotMatch) { 
+            if (robotMatch["Match Number"]) {
+              thisMatchOverview = {};
+              console.log("1. Checking to see if match " + robotMatch["Match Number"] + " has been created in the array, yet");
+              if (!$scope.matchOverviews[robotMatch["Match Number"]]) {
+                console.log("1a. Match " + robotMatch["Match Number"] + " wasn't created; creating it now");
+                $scope.matchOverviews[robotMatch["Match Number"]] = {'scouts': []};
+              }
+              console.log("2. Retrieving the match object for Match #" + robotMatch["Match Number"]);
+              thisMatchOverview = $scope.matchOverviews[robotMatch["Match Number"]];
+              console.log("3. Successfully retrieved the match object for Match #" + robotMatch["Match Number"] + ". The object looks like this: " + JSON.stringify(thisMatchOverview));
+              console.log("4. Setting the match number of the object to " + robotMatch["Match Number"]);
+              thisMatchOverview.matchNum = robotMatch["Match Number"];
+              console.log("5. Here's the object after setting the match number: " + JSON.stringify(thisMatchOverview));
+              console.log("6. Adding the scout " + robotMatch["Student"] + " to the object");
+              var scoutRecord = {};
+              scoutRecord.name = robotMatch['Student'];
+              scoutRecord.teamNum = robotMatch['Team Number'];
+              
+              //determine the % of critical questions answered
+              var pctAnswered = 0;
+              if (robotMatch.AQ1 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ2 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ3 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ4 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ6 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ7 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ8 != null) pctAnswered += 6.25;
+              if (robotMatch.AQ9 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ1 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ2 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ3 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ6 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ7 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ8 != null) pctAnswered += 6.25;
+              if (robotMatch.TQ9 != null) pctAnswered += 6.25;
+              if (robotMatch.EQ11 != null) pctAnswered += 6.25;
+              scoutRecord.percent = pctAnswered;
+              
+              thisMatchOverview['scouts'].push(scoutRecord);
+              console.log("7. Updated object for Match #" + robotMatch["Match Number"] + ". Object definition: " + JSON.stringify(thisMatchOverview));
+              console.log("");
+            }
+          })
+        })
+        //console.log("8. matchOverviews after match added: " + JSON.stringify($scope.matchOverviews));
+      })
+    }).then(function() {
+      //remove null values from the array
+      $scope.matchOverviews = $scope.matchOverviews.filter(function(n){ return n != undefined }); 
+      /*
+      angular.forEach(matchOverviews, function(matchOverview) {
+        
+      })
+      */
+    })
+  }
 }])
    
 .controller('menuCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) { }]);

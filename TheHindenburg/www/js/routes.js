@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('menu.pitScouting', {
+  .state('menu.pitScouting', {
     url: '/pitscouting',
     views: {
       'side-menu21': {
@@ -36,6 +36,16 @@ angular.module('app.routes', [])
       'side-menu21': {
         templateUrl: 'templates/synchronize.html',
         controller: 'synchronizeCtrl'
+      }
+    }
+  })
+  
+  .state('menu.burgerMinder', {
+    url: '/burgerMinder',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/burgerMinder.html',
+        controller: 'burgerMinderCtrl'
       }
     }
   })
