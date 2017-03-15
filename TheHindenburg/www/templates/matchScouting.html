@@ -141,7 +141,7 @@
           </select>
         </label>
         
-        <label class="item item-input">
+        <label class="item item-select">
           <span class="input-label" style="color: red;">How many penalties did they accumulate?</span>
           <select 
             ng-model="AQ9"
@@ -181,7 +181,7 @@
       <form id="matchScouting-teleop" class="list" ng-show="showIfButtonClicked('teleop')">
         <h1 id="matchScouting-heading2" style="color:#000000;text-align:center;">Teleop</h1>
       
-        <label class="item item-input">
+        <label class="item item-select">
           <span class="input-label" style="color: red;">How many gears did they score?</span>
           <select
             ng-model="TQ1"
@@ -213,7 +213,7 @@
           </select>
         </label>
         
-        <label class="item item-input">
+        <label class="item item-select">
           <span class="input-label" style="color: red;">If so how many trips did they take to score in the high boiler?</span>
           <select 
             ng-model="TQ3"
@@ -245,7 +245,7 @@
           </select>
         </label>
         
-        <label class="item item-input" id="TQ5" name="TQ5">
+        <label class="item item-select">
           <span class="input-label">If so how many trips did they take to score in the low boiler?</span>
           <select 
             ng-model="TQ5"
@@ -533,7 +533,8 @@
             ng-model="EQ17"
             ng-change="updateField('EQ17')" 
             id="EQ17" 
-            placeholder="">
+            placeholder=""
+            rows="5">
           </textarea>
         </label>
 
