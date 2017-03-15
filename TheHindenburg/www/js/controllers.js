@@ -260,6 +260,12 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
 
   
   
+  $scope.textEntered = function(fieldName) {
+    //$scope[fieldName].replace(/[\n\r]/, '');
+    $scop.EQ17.replace(/[\n\r]/, '');
+  }
+  
+  
   
   $scope.updateField = function(fieldName) {
     var refTeams = firebase.database().ref().child("Events/0/Matches/" + $scope.matchNum + "/Teams/" + $scope.team.number);
@@ -274,6 +280,12 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
       } else {
       
         if (fieldName == "Scout" && $scope.allIdFieldsSelected()) matches[0].Student = $scope.scout.name;
+        
+        //prepopulate the # of penalties to 0
+        if (!$scope.AQ9) {
+          $scope.AQ9 = 0;
+          matches[0].AQ9 = 0;
+        }
         
         if (fieldName == "AQ1") {
           matches[0].AQ1 = $scope.AQ1;
@@ -340,7 +352,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         if (fieldName == "EQ14") matches[0].EQ14 = $scope.EQ14;
         if (fieldName == "EQ15") matches[0].EQ15 = $scope.EQ15;
         if (fieldName == "EQ16") matches[0].EQ16 = $scope.EQ16;
-        if (fieldName == "EQ17") matches[0].EQ17 = $scope.EQ17;
+        if (fieldName == "EQ17") matches[0].EQ17 = $scope.EQ17.replace(/(\r\n|\n|\r)/gm," ");
   
         if (fieldName == "HQ1") matches[0].HQ1 = $scope.HQ1;
         if (fieldName == "HQ2") matches[0].HQ2 = $scope.HQ2;
@@ -688,14 +700,17 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
 }])
 
-.controller('burgerMinderCtrl', ['$scope', '$stateParams', '$firebaseArray', '$cordovaFile', '$cordovaToast', 
-  function ($scope, $stateParams, $firebaseArray, $cordovaFile, $cordovaToast) {
+.controller('burgerMinderCtrl', ['$scope', '$stateParams', '$firebaseArray', '$cordovaFile', '$cordovaToast', '$interval',
+  function ($scope, $stateParams, $firebaseArray, $cordovaFile, $cordovaToast, $interval) {
     
   /* This method will pull together an overview for each match, including the
    * match number, team number, scout name, and the % of the following questions
    * that have been answered: AQ1, AQ2, AQ3, AQ4, AQ6, AQ7, AQ8, AQ9, TQ1, TQ2,
    * TQ3, TQ6, TQ7, TQ8, TQ9, and EQ11
    */
+   
+  $interval($scope.refresh, 5000); 
+   
   $scope.refresh = function() {
     var refMatches = firebase.database().ref().child("Events/0/Matches");
     var matches = $firebaseArray(refMatches);
