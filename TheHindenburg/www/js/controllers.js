@@ -709,8 +709,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
    * TQ3, TQ6, TQ7, TQ8, TQ9, and EQ11
    */
    
-  $interval($scope.refresh, 5000); 
-   
+
   $scope.refresh = function() {
     var refMatches = firebase.database().ref().child("Events/0/Matches");
     var matches = $firebaseArray(refMatches);
@@ -724,18 +723,18 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
           angular.forEach(robotMatchWrapper, function(robotMatch) { 
             if (robotMatch["Match Number"]) {
               thisMatchOverview = {};
-              console.log("1. Checking to see if match " + robotMatch["Match Number"] + " has been created in the array, yet");
+              //console.log("1. Checking to see if match " + robotMatch["Match Number"] + " has been created in the array, yet");
               if (!$scope.matchOverviews[robotMatch["Match Number"]]) {
-                console.log("1a. Match " + robotMatch["Match Number"] + " wasn't created; creating it now");
+                //console.log("1a. Match " + robotMatch["Match Number"] + " wasn't created; creating it now");
                 $scope.matchOverviews[robotMatch["Match Number"]] = {'scouts': []};
               }
-              console.log("2. Retrieving the match object for Match #" + robotMatch["Match Number"]);
+              //console.log("2. Retrieving the match object for Match #" + robotMatch["Match Number"]);
               thisMatchOverview = $scope.matchOverviews[robotMatch["Match Number"]];
-              console.log("3. Successfully retrieved the match object for Match #" + robotMatch["Match Number"] + ". The object looks like this: " + JSON.stringify(thisMatchOverview));
-              console.log("4. Setting the match number of the object to " + robotMatch["Match Number"]);
+              //console.log("3. Successfully retrieved the match object for Match #" + robotMatch["Match Number"] + ". The object looks like this: " + JSON.stringify(thisMatchOverview));
+              //console.log("4. Setting the match number of the object to " + robotMatch["Match Number"]);
               thisMatchOverview.matchNum = robotMatch["Match Number"];
-              console.log("5. Here's the object after setting the match number: " + JSON.stringify(thisMatchOverview));
-              console.log("6. Adding the scout " + robotMatch["Student"] + " to the object");
+              //console.log("5. Here's the object after setting the match number: " + JSON.stringify(thisMatchOverview));
+              //console.log("6. Adding the scout " + robotMatch["Student"] + " to the object");
               var scoutRecord = {};
               scoutRecord.name = robotMatch['Student'];
               scoutRecord.teamNum = robotMatch['Team Number'];
@@ -759,10 +758,10 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
               if (robotMatch.TQ9 != null) pctAnswered += 6.25;
               if (robotMatch.EQ11 != null) pctAnswered += 6.25;
               scoutRecord.percent = pctAnswered;
-              
+
               thisMatchOverview['scouts'].push(scoutRecord);
-              console.log("7. Updated object for Match #" + robotMatch["Match Number"] + ". Object definition: " + JSON.stringify(thisMatchOverview));
-              console.log("");
+              //console.log("7. Updated object for Match #" + robotMatch["Match Number"] + ". Object definition: " + JSON.stringify(thisMatchOverview));
+              //console.log("");
             }
           })
         })
@@ -771,13 +770,12 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     }).then(function() {
       //remove null values from the array
       $scope.matchOverviews = $scope.matchOverviews.filter(function(n){ return n != undefined }); 
-      /*
-      angular.forEach(matchOverviews, function(matchOverview) {
-        
-      })
-      */
     })
   }
+  
+  $scope.refresh();
+  $interval($scope.refresh, 5000); 
+  
 }])
    
 .controller('menuCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) { }]);
