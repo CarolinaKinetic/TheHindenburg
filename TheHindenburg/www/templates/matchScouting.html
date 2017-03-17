@@ -44,7 +44,7 @@
         <h1 id="matchScouting-heading1" style="color:#000000;text-align:center;">Autonomous</h1>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Did the robot have Autonomous?</span>
+          <span class="input-label" style="color: red;"><!--Did the robot have -->Autonomous?</span>
           <select
             id="AQ1"
             ng-model="AQ1"
@@ -56,7 +56,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Did the robot place gears?</span>
+          <span class="input-label" style="color: red;"><!-- Did the robot place -->Hang gears?</span>
           <select
             id="AQ2"
             ng-model="AQ2"
@@ -68,7 +68,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Did the robot cross the line?</span>
+          <span class="input-label" style="color: red;"><!--Did the robot -->Cross the line?</span>
           <select
             id="AQ3"
             ng-model="AQ3"
@@ -80,7 +80,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Did the robot score high boiler?</span>
+          <span class="input-label" style="color: red;"><!--Did the robot score -->High boiler?</span>
           <select
             id="AQ4"
             ng-model="AQ4"
@@ -92,7 +92,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label">Did the robot score low boiler?</span>
+          <span class="input-label"><!-- Did the robot score -->Low boiler?</span>
           <select
             id="AQ5"
             ng-model="AQ5"
@@ -104,7 +104,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Did the robot activate the hopper?</span>
+          <span class="input-label" style="color: red;"><!--Did the robot -->Activate the hopper?</span>
           <select
             id="AQ6"
             ng-model="AQ6"
@@ -116,7 +116,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">What starting pieces did they start out with?</span>
+          <span class="input-label" style="color: red;"><!--What starting pieces did they-->Pieces start out with?</span>
           <select
             id="AQ7"
             ng-model="AQ7"
@@ -129,25 +129,26 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Which position did they start off in?</span>
+          <span class="input-label" style="color: red;"><!--Which position did they start off in-->Start position?</span>
           <select
             id="AQ8"
             ng-model="AQ8"
             ng-change="updateField('AQ8')">
             <option value=""></option>
-            <option value="1">Pit Side</option>
+            <option value="1">Load Zone</option>
             <option value="2">Middle</option>
-            <option value="3">Stand Side</option>
+            <option value="3">Boiler</option>
           </select>
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">How many penalties did they accumulate?</span>
+          <span class="input-label" style="color: red;"><!--How many penalties did they accumulate-->Penalty in auto?</span>
           <select 
             ng-model="AQ9"
             ng-change="updateField('AQ9')" 
             id="AQ9">
             <option value=""></option>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -182,12 +183,13 @@
         <h1 id="matchScouting-heading2" style="color:#000000;text-align:center;">Teleop</h1>
       
         <label class="item item-select">
-          <span class="input-label" style="color: red;">How many gears did they score?</span>
+          <span class="input-label" style="color: red;"><!--How many gears did they score-->Gear hung?</span>
           <select
             ng-model="TQ1"
             ng-change="updateField('TQ1')" 
             id="TQ1">
             <option value=""></option>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -202,7 +204,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">Did they attempt to score high boiler?</span>
+          <span class="input-label" style="color: red;"><!--Did they attempt to score-->High boiler attempted?</span>
           <select
             id="TQ2"
             ng-model="TQ2"
@@ -214,12 +216,13 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;">If so how many trips did they take to score in the high boiler?</span>
+          <span class="input-label" style="color: red;"><!--If so how many trips did they take to score in the high boiler--># of attempts?</span>
           <select 
             ng-model="TQ3"
             ng-change="updateField('TQ3')" 
             id="TQ3">
             <option value=""></option>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -234,7 +237,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label">Did they attempt to score low boiler?</span>
+          <span class="input-label"><!--Did they attempt to score -->Low boiler attempted??</span>
           <select
             id="TQ4"
             ng-model="TQ4"
@@ -246,12 +249,13 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label">If so how many trips did they take to score in the low boiler?</span>
+          <span class="input-label"><!--If so how many trips did they take to score in the --># of attempts?</span>
           <select 
             ng-model="TQ5"
             ng-change="updateField('TQ5')" 
             id="TQ5">
             <option value=""></option>
+            <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -266,7 +270,7 @@
         </label>
         
         <label class="item item-select" id="TQ6" name="TQ6">
-          <span class="input-label" style="color: red;">Did they receive a technical foul?</span>
+          <span class="input-label" style="color: red;"><!--Did they receive a -->Technical foul?</span>
           <select
             id="TQ6"
             ng-model="TQ6"
@@ -278,7 +282,7 @@
         </label>
         
         <label class="item item-select" id="TQ7" name="TQ7">
-          <span class="input-label" style="color: red;">Did they receive a Yellow Card?</span>
+          <span class="input-label" style="color: red;"><!--Did they receive a -->Yellow Card?</span>
           <select
             id="TQ7"
             ng-model="TQ7"
@@ -290,7 +294,7 @@
         </label>
         
         <label class="item item-select" id="TQ8" name="TQ8">
-          <span class="input-label" style="color: red;">Did they receive a Red Card?</span>
+          <span class="input-label" style="color: red;"><!--Did they receive a -->Red Card?</span>
           <select
             id="TQ8"
             ng-model="TQ8"
@@ -302,12 +306,13 @@
         </label>
         
         <label class="item item-select" id="TQ9" name="TQ9">
-          <span class="input-label" style="color: red;">Did they play defensively or offensively?</span>
+          <span class="input-label" style="color: red;"><!--Did they play -->Defensively or offensively?</span>
           <select
             id="TQ9"
             ng-model="TQ9"
             ng-change="updateField('TQ9')">
             <option value=""></option>
+            <option value="0">Neither</option>
             <option value="1">Defense</option>
             <option value="2">Offense</option>
             <option value="3">Both</option>
