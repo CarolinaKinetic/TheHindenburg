@@ -1,0 +1,1527 @@
+{
+  "Configuration" : {
+    "Scout data export file name" : "export.txt",
+    "Scout data import file name" : "import.txt",
+    "Team list import file name" : "teams-import.txt"
+  },
+  "Events" : [ {
+    "Scouts" : {
+      "AJ" : {
+        "name" : "AJ"
+      },
+      "Aidan" : {
+        "name" : "Aidan"
+      },
+      "Alex" : {
+        "name" : "Alex"
+      },
+      "Brogan" : {
+        "name" : "Brogan"
+      },
+      "Camila" : {
+        "name" : "Camila"
+      },
+      "Cedric" : {
+        "name" : "Cedric"
+      },
+      "Chris" : {
+        "name" : "Chris"
+      },
+      "Elizabeth" : {
+        "name" : "Elizabeth"
+      },
+      "Grace" : {
+        "name" : "Grace"
+      },
+      "Grady" : {
+        "name" : "Grady"
+      },
+      "Gustavo" : {
+        "name" : "Gustavo"
+      },
+      "Hasib" : {
+        "name" : "Hasib"
+      },
+      "Heyinn" : {
+        "name" : "Heyinn"
+      },
+      "Jake" : {
+        "name" : "Jake"
+      },
+      "Jared" : {
+        "name" : "Jared"
+      },
+      "Jayson" : {
+        "name" : "Jayson"
+      },
+      "Kris" : {
+        "name" : "Kris"
+      },
+      "Nathan" : {
+        "name" : "Nathan"
+      },
+      "Navia" : {
+        "name" : "Navia"
+      },
+      "Patrick" : {
+        "name" : "Patrick"
+      },
+      "Pyper" : {
+        "name" : "Pyper"
+      },
+      "Ryan" : {
+        "name" : "Ryan"
+      },
+      "ZachD" : {
+        "name" : "Zach D"
+      },
+      "Zack" : {
+        "name" : "Zack"
+      }
+    },
+    "Teams" : {
+      "-KfW7cTX3ZMUzkwuRWuQ" : {
+        "name" : "Delphi E.L.I.T.E.",
+        "number" : 48,
+        "order" : 1
+      },
+      "-KfW7oa6eu8GMJp0Eyca" : {
+        "name" : "McDowell Robotics Team 63",
+        "number" : 63,
+        "order" : 2
+      },
+      "-KfW7qtva8b5WKJuka9V" : {
+        "name" : "SigmaC@T Robotic Team",
+        "number" : 108,
+        "order" : 3
+      },
+      "-KfW7sn2CAV1StiEQeZw" : {
+        "name" : "Tech Fusion",
+        "number" : 279,
+        "order" : 4
+      },
+      "-KfW7uQY9_cHFTGhoJ5D" : {
+        "name" : "Hard Working Hard Hats",
+        "number" : 337,
+        "order" : 5
+      },
+      "-KfW7w0tRJX1-kWA20y7" : {
+        "name" : "Burning Magnetos",
+        "number" : 342,
+        "order" : 6
+      },
+      "-KfW7xJS3dNyuOCGLbX3" : {
+        "name" : "Shark Attack",
+        "number" : 744,
+        "order" : 7
+      },
+      "-KfW8KtkHBvFmq7dXGSs" : {
+        "name" : "Horsepower",
+        "number" : 801,
+        "order" : 8
+      },
+      "-KfW8ME3JN_5hRn5iJLc" : {
+        "name" : "Aluminum Assault",
+        "number" : 1287,
+        "order" : 9
+      },
+      "-KfW8NQ5hPjZVibKOgl0" : {
+        "name" : "Webb Robotics",
+        "number" : 1466,
+        "order" : 10
+      },
+      "-KfW8OYH1xqcegf-5Sf9" : {
+        "name" : "Beachbotics",
+        "number" : 1876,
+        "order" : 11
+      },
+      "-KfW8PcaDfs8dU-WvNDH" : {
+        "name" : "Robotichauns",
+        "number" : 2393,
+        "order" : 12
+      },
+      "-KfW8QfLqP2M0aB9EPNk" : {
+        "name" : "PCCR",
+        "number" : 2641,
+        "order" : 13
+      },
+      "-KfW8RmgAgGMGiNrH52J" : {
+        "name" : "Jeffersontown Robochargers",
+        "number" : 3000,
+        "order" : 14
+      },
+      "-KfW8SoFaSdUoaCt-8hj" : {
+        "name" : "Flagship",
+        "number" : 3140,
+        "order" : 15
+      },
+      "-KfW8TsDVkN_JBE1UPHH" : {
+        "name" : "Thoroughbots",
+        "number" : 3259,
+        "order" : 16
+      },
+      "-KfW8Uy7XRokPYjNKmKF" : {
+        "name" : "Category 5",
+        "number" : 3489,
+        "order" : 17
+      },
+      "-KfW8VzJSm2R8lBGdlNb" : {
+        "name" : "Pirabots",
+        "number" : 3821,
+        "order" : 18
+      },
+      "-KfW8X-crLHOYbVVctiq" : {
+        "name" : "HVA RoHAWKtics",
+        "number" : 3824,
+        "order" : 19
+      },
+      "-KfW8Y91TF3Jh0Rt1WUt" : {
+        "name" : "M.C.R.T. ROBO RACERS",
+        "number" : 3843,
+        "order" : 20
+      },
+      "-KfW8ZgNTk35hfVkRyIo" : {
+        "name" : "Kentucky Wildbots",
+        "number" : 3844,
+        "order" : 21
+      },
+      "-KfW8_omn2_i261e6AZh" : {
+        "name" : "L&N STEMpunks",
+        "number" : 3966,
+        "order" : 22
+      },
+      "-KfW8ayu7kbq9WaRm3D_" : {
+        "name" : "The Toppers",
+        "number" : 3984,
+        "order" : 23
+      },
+      "-KfW8c8V3oLL230Jumj4" : {
+        "name" : "Cyber Tribe",
+        "number" : 4020,
+        "order" : 24
+      },
+      "-KfW8dIFRYY-sXhETsSO" : {
+        "name" : "Viking Robotics Team",
+        "number" : 4098,
+        "order" : 25
+      },
+      "-KfW8ePqy2YY9HIrvvOP" : {
+        "name" : "The Fellowship of the Springs",
+        "number" : 4264,
+        "order" : 26
+      },
+      "-KfW8faPWXE9OQBQ2hV-" : {
+        "name" : "Secret City Wildbots",
+        "number" : 4265,
+        "order" : 27
+      },
+      "-KfW8gpZSvNhYgNH2rqw" : {
+        "name" : "RoboKomodos",
+        "number" : 4306,
+        "order" : 28
+      },
+      "-KfW8i3qRs0ZcrnwCOxs" : {
+        "name" : "Full Metal Jackets",
+        "number" : 4462,
+        "order" : 29
+      },
+      "-KfW8jQNI7X_1HwYDqow" : {
+        "name" : "B. C. Robotics",
+        "number" : 4504,
+        "order" : 30
+      },
+      "-KfW8ksVdXJvufUwQKm2" : {
+        "name" : "Harrison Robotics",
+        "number" : 4521,
+        "order" : 31
+      },
+      "-KfW8m1y2cEmd6Rlcop5" : {
+        "name" : "Wando Adv. Robotics",
+        "number" : 4533,
+        "order" : 32
+      },
+      "-KfW8nGXF6EOv9TBbGGe" : {
+        "name" : "Red Nation Robotics",
+        "number" : 4576,
+        "order" : 33
+      },
+      "-KfW8oYaTJHEmtHPVsrt" : {
+        "name" : "Robodragon",
+        "number" : 4630,
+        "order" : 34
+      },
+      "-KfW8pf1_N7-0MeG9IBF" : {
+        "name" : "Dragon Robotics",
+        "number" : 5002,
+        "order" : 35
+      },
+      "-KfW8qyRBRHp8F_81Iz3" : {
+        "name" : "Rat Rod Robotics",
+        "number" : 5022,
+        "order" : 36
+      },
+      "-KfWBUz2SJdqycFdj5--" : {
+        "name" : "CGLA Mustangs",
+        "number" : 5058,
+        "order" : 37
+      },
+      "-KfWBWDbQ3xE8uugeu8A" : {
+        "name" : "Cybears",
+        "number" : 5186,
+        "order" : 38
+      },
+      "-KfWBXo1IIJEKOlbZz_4" : {
+        "name" : "HopCo Robo",
+        "number" : 5423,
+        "order" : 39
+      },
+      "-KfWBZ7mDgqgZum8B9Wr" : {
+        "name" : "Winner's Circle Robo Jockeys",
+        "number" : 5492,
+        "order" : 40
+      },
+      "-KfWB_CATZGofTwQjYWw" : {
+        "name" : "Wolfbots",
+        "number" : 5508,
+        "order" : 41
+      },
+      "-KfWBaJaq0h0irZjyE2T" : {
+        "name" : "Broken Gears",
+        "number" : 5744,
+        "order" : 42
+      },
+      "-KfWBd6rDhXZbsONruHI" : {
+        "name" : "GRA-V Robotics",
+        "number" : 5816,
+        "order" : 43
+      },
+      "-KfWBeJTTbbMy7duaFHT" : {
+        "name" : "Firebirds with Skills",
+        "number" : 6105,
+        "order" : 44
+      },
+      "-KfWBfNMs7ZKbtt8qwPb" : {
+        "name" : "Ragnarok",
+        "number" : 6157,
+        "order" : 45
+      },
+      "-KfWBgWyB-GMsG7uLn_-" : {
+        "name" : "Cuttin' Edge Robotics",
+        "number" : 6219,
+        "order" : 46
+      },
+      "-KfWBhyIPGpRAPqDbnzR" : {
+        "name" : "Tech Devils",
+        "number" : 6302,
+        "order" : 47
+      },
+      "-KfWBj4cCqbD5-D2fyJb" : {
+        "name" : "Team FTW",
+        "number" : 6517,
+        "order" : 48
+      },
+      "-KfWBk6DaEjg3zl9KWu4" : {
+        "name" : "Central Robobcatics",
+        "number" : 6654,
+        "order" : 49
+      }
+    },
+    "numMatches" : 65
+  } ],
+  "Questions" : [ {
+    "Description" : "Questions to ask teams in the Pit",
+    "Name" : "Pit Questions",
+    "Pit Questions" : [ {
+      "ID" : "PQ1",
+      "Order" : 1,
+      "Question" : "What chassis type is your robot?",
+      "Type" : "Text field"
+    }, {
+      "ID" : "PQ2",
+      "Order" : 2,
+      "Question" : "How tall is your chassis?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ3",
+      "Order" : 3,
+      "Question" : "What is your primary objective? ",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Fuel",
+        "Order" : 2,
+        "Value" : 1
+      }, {
+        "Label" : "Gears",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Other",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "PQ4",
+      "Order" : 4,
+      "Question" : "What is your secondary objective?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Fuel",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Gears",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Other",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "PQ5",
+      "Order" : 5,
+      "Question" : "Where can your robot shoot fuel?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "High",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Low",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Both",
+        "Order" : 4,
+        "Value" : 3
+      }, {
+        "Label" : "None",
+        "Order" : 5,
+        "Value" : 4
+      } ]
+    }, {
+      "ID" : "PQ6",
+      "Order" : 6,
+      "Question" : "Can your robot climb the rope?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ7",
+      "Order" : 7,
+      "Question" : "Does your robot stay up when it goes up?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ8",
+      "Order" : 8,
+      "Question" : "Do you use your own rope?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ9",
+      "Order" : 9,
+      "Question" : "Do you have to be right on top of the rope to climb?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ10",
+      "Order" : 10,
+      "Question" : "Does your robot place gears?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ11A",
+      "Order" : 11,
+      "Question" : "How do you pick up fuel? (floor)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ11B",
+      "Order" : 11,
+      "Question" : "How do you pick up fuel? (feeder station)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ11C",
+      "Order" : 11,
+      "Question" : "How do you pick up fuel? (hopper)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ12A",
+      "Order" : 12,
+      "Question" : "Where can you put your human players? (airship)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ12B",
+      "Order" : 12,
+      "Question" : "Where can you put your human players? (feeder station)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ12C",
+      "Order" : 12,
+      "Question" : "Where can you put your human players? (overflow)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ12D",
+      "Order" : 12,
+      "Question" : "Where can you put your human players? (runner)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ13",
+      "Order" : 13,
+      "Question" : "Do you have autonomous?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ14A",
+      "Order" : 14,
+      "Question" : "Where do you score from in autonomous? (move forward)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ14B",
+      "Order" : 14,
+      "Question" : "Where do you score from in autonomous? (place gear)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ14C",
+      "Order" : 14,
+      "Question" : "Where do you score from in autonomous? (shoot into boiler)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ15",
+      "Order" : 15,
+      "Question" : "Where can you pick up gears?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Feeding station",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Ground",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ16",
+      "Order" : 16,
+      "Question" : "Where can you pick up fuel?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Feeding station",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Ground",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "PQ17",
+      "Order" : 17,
+      "Question" : "How is your team willing to play?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Defensive",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Offensive",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Both",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "PQ18",
+      "Order" : 18,
+      "Question" : "What are your strengths?",
+      "Type" : "Text field"
+    }, {
+      "ID" : "PQ19",
+      "Order" : 19,
+      "Question" : "What are your weaknesses?",
+      "Type" : "Text field"
+    }, {
+      "ID" : "PQ20",
+      "Order" : 20,
+      "Question" : "On a scale of 1 to 10 what is your robot's maneuverability?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ21",
+      "Order" : 21,
+      "Question" : "How many feet per second can your robot travel?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ22",
+      "Order" : 22,
+      "Question" : "How many years has your driver been driving?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ23",
+      "Order" : 23,
+      "Question" : "How many years has your manipulator been manipulating your robot?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ24",
+      "Order" : 24,
+      "Question" : "How quickly can you do a full cycle?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ25A",
+      "Order" : 25,
+      "Question" : "Fuel firing? (high)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ25B",
+      "Order" : 25,
+      "Question" : "Fuel firing? (low)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ25C",
+      "Order" : 25,
+      "Question" : "Fuel firing? (single)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ25D",
+      "Order" : 25,
+      "Question" : "Fuel firing? (multi)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ26",
+      "Order" : 26,
+      "Question" : "What drivetrain do you have?",
+      "Type" : "Text field"
+    }, {
+      "ID" : "PQ27A",
+      "Order" : 27,
+      "Question" : "What position does your team start at? (closest stands)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ27B",
+      "Order" : 27,
+      "Question" : "What position does your team start at? (middle)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ27C",
+      "Order" : 27,
+      "Question" : "What position does your team start at? (closest pit)",
+      "Type" : "Check box"
+    }, {
+      "ID" : "PQ28",
+      "Order" : 28,
+      "Question" : "How experienced is your Drive Team? (How many years of Drive team do they have)?",
+      "Type" : "Number field"
+    }, {
+      "ID" : "PQ29",
+      "Order" : 29,
+      "Question" : "What type of shooter does your robot have?",
+      "Type" : "Text field"
+    } ]
+  }, {
+    "Autonomous Questions" : [ {
+      "ID" : "AQ1",
+      "Order" : 1,
+      "Question" : "Did the robot have Autonomous?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "AQ2",
+      "Order" : 2,
+      "Question" : "Did the robot place gears?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "AQ3",
+      "Order" : 3,
+      "Question" : "Did the robot cross the line?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "AQ4",
+      "Order" : 4,
+      "Question" : "Did the robot score high boiler?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "AQ5",
+      "Order" : 5,
+      "Question" : "Did the robot score low boiler?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "AQ6",
+      "Order" : 6,
+      "Question" : "Did the robot activate the hopper?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "AQ7",
+      "Order" : 7,
+      "Question" : "What starting pieces did they start out with?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Gear",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Fuel",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Both",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "AQ8",
+      "Order" : 8,
+      "Question" : "Which position did they start off in?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Pit side",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Middle",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Stands side",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "AQ9",
+      "Order" : 9,
+      "Question" : "How many penalties did they accumulate?",
+      "Type" : "Number field"
+    } ],
+    "Description" : "Questions you answer in the stand during the match",
+    "End-Game Questions" : [ {
+      "ID" : "EQ1",
+      "Order" : 1,
+      "Question" : "How well did they maneuver?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ2",
+      "Order" : 2,
+      "Question" : "How well did they get Fuel from the Hopper?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ3",
+      "Order" : 3,
+      "Question" : "How well did they get Fuel from the floor?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ4",
+      "Order" : 4,
+      "Question" : "How well did they get Fuel from the feeder?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ5",
+      "Order" : 5,
+      "Question" : "How well did they get Gears from the floor?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ6",
+      "Order" : 6,
+      "Question" : "How well did they get Gears from the feeder?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ7",
+      "Order" : 7,
+      "Question" : "How well did they put the Gear on the hook?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ8",
+      "Order" : 8,
+      "Question" : "Roughly what percentage of the high shots succeeded?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "<25%",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "<50%",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "<75%",
+        "Order" : 4,
+        "Value" : 3
+      }, {
+        "Label" : ">75%",
+        "Order" : 5,
+        "Value" : 4
+      } ]
+    }, {
+      "ID" : "EQ9",
+      "Order" : 9,
+      "Question" : "Roughly what percentage of the low shots succeeded?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "<25%",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "<50%",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "<75%",
+        "Order" : 4,
+        "Value" : 3
+      }, {
+        "Label" : ">75%",
+        "Order" : 5,
+        "Value" : 4
+      } ]
+    }, {
+      "ID" : "EQ10",
+      "Order" : 10,
+      "Question" : "Roughly what percentage of the gears succeeded?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "<25%",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "<50%",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "<75%",
+        "Order" : 4,
+        "Value" : 3
+      }, {
+        "Label" : ">75%",
+        "Order" : 5,
+        "Value" : 4
+      } ]
+    }, {
+      "ID" : "EQ11",
+      "Order" : 11,
+      "Question" : "Did they attempt to scale?",
+      "Type" : "Dropdown",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Didn't attempt",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Attempted",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Successful",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "EQ12",
+      "Order" : 12,
+      "Question" : "Did their robot break?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "EQ13",
+      "Order" : 13,
+      "Question" : "Number of points lost to penalties?",
+      "Type" : "Numeric field"
+    }, {
+      "ID" : "EQ14",
+      "Order" : 14,
+      "Question" : "Number of points lost to fouls?",
+      "Type" : "Numeric field"
+    }, {
+      "ID" : "EQ15",
+      "Order" : 15,
+      "Question" : "Did the airship launch?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "EQ16",
+      "Order" : 16,
+      "Question" : "Did their alliance gain a Order Point?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "EQ17",
+      "Order" : 17,
+      "Question" : "Notes",
+      "Type" : "Text"
+    } ],
+    "Human player Questions" : [ {
+      "Comment" : "All HQ questions are answered from the Human Player scouting tablet",
+      "ID" : "HQ1",
+      "Order" : 0,
+      "Question" : "How did they pull up the gears?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "HQ2",
+      "Order" : 2,
+      "Question" : "Did they put the gears in the right order?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "HQ3",
+      "Order" : 3,
+      "Question" : "Did they drop rope early?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "HQ4",
+      "Order" : 4,
+      "Question" : "Did the human player get a foul?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "Comments" : "Include list of all teams at the event.",
+      "ID" : "HQ5",
+      "Order" : 5,
+      "Question" : "From which team was the airship (1) human player?",
+      "Type" : "Dropdown list"
+    }, {
+      "Comments" : "Include list of all teams at the event.",
+      "ID" : "HQ6",
+      "Order" : 6,
+      "Question" : "From which team was the airship (2) human player?",
+      "Type" : "Dropdown list"
+    }, {
+      "Comments" : "Include list of all teams at the event.",
+      "ID" : "HQ7",
+      "Order" : 7,
+      "Question" : "From which team was the runner human player?",
+      "Type" : "Dropdown list"
+    }, {
+      "ID" : "HQ8",
+      "Order" : 8,
+      "Question" : "How did the airship (1) human player do?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "HQ9",
+      "Order" : 9,
+      "Question" : "How did the airship (2) human player do?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "ID" : "HQ10",
+      "Order" : 10,
+      "Question" : "How did the runner human player do?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Poorly",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Well",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Exceptionally",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    }, {
+      "Comment" : "This is at the alliance level",
+      "ID" : "HQ11",
+      "Order" : 11,
+      "Question" : "Number of props spinning",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : ""
+      }, {
+        "Label" : "0",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "1",
+        "Order" : 3,
+        "Value" : 0
+      }, {
+        "Label" : "2",
+        "Order" : 4,
+        "Value" : 2
+      }, {
+        "Label" : "3",
+        "Order" : 5,
+        "Value" : 3
+      }, {
+        "Label" : "4",
+        "Order" : 6,
+        "Value" : 4
+      } ]
+    } ],
+    "Name" : "Match Questions",
+    "Tele-op Questions" : [ {
+      "ID" : "TQ1",
+      "Order" : 1,
+      "Question" : "How many gears did they score?",
+      "Type" : "Number field"
+    }, {
+      "Comment" : "If they attempt to score, show the next question",
+      "ID" : "TQ2",
+      "Order" : 2,
+      "Question" : "Did they attempt to score high boiler?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "TQ3",
+      "Order" : 3,
+      "Question" : "How many trips did they take to score in the high boiler?",
+      "Type" : "Number field"
+    }, {
+      "Comment" : "If they do attempt to score low boiler, show the next question",
+      "ID" : "TQ4",
+      "Order" : 4,
+      "Question" : "Did they attempt to score the low boiler?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "TQ5",
+      "Order" : 5,
+      "Question" : "How many trips did they take to score in the low boiler?",
+      "Type" : "Number field"
+    }, {
+      "Comment" : "We're not exactly sure if there is such thing",
+      "ID" : "TQ6",
+      "Order" : 6,
+      "Question" : "Did they receive a technical foul?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "Comment" : "",
+      "ID" : "TQ7",
+      "Order" : 7,
+      "Question" : "Did they receive a Yellow Card?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "TQ8",
+      "Order" : 8,
+      "Question" : "Did they receive a Red Card?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "No",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Yes",
+        "Order" : 3,
+        "Value" : 2
+      } ]
+    }, {
+      "ID" : "TQ9",
+      "Order" : 9,
+      "Question" : "Did they play defensively or offensively?",
+      "Type" : "Dropdown list",
+      "Values" : [ {
+        "Label" : "",
+        "Order" : 1,
+        "Value" : 0
+      }, {
+        "Label" : "Offensively",
+        "Order" : 2,
+        "Value" : 0
+      }, {
+        "Label" : "Defensively",
+        "Order" : 3,
+        "Value" : 2
+      }, {
+        "Label" : "Both",
+        "Order" : 4,
+        "Value" : 3
+      } ]
+    } ]
+  } ]
+}
