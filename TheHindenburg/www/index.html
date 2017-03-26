@@ -4,22 +4,85 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
-
-    
     
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
+    
+    <!-- Cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    
+    <!-- Cordova script for file handling -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-cordova/0.1.27-alpha/ng-cordova.min.js"></script>
+    
+    <!-- D3 library for string processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
-
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        /* Team 3489 & 342 */
+        apiKey: "AIzaSyCSWovxL9i83nn4vZf6byIW8WwSK72fX-Q",
+        authDomain: "thehindenburg-628dd.firebaseapp.com",
+        databaseURL: "https://thehindenburg-628dd.firebaseio.com",
+        storageBucket: "thehindenburg-628dd.appspot.com",
+        messagingSenderId: "472094950060"
+        /* */
+        
+        /* Team 3490 - Cane Bay
+        apiKey: "AIzaSyDpciADkOW75g5vObCh9XQiniD3yGqSYs4",
+        authDomain: "thehindenburg-e6689.firebaseapp.com",
+        databaseURL: "https://thehindenburg-e6689.firebaseio.com",
+        storageBucket: "thehindenburg-e6689.appspot.com",
+        messagingSenderId: "759673820533"
+        */
+        
+        /* Team 4533 - Wando 
+        apiKey: "AIzaSyA4OES5I51-Ug8KujQkhOWeCQ7ZZaXjhjA",
+        authDomain: "thehindenburgwando.firebaseapp.com",
+        databaseURL: "https://thehindenburgwando.firebaseio.com",
+        storageBucket: "thehindenburgwando.appspot.com",
+        messagingSenderId: "1075929746270"
+        */
+        
+        /* Test database
+        apiKey: "AIzaSyAya_4Thpm-AAj0A-XPeswicLTP7av2n4o",
+        authDomain: "thehindenburg-5a555.firebaseapp.com",
+        databaseURL: "https://thehindenburg-5a555.firebaseio.com",
+        storageBucket: "thehindenburg-5a555.appspot.com",
+        messagingSenderId: "367798273573"
+        */
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!--script>
+      // Initialize Firebase
+      var config = {
+        apiKey: $scope.apiKey,
+        authDomain: $scope.authDomain,
+        databaseURL: $scope.databaseURL,
+        storageBucket: $scope.storageBucket,
+        messagingSenderId: $scope.messagingSenderId
+      };
+      firebase.initializeApp(config);
+    </script-->
+    
     
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    
-
     <style type="text/css">
       .platform-ios .manual-ios-statusbar-padding{
         padding-top:20px;
@@ -48,30 +111,15 @@
         padding-left:40px;
       }
     </style>
-
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/routes.js"></script>
-    
-     
-    <script src="js/directives.js"></script>
-     
-    <script src="js/services.js"></script>
-    
-
-    <!-- Only required for Tab projects w/ pages in multiple tabs 
-    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
-    -->
-
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
-  <div>
-  <div>
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
-  </div>
-</div>
+    <div>
+      <div>
+        <ion-nav-bar class="bar-stable">
+          <ion-nav-back-button></ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+      </div>
+    </div>
   </body>
 </html>

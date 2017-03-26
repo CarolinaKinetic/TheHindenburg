@@ -1,0 +1,25 @@
+<ion-view title="Burger Minder">
+  <ion-content padding="true" class="has-header">
+    <div ng-controller="burgerMinderCtrl" class="padding">
+      <!--button class="button button-positive button-block" ng-click="refresh()">Refresh</button-->
+
+      <ion-card ng-repeat="overview in matchOverviews | orderBy:'-'">
+        <div ng-if="overview != null">
+          <div class="item item-divider">
+            <h2>Match #{{overview.matchNum}}</h2>
+          </div>
+          <div class="item item-text-wrap">
+            <div class="row" ng-repeat="scout in overview.scouts" ng-if="scout.percent > 0">
+              <div class="col-25"><p><strong>Scout:</strong> {{scout.name}}</p></div>
+              <div class="col-25"><p><strong>Team:</strong> {{scout.teamNum}}</p></div>
+              <div class="col-25"><p><strong>Percent:</strong> {{scout.percent}}%</p></div>
+              <div class="col-25"><p><img ng-src="img/{{scout.percent}}.png" width="30px" /></p></div>
+              </tr>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+
+    </div>
+  </ion-content>
+</ion-view>
