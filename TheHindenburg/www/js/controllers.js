@@ -234,7 +234,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     $scope.scouts = $firebaseArray(refScouts);
   }
   $scope.loadScoutsIntoMemory();
-  
+
   
   
   $scope.showIfButtonClicked = function(sectionName) {
@@ -262,7 +262,25 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
   $scope.textEntered = function(fieldName) {
     //$scope[fieldName].replace(/[\n\r]/, '');
-    $scop.EQ17.replace(/[\n\r]/, '');
+    $scope.EQ17.replace(/[\n\r]/, '');
+  }
+  
+  
+  
+  $scope.incGearCount = function() {
+      console.log("About to increment TQ1");
+      if (!$scope.TQ1) $scope.TQ1 = 0;
+      $scope.TQ1 = $scope.TQ1 + 1;
+      console.log("Just incremented TQ1");
+  }
+  
+  
+  
+  $scope.decGearCount = function() {
+      console.log("About to decrement TQ1");
+      if (!$scope.TQ1) $scope.TQ1 = 0;
+      $scope.TQ1 = $scope.TQ1 - 1;
+      console.log("Just decremented TQ1");
   }
   
   
@@ -407,49 +425,13 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     $scope.AQ1 = 0;
     $scope.AQ2 = 0;
     $scope.AQ3 = 0;
-    $scope.AQ4 = 0;
     $scope.AQ5 = 0;
-    $scope.AQ6 = 0;
-    $scope.AQ7 = 0;
     $scope.AQ8 = 0;
-    $scope.AQ9 = 0;
+    $scope.AQ10 = 0;
     $scope.TQ1 = 0;
-    $scope.TQ2 = 0;
-    $scope.TQ3 = 0;
-    $scope.TQ4 = 0;
-    $scope.TQ5 = 0;
-    $scope.TQ6 = 0;
-    $scope.TQ7 = 0;
-    $scope.TQ8 = 0;
-    $scope.TQ9 = 0;
-    $scope.EQ1 = 0;
-    $scope.EQ2 = 0;
-    $scope.EQ3 = 0;
-    $scope.EQ4 = 0;
-    $scope.EQ5 = 0;
-    $scope.EQ6 = 0;
-    $scope.EQ7 = 0;
-    $scope.EQ8 = -1;
-    $scope.EQ9 = -1;
-    $scope.EQ10 = -1;
     $scope.EQ11 = 0;
-    $scope.EQ12 = 0;
-    $scope.EQ13 = 0;
-    $scope.EQ14 = 0;
-    $scope.EQ15 = 0;
-    $scope.EQ16 = 0;
     $scope.EQ17 = "";
-    $scope.HQ1 = 0;
-    $scope.HQ2 = 0;
-    $scope.HQ3 = 0;
-    $scope.HQ4 = 0;
-    $scope.HQ5 = 0;
-    $scope.HQ6 = 0;
-    $scope.HQ7 = 0;
-    $scope.HQ8 = 0;
-    $scope.HQ9 = 0;
-    $scope.HQ10 = 0;
-    $scope.HQ11 = 0;
+    $scope.HQ12 = 0;
   };
 }])
    

@@ -11,26 +11,7 @@
             ng-model="team"
             ng-change="teamSelected()"></select>
         </label>
-        <label class="item item-input">
-          <span class="input-label">What chassis type is your robot?</span>
-          <textarea 
-            ng-model="PQ1" 
-            id="PQ1" 
-            placeholder="" 
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ1')"
-            rows="5"></textarea>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">How tall is your chassis?</span>
-          <input 
-            ng-model="PQ2" 
-            id="PQ2" 
-            type="number" 
-            placeholder="" 
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ2')">
-        </label>
+
         <label class="item item-select">
           <span class="input-label">What is your primary objective?</span>
           <select
@@ -43,31 +24,7 @@
             <option value="3">Other</option>
           </select>
         </label>
-        <label class="item item-select">
-          <span class="input-label">What is your secondary objective?</span>
-          <select
-            id="PQ4"
-            ng-model="PQ4"
-            ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ4')">
-            <option value=""></option>
-            <option value="1">Fuel</option>
-            <option value="2">Gears</option>
-            <option value="3">Other</option>
-          </select>
-        </label>
-        <label class="item item-select">
-          <span class="input-label">Where can your robot shoot fuel?</span>
-          <select
-            id="PQ5"
-            ng-model="PQ5"
-            ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ5')">
-            <option value=""></option>
-            <option value="1">High</option>
-            <option value="2">Low</option>
-            <option value="3">Both</option>
-            <option value="4">None</option>
-          </select>
-        </label>
+
         <label class="item item-select">
           <span class="input-label">Can your robot climb the rope?</span>
           <select
@@ -79,39 +36,7 @@
             <option value="1">No</option>
           </select>
         </label>
-        <label class="item item-select">
-          <span class="input-label">Does your robot stay up when it goes up?</span>
-          <select
-            id="PQ7"
-            ng-model="PQ7"
-            ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ7')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        <label class="item item-select">
-          <span class="input-label">Do you use your own rope?</span>
-          <select
-            id="PQ8"
-            ng-model="PQ8"
-            ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ8')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        <label class="item item-select">
-          <span class="input-label">Do you have to be right on top of the rope to climb?</span>
-          <select
-            id="PQ9"
-            ng-model="PQ9"
-            ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ9')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
+
         <label class="item item-select">
           <span class="input-label">Does your robot place gears?</span>
           <select
@@ -124,15 +49,7 @@
             <option value="1">No</option>
           </select>
         </label>
-      <div class="item item-divider">How do you pick up fuel?</div>
-        <ion-checkbox ng-model="PQ11A" id="PQ11A" name="PQ11A" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ11A')">Floor</ion-checkbox>
-        <ion-checkbox ng-model="PQ11B" id="PQ11B" name="PQ11B" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ11B')">Feeder station</ion-checkbox>
-        <ion-checkbox ng-model="PQ11C" id="PQ11C" name="PQ11C" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ11C')">Hopper</ion-checkbox>
-      <div class="item item-divider">Where can you put your human players?</div>
-        <ion-checkbox ng-model="PQ12A" id="PQ12A" name="PQ12A" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ12A')">Airship</ion-checkbox>
-        <ion-checkbox ng-model="PQ12B" id="PQ12B" name="PQ12B" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ12B')">Feeder station</ion-checkbox>
-        <ion-checkbox ng-model="PQ12C" id="PQ12C" name="PQ12C" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ12C')">Overflow</ion-checkbox>
-        <ion-checkbox ng-model="PQ12D" id="PQ12D" name="PQ12D" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ12D')">Runner</ion-checkbox>
+
         <label class="item item-select">
           <span class="input-label">Do you have autonomous?</span>
           <select
@@ -149,6 +66,7 @@
         <ion-checkbox ng-model="PQ14A" id="PQ14A" name="PQ14A" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ14A')">Move forward</ion-checkbox>
         <ion-checkbox ng-model="PQ14B" id="PQ14B" name="PQ14B" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ14B')">Place gear</ion-checkbox>
         <ion-checkbox ng-model="PQ14C" id="PQ14C" name="PQ14C" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ14C')">Shoot into boiler</ion-checkbox>
+
         <label class="item item-select">
           <span class="input-label">Where can you pick up gears?</span>
           <select
@@ -161,104 +79,36 @@
             <option value="2">Ground</option>
           </select>
         </label>
-        <label class="item item-select">
-          <span class="input-label">Where can you pick up fuel?</span>
-          <select
-            id="PQ16"
-            ng-model="PQ16"
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ16')">
-            <option value=""></option>
-            <option value="1">Feeding Station</option>
-            <option value="2">Ground</option>
-          </select>
-        </label>
-        <label class="item item-select">
-          <span class="input-label">How is your team willing to play?</span>
-          <select
-            id="PQ17"
-            ng-model="PQ17"
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ17')">
-            <option value=""></option>
-            <option value="1">Defense</option>
-            <option value="2">Offense</option>
-            <option value="3">Both</option>
-          </select>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">What are your strengths?</span>
-          <textarea 
-            ng-model="PQ18" 
-            id="PQ18" 
-            placeholder="" 
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ18')"
-            rows="5"></textarea>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">What are your weaknesses?</span>
-          <textarea 
-            ng-model="PQ19" 
-            id="PQ19" 
-            placeholder="" 
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ19')"
-            rows="5"></textarea>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">On a scale of 1 to 10 what is your robots manuverability?</span>
-          <input ng-model="PQ20" id="PQ20" type="number" placeholder="" ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ20')">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">How many feet per second can your robot travel?</span>
-          <input ng-model="PQ21" id="PQ21" type="number" placeholder="" ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ21')">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">How many years has your driver been driving?</span>
-          <input ng-model="PQ22" id="PQ22" type="number" placeholder="" ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ22')">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">How many years has your manipulator been manipulating your robot?</span>
-          <input ng-model="PQ23" id="PQ23" type="number" placeholder="" ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ23')">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">How quickly can you do a full cycle?</span>
-          <input ng-model="PQ24" id="PQ24" type="number" placeholder="" ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ24')">
-        </label>
-      <div class="item item-divider">Fuel Firing?</div>
-        <ion-checkbox ng-model="PQ25A" id="PQ25A" name="PQ25A" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ25A')">High</ion-checkbox>
-        <ion-checkbox ng-model="PQ25B" id="PQ25B" name="PQ25B" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ25B')">Low</ion-checkbox>
-        <ion-checkbox ng-model="PQ25C" id="PQ25C" name="PQ25C" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ25C')">Single</ion-checkbox>
-        <ion-checkbox ng-model="PQ25D" id="PQ25D" name="PQ25D" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ25D')">Multi</ion-checkbox>
-        <label class="item item-input">
-          <span class="input-label">What drivetrain do you have?</span>
-          <textarea 
-            ng-model="PQ26" 
-            id="PQ26" 
-            placeholder="" 
-            ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ26')"
-            rows="5"></textarea>
-        </label>
+
       <div class="item item-divider">What position can your team start from?</div>
         <ion-checkbox ng-model="PQ27A" id="PQ27A" name="PQ27A" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ27A')">Closest stands</ion-checkbox>
         <ion-checkbox ng-model="PQ27B" id="PC27B" name="PC27B" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ27B')">Middle</ion-checkbox>
         <ion-checkbox ng-model="PQ27C" id="PQ27C" name="PQ27C" ng-disabled="areFieldsDisabled()" ng-change="updateField('PQ27C')">Closest pit</ion-checkbox>
+        
         <label class="item item-input">
-          <span class="input-label">How expereienced is your Drive Team? (How many years of Drive team do they have)?</span>
-          <input ng-model="PQ28" id="PQ28" type="number" placeholder="" ng-disabled="areFieldsDisabled()" ng-blur="updateField('PQ28')">
+          <span class="input-label">Number of seconds to scale?</span>
+          <input 
+            ng-model="PQ30"
+            ng-change="updateField('PQ30')" 
+            id="PQ30" 
+            type="number" 
+            placeholder="">
         </label>
-        <label class="item item-input">
-          <span class="input-label">What type of shooter does your robot have?</span>
-          <textarea 
-            ng-model="PQ29" 
-            id="PQ29" 
-            placeholder="" 
+        
+        <label class="item item-select">
+          <span class="input-label">Does the gear have to be pulled out of your robot?</span>
+          <select
+            id="PQ31"
+            ng-model="PQ31"
             ng-disabled="areFieldsDisabled()" 
-            ng-blur="updateField('PQ29')"
-            rows="5"></textarea>
+            ng-blur="updateField('PQ31')">
+            <option value=""></option>
+            <option value="2">Yes</option>
+            <option value="1">No</option>
+          </select>
         </label>
+
+
         <button
           class="button button-balanced button-block"
           ng-click="submitPit()">Submit</button>

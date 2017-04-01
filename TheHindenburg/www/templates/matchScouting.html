@@ -33,18 +33,11 @@
         </label>
       </form>
 
-      <div id="matchScouting-button-bar1" class="button-bar">
-        <button id="matchScouting-button4" class="button button-positive  button-block" ng-click="buttonClick('autonomous')">Autonomous</button>
-        <button id="matchScouting-button5" class="button button-positive  button-block" ng-click="buttonClick('teleop')">Teleop</button>
-        <button id="matchScouting-button6" class="button button-positive  button-block" ng-click="buttonClick('postgame')">Post-Game</button>
-        <button id="matchScouting-button7" class="button button-positive  button-block" ng-click="buttonClick('human')">Human Player</button>
-      </div>
-    
-      <form id="matchScouting-autonomous" class="list" ng-show="showIfButtonClicked('autonomous')">
-        <h1 id="matchScouting-heading1" style="color:#000000;text-align:center;">Autonomous</h1>
+      <form id="matchScouting-autonomous" class="list" ng-show="allIdFieldsSelected()">
+        <div class="item item-divider">Autonomous</div>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--Did the robot have -->Autonomous?</span>
+          <span class="input-label"><!--Did the robot have -->Autonomous?</span>
           <select
             id="AQ1"
             ng-model="AQ1"
@@ -56,7 +49,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;"><!-- Did the robot place -->Hang gears?</span>
+          <span class="input-label"><!-- Did the robot place -->Hang gears?</span>
           <select
             id="AQ2"
             ng-model="AQ2"
@@ -67,24 +60,27 @@
           </select>
         </label>
         
+        <div ng-show="AQ2 == 2">
+          <label class="item item-select">
+            <span class="input-label">Which post?</span>
+            <select
+              id="AQ10"
+              ng-model="AQ10"
+              ng-change="updateField('AQ10')">
+              <option value=""></option>
+              <option value="1">Load Zone</option>
+              <option value="2">Middle</option>
+              <option value="3">Boiler</option>
+            </select>
+          </label>
+        </div>
+        
         <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--Did the robot -->Cross the line?</span>
+          <span class="input-label"><!--Did the robot -->Cross the line?</span>
           <select
             id="AQ3"
             ng-model="AQ3"
             ng-change="updateField('AQ3')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--Did the robot score -->High boiler?</span>
-          <select
-            id="AQ4"
-            ng-model="AQ4"
-            ng-change="updateField('AQ4')">
             <option value=""></option>
             <option value="2">Yes</option>
             <option value="1">No</option>
@@ -104,33 +100,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--Did the robot -->Activate the hopper?</span>
-          <select
-            id="AQ6"
-            ng-model="AQ6"
-            ng-change="updateField('AQ6')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--What starting pieces did they-->Pieces start out with?</span>
-          <select
-            id="AQ7"
-            ng-model="AQ7"
-            ng-change="updateField('AQ7')">
-            <option value=""></option>
-            <option value="0">Neither</option>
-            <option value="1">Gear</option>
-            <option value="2">Fuel</option>
-            <option value="3">Both</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--Which position did they start off in-->Start position?</span>
+          <span class="input-label"><!--Which position did they start off in-->Start position?</span>
           <select
             id="AQ8"
             ng-model="AQ8"
@@ -142,333 +112,23 @@
           </select>
         </label>
         
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--How many penalties did they accumulate-->Penalty in auto?</span>
-          <select 
-            ng-model="AQ9"
-            ng-change="updateField('AQ9')" 
-            id="AQ9">
-            <option value=""></option>
-            <option value="-1">Unknown</option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </label>
-        
-        <!--
-        <div class="item item-input-inset">
-          <div class="numLabel">Boulders/low goal</div>
-          <button 
-            class="button button-small button-assertive icon ion-minus" 
-            ng-disabled="disableMatchFields()"
-            ng-click="decField('numLowA')"></button>
-            &nbsp;&nbsp;<div id="numLowA">{{ numLowA }}</div>&nbsp;&nbsp;
-          <button 
-            class="button button-small button-balanced icon ion-plus" 
-            ng-disabled="disableMatchFields()"
-            ng-click="incField('numLowA')"></button>
+        <div class="item item-divider">Teleop</div>
+      
+        <div class="item item-input">
+          <span class="input-label">Gear hung?</span>
+          <button
+            class="button button-small button-assertive icon ion-minus"
+            ng-click="decGearCount()"></button>
+          &nbsp;&nbsp;{{TQ1}}&nbsp;&nbsp;
+          <button
+            class="button button-small button-balanced icon ion-plus"
+            ng-click="incGearCount()"></button>
         </div>
-        -->
         
-      </form>
+        <div class="item item-divider">Post-game</div>
         
-      <form id="matchScouting-teleop" class="list" ng-show="showIfButtonClicked('teleop')">
-        <h1 id="matchScouting-heading2" style="color:#000000;text-align:center;">Teleop</h1>
-      
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--How many gears did they score-->Gear hung?</span>
-          <select
-            ng-model="TQ1"
-            ng-change="updateField('TQ1')" 
-            id="TQ1">
-            <option value=""></option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--Did they attempt to score-->High boiler attempted?</span>
-          <select
-            id="TQ2"
-            ng-model="TQ2"
-            ng-change="updateField('TQ2')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label" style="color: red;"><!--If so how many trips did they take to score in the high boiler--># of attempts?</span>
-          <select 
-            ng-model="TQ3"
-            ng-change="updateField('TQ3')" 
-            id="TQ3">
-            <option value=""></option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label"><!--Did they attempt to score -->Low boiler attempted??</span>
-          <select
-            id="TQ4"
-            ng-model="TQ4"
-            ng-change="updateField('TQ4')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select">
-          <span class="input-label"><!--If so how many trips did they take to score in the --># of attempts?</span>
-          <select 
-            ng-model="TQ5"
-            ng-change="updateField('TQ5')" 
-            id="TQ5">
-            <option value=""></option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="TQ6" name="TQ6">
-          <span class="input-label" style="color: red;"><!--Did they receive a -->Technical foul?</span>
-          <select
-            id="TQ6"
-            ng-model="TQ6"
-            ng-change="updateField('TQ6')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="TQ7" name="TQ7">
-          <span class="input-label" style="color: red;"><!--Did they receive a -->Yellow Card?</span>
-          <select
-            id="TQ7"
-            ng-model="TQ7"
-            ng-change="updateField('TQ7')">
-            <option value=""></option>
-            <option value="0">I don't know</option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="TQ8" name="TQ8">
-          <span class="input-label" style="color: red;"><!--Did they receive a -->Red Card?</span>
-          <select
-            id="TQ8"
-            ng-model="TQ8"
-            ng-change="updateField('TQ8')">
-            <option value=""></option>
-            <option value="0">I don't know</option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="TQ9" name="TQ9">
-          <span class="input-label" style="color: red;"><!--Did they play -->Defensively or offensively?</span>
-          <select
-            id="TQ9"
-            ng-model="TQ9"
-            ng-change="updateField('TQ9')">
-            <option value=""></option>
-            <option value="0">Neither</option>
-            <option value="1">Defense</option>
-            <option value="2">Offense</option>
-            <option value="3">Both</option>
-          </select>
-        </label>
-      </form>
-      
-      <form id="matchScouting-postgame" class="list" ng-show="showIfButtonClicked('postgame')">
-        <h1 id="matchScouting-heading3" style="color:#000000;text-align:center;">Post-Game</h1>
-        
-        <label class="item item-select" id="EQ1" name="EQ1">
-          <span class="input-label">How well did they manuver?</span>
-          <select
-            id="EQ1"
-            ng-model="EQ1"
-            ng-change="updateField('EQ1')">
-            <option value=""></option>
-            <option value="1">Low</option>
-            <option value="2">Medium</option>
-            <option value="3">High</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ2" name="EQ2">
-          <span class="input-label" >How well did they get Fuel from the Hopper?</span>
-          <select
-            id="EQ2"
-            ng-model="EQ2"
-            ng-change="updateField('EQ2')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ3" name="EQ3">
-          <span class="input-label" >How well did they get Fuel from the floor?</span>
-          <select
-            id="EQ3"
-            ng-model="EQ3"
-            ng-change="updateField('EQ3')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ4" name="EQ4">
-          <span class="input-label" >How well did they get Fuel from the feeder?</span>
-          <select
-            id="EQ4"
-            ng-model="EQ4"
-            ng-change="updateField('EQ4')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ5" name="EQ5">
-          <span class="input-label" >How well did they get Gears from the floor?</span>
-          <select
-            id="EQ5"
-            ng-model="EQ5"
-            ng-change="updateField('EQ5')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ6" name="EQ6">
-          <span class="input-label" >How well did they get Gears from the feeder?</span>
-          <select
-            id="EQ6"
-            ng-model="EQ6"
-            ng-change="updateField('EQ6')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ7" name="EQ7">
-          <span class="input-label" >How well did they put the Gear on the hook?</span>
-          <select
-            id="EQ7"
-            ng-model="EQ7"
-            ng-change="updateField('EQ7')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ8" name="EQ8">
-          <span class="input-label">Roughly what percentage of the high shots succeeded?</span>
-          <select
-            id="EQ8"
-            ng-model="EQ8"
-            ng-change="updateField('EQ8')">
-            <option value=""></option>
-            <option value="1"><30%</option>
-            <option value="2">31-60%</option>
-            <option value="3">61-90%</option>
-            <option value="4">>90%</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ9" name="EQ9">
-          <span class="input-label">Roughly what percentage of the low shots succeeded?</span>
-          <select
-            id="EQ9"
-            ng-model="EQ9"
-            ng-change="updateField('EQ9')">
-            <option value=""></option>
-            <option value="1"><30%</option>
-            <option value="2">31-60%</option>
-            <option value="3">61-90%</option>
-            <option value="4">>90%</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ10" name="EQ10">
-          <span class="input-label">Roughly what percentage of the gears succeeded?</span>
-          <select
-            id="EQ10"
-            ng-model="EQ10"
-            ng-change="updateField('EQ10')">
-            <option value=""></option>
-            <option value="1"><30%</option>
-            <option value="2">31-60%</option>
-            <option value="3">61-90%</option>
-            <option value="4">>90%</option>
-          </select>
-        </label>
-        
-        <!-- BUG: verify that this field works -->
         <label class="item item-select" id="EQ11" name="EQ11">
-          <span class="input-label" style="color: red;">Did they attempt to scale?</span>
+          <span class="input-label">Did they attempt to scale?</span>
           <select
             id="EQ11"
             ng-model="EQ11"
@@ -477,62 +137,6 @@
             <option value="1">Didn't attempt</option>
             <option value="2">Attempted</option>
             <option value="3">Successful</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ12" name="EQ12">
-          <span class="input-label">Did their robot break?</span>
-          <select
-            id="EQ12"
-            ng-model="EQ12"
-            ng-change="updateField('EQ12')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-input" id="EQ13" name="EQ13">
-          <span class="input-label">Number of points lost to penalties?</span>
-          <input 
-            ng-model="EQ13"
-            ng-change="updateField('EQ13')" 
-            id="EQ13" 
-            type="number" 
-            placeholder="">
-        </label>
-        
-        <label class="item item-input" id="EQ14" name="EQ14">
-          <span class="input-label">Number of points lost to fouls?</span>
-          <input 
-            ng-model="EQ14"
-            ng-change="updateField('EQ14')" 
-            id="EQ14" 
-            type="number" 
-            placeholder="">
-        </label>
-        
-        <label class="item item-select" id="EQ15" name="EQ15">
-          <span class="input-label">Did the airship launch?</span>
-          <select
-            id="EQ15"
-            ng-model="EQ15"
-            ng-change="updateField('EQ15')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="EQ16" name="EQ16">
-          <span class="input-label">Did their alliance gain a Ranking Point?</span>
-          <select
-            id="EQ16"
-            ng-model="EQ16"
-            ng-change="updateField('EQ16')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
           </select>
         </label>
         
@@ -546,152 +150,20 @@
             rows="5"></textarea>
         </label>
 
-        <button
-          class="button button-balanced button-block"
-          ng-click="submitMatch()">Submit</button>
-
-      </form>
-          
-      <form id="matchScouting-human" class="list" ng-show="showIfButtonClicked('human')">
-        <h1 id="matchScouting-heading4" style="color:#000000;text-align:center;">Human Player</h1>
+        <div class="item item-divider">Human Player</div>
         
-        <label class="item item-select" id="HQ1" name="HQ1">
-          <span class="input-label">How did they pull up the gears?</span>
-          <select
-            id="HQ1"
-            ng-model="HQ1"
-            ng-change="updateField('HQ1')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="HQ2" name="HQ2">
-          <span class="input-label">Did they put the gears in the right order?</span>
-          <select
-            id="HQ2"
-            ng-model="HQ2"
-            ng-change="updateField('HQ2')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="HQ3" name="HQ3">
-          <span class="input-label">Did they drop rope early?</span>
-          <select
-            id="HQ3"
-            ng-model="HQ3"
-            ng-change="updateField('HQ3')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="HQ4" name="HQ4">
-          <span class="input-label">Did the human player get a foul?</span>
-          <select
-            id="HQ4"
-            ng-model="HQ4"
-            ng-change="updateField('HQ4')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
-          </select>
-        </label>
-        
-        <label class="item item-select" id="HQ5" name="HQ5">
-          <span class="input-label">From which team was the airship (1) human player?</span>
-          <select 
-            name="HQ5" 
-            id="HQ5" 
-            ng-options="team.number + ' - ' + team.name for team in teams track by team.number"
-            ng-model="HQ5"
-            ng-change="updateField('HQ5')">
-          </select>
-        </label>
-        
-        <label class="item item-select" id="HQ6" name="HQ6">
-          <span class="input-label">From which team was the airship (2) human player?</span>
-          <select 
-            name="HQ6" 
-            id="HQ6" 
-            ng-options="team.number + ' - ' + team.name for team in teams track by team.number"
-            ng-model="HQ6"
-            ng-change="updateField('HQ6')"></select>
-        </label>
-        
-        <label class="item item-select" id="HQ7" name="HQ7">
-          <span class="input-label">From which team was the runner human player?</span>
-          <select 
-            name="HQ7" 
-            id="HQ7" 
-            ng-options="team.number + ' - ' + team.name for team in teams track by team.number"
-            ng-model="HQ7"
-            ng-change="updateField('HQ7')"></select>
-        </label>
-  
-        <label class="item item-select" id="HQ8" name="HQ8">
-          <span class="input-label">How did the airship (1) human player do?</span>
-          <select
-            id="HQ8"
-            ng-model="HQ8"
-            ng-change="updateField('HQ8')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-  
-        <label class="item item-select" id="HQ9" name="HQ9">
-          <span class="input-label">How did the airship (2) human player do?</span>
-          <select
-            id="HQ9"
-            ng-model="HQ9"
-            ng-change="updateField('HQ9')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-  
-        <label class="item item-select" id="HQ10" name="HQ10">
-          <span class="input-label">How did the runner human player do?</span>
-          <select
-            id="HQ10"
-            ng-model="HQ10"
-            ng-change="updateField('HQ10')">
-            <option value=""></option>
-            <option value="1">Poorly</option>
-            <option value="2">Well</option>
-            <option value="3">Exceptional</option>
-            <option value="4">No attempt</option>
-          </select>
-        </label>
-  
         <label class="item item-select">
-          <span class="input-label">Number of rotors spinning</span>
+          <span class="input-label">Is the human player (pilot) good?</span>
           <select
-            id="HQ11" 
-            ng-model="HQ11" 
-            ng-change="updateField('HQ11')">
+            id="HQ12"
+            ng-model="HQ12"
+            ng-change="updateField('HQ12')">
             <option value=""></option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="2">Yes</option>
+            <option value="1">No</option>
           </select>
         </label>
-  
+        
         <button
           class="button button-balanced button-block"
           ng-click="submitMatch()">Submit</button>
