@@ -10,10 +10,11 @@
           </div>
           <div class="item item-text-wrap">
             <div class="row" ng-repeat="scout in overview.scouts" ng-if="scout.percent > 0">
-              <div class="col-25"><p><strong>Scout:</strong> {{scout.name}}</p></div>
-              <div class="col-25"><p><strong>Team:</strong> {{scout.teamNum}}</p></div>
-              <div class="col-25"><p><strong>Percent:</strong> {{scout.percent}}%</p></div>
-              <div class="col-25"><p><img ng-src="img/{{scout.percent}}.png" width="30px" /></p></div>
+              <div class="col-20"><p><strong>Scout:</strong> {{scout.name}}</p></div>
+              <div class="col-20"><p><strong>Team:</strong> {{scout.teamNum}}</p></div>
+              <div class="col-20"><p><strong>Percent:</strong> {{scout.percent}}%</p></div>
+              <div class="col-20"><p><img ng-src="img/{{scout.percent}}.png" width="30px" /></p></div>
+              <div class="col-20"><p>Missing questions: {{scout.unanswered.join()}}</p></div>
               </tr>
             </div>
           </div>
