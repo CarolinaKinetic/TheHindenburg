@@ -193,7 +193,9 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
   $scope.decGearCount = function() {
       if (!$scope.TQ1) $scope.TQ1 = 0;
-      $scope.TQ1 = $scope.TQ1 - 1;
+      if ($scope.TQ1 > 0) {
+        $scope.TQ1 = $scope.TQ1 - 1;
+      }
       $scope.updateField('TQ1');
   }
   
