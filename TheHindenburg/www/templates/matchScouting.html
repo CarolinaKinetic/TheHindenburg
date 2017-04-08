@@ -42,9 +42,8 @@
             id="AQ1"
             ng-model="AQ1"
             ng-change="updateField('AQ1')"> 
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </label>
         
@@ -54,23 +53,21 @@
             id="AQ2"
             ng-model="AQ2"
             ng-change="updateField('AQ2')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </label>
         
-        <div ng-show="AQ2 == 2">
+        <div ng-show="AQ2 == 1">
           <label class="item item-select">
             <span class="input-label">Which post?</span>
             <select
               id="AQ10"
               ng-model="AQ10"
               ng-change="updateField('AQ10')">
-              <option value=""></option>
-              <option value="1">Load Zone</option>
-              <option value="2">Middle</option>
-              <option value="3">Boiler</option>
+              <option value="0">Load Zone</option>
+              <option value="1">Middle</option>
+              <option value="2">Boiler</option>
             </select>
           </label>
         </div>
@@ -81,9 +78,8 @@
             id="AQ3"
             ng-model="AQ3"
             ng-change="updateField('AQ3')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </label>
         
@@ -93,9 +89,8 @@
             id="AQ5"
             ng-model="AQ5"
             ng-change="updateField('AQ5')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </label>
         
@@ -105,10 +100,9 @@
             id="AQ8"
             ng-model="AQ8"
             ng-change="updateField('AQ8')">
-            <option value=""></option>
-            <option value="1">Load Zone</option>
-            <option value="2">Middle</option>
-            <option value="3">Boiler</option>
+            <option value="0">Load Zone</option>
+            <option value="1">Middle</option>
+            <option value="2">Boiler</option>
           </select>
         </label>
         
@@ -128,15 +122,13 @@
         <div class="item item-divider">Post-game</div>
         
         <label class="item item-select" id="EQ11" name="EQ11">
-          <span class="input-label">Did they attempt to scale?</span>
+          <span class="input-label">Did they scale?</span>
           <select
             id="EQ11"
             ng-model="EQ11"
             ng-change="updateField('EQ11')">
-            <option value=""></option>
-            <option value="1">Didn't attempt</option>
-            <option value="2">Attempted</option>
-            <option value="3">Successful</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </label>
         
@@ -158,11 +150,12 @@
             id="HQ12"
             ng-model="HQ12"
             ng-change="updateField('HQ12')">
-            <option value=""></option>
-            <option value="2">Yes</option>
-            <option value="1">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </label>
+        
+        <p>Jared, pay attention!</p>
         
         <button
           class="button button-balanced button-block"

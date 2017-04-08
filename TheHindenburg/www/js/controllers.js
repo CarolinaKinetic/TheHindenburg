@@ -215,15 +215,15 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         
         if (fieldName == "AQ1") {
           matches[0].AQ1 = $scope.AQ1;
-          if (matches[0].AQ1 == 1) {
+          if (matches[0].AQ1 == 0) {
             //if the answer to AQ1 is no, then the same is true for AQ2-6
-            matches[0].AQ2 = "1";
-            matches[0].AQ3 = "1";
-            matches[0].AQ5 = "1";
+            matches[0].AQ2 = "0";
+            matches[0].AQ3 = "0";
+            matches[0].AQ5 = "0";
             matches[0].AQ10 = "0";
-            $scope.AQ2 = "1";
-            $scope.AQ3 = "1";
-            $scope.AQ5 = "1";
+            $scope.AQ2 = "0";
+            $scope.AQ3 = "0";
+            $scope.AQ5 = "0";
             $scope.AQ10 = "0";
           }
         }
