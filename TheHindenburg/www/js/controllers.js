@@ -293,7 +293,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     Clear all fields and hide all of those except the team and match after a match
     concludes
   */
-  $scope.clearData = function() {
+  $scope.clearFields = function() {
     $scope.team = null;
     $scope.selectedRobot = null;
     $scope.matchNum = null;
