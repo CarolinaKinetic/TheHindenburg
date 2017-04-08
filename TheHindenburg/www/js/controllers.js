@@ -84,6 +84,7 @@ function ($scope, $stateParams, $firebaseArray) {
       if (fieldName == "PQ27C") interviews[0].PQ27C = $scope.PQ27C;
       if (fieldName == "PQ30") interviews[0].PQ30 = $scope.PQ30;
       if (fieldName == "PQ31") interviews[0].PQ31 = $scope.PQ31;
+      if (fieldName == "PQ32") interviews[0].PQ32 = $scope.PQ32;
       
       interviews.$save(0);
     })
@@ -98,11 +99,11 @@ function ($scope, $stateParams, $firebaseArray) {
   $scope.submitPit = function() {
     $scope.team = 0;
     $scope.resetFields();
-   };
+  };
    
    
    
-   $scope.resetFields = function() {
+  $scope.resetFields = function() {
     $scope.PQ3 = 0;
     $scope.PQ6 = 0;
     $scope.PQ10 = 0;
@@ -115,8 +116,9 @@ function ($scope, $stateParams, $firebaseArray) {
     $scope.PQ27B = "false";
     $scope.PQ27C = "false";
     $scope.PQ30 = 0;
-    $scope.PQ31 = 0;     
-   }
+    $scope.PQ31 = 0;
+    $scope.PQ32 = "";
+  }
 }])
 
 
@@ -173,7 +175,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   $scope.allIdFieldsSelected = function() {
     return (($scope.teamSelected == true) && ($scope.scoutSelected == true) && ($scope.matchNumSelected == true));
   }
-
+  
   
   
   $scope.textEntered = function(fieldName) {
@@ -232,7 +234,6 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         if (fieldName == "AQ2") matches[0].AQ2 = $scope.AQ2;
         if (fieldName == "AQ3") matches[0].AQ3 = $scope.AQ3;
         if (fieldName == "AQ5") matches[0].AQ5 = $scope.AQ5;
-        if (fieldName == "AQ8") matches[0].AQ8 = $scope.AQ8;
         if (fieldName == "AQ10") matches[0].AQ10 = $scope.AQ10;
   
         if (fieldName == "TQ1") matches[0].TQ1 = $scope.TQ1;
@@ -246,8 +247,9 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     }).catch(function(error) {
       console.log("Error:", error);
     });
-    
   }
+  
+  
   
   $scope.selectTeamMatchScout = function() {
     //Do something about a team/match#/scout having been selected
@@ -269,14 +271,29 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     } else {
       $scope.matchNumSelected = false;
     }
-    
   }
+  
+  
+  
+  $scope.submitData = function() {
+    $scope.updateField("AQ1");
+    $scope.updateField("AQ2");
+    $scope.updateField("AQ3");
+    $scope.updateField("AQ5");
+    $scope.updateField("AQ10");
+    $scope.updateField("TQ1");
+    $scope.updateField("EQ11");
+    $scope.updateField("EQ17");
+    $scope.updateField("HQ12");
+  }
+  
+  
    
   /*
     Clear all fields and hide all of those except the team and match after a match
     concludes
   */
-  $scope.submitMatch = function() {
+  $scope.clearData = function() {
     $scope.team = null;
     $scope.selectedRobot = null;
     $scope.matchNum = null;

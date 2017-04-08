@@ -143,11 +143,19 @@
           </select>
         </label>
         
-        <p>Jared, pay attention!</p>
+        <label class="item">Jared, pay attention!</label>
         
-        <button
-          class="button button-balanced button-block"
-          ng-click="submitMatch()">Submit</button>
+        <div style="float:left">
+          <button
+            class="button button-balanced button-block"
+            ng-click="submitData()">Submit the Data</button>
+        </div>
+        <div style="float:right">
+          <button
+            class="button button-balanced button-block"
+            ng-click="clearFields()">Clear the Fields</button>
+        </div>
+        
           
       </form>
     </div>
