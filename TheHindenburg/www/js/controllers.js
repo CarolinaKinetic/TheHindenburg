@@ -84,7 +84,6 @@ function ($scope, $stateParams, $firebaseArray) {
       if (fieldName == "PQ27C") interviews[0].PQ27C = $scope.PQ27C;
       if (fieldName == "PQ30") interviews[0].PQ30 = $scope.PQ30;
       if (fieldName == "PQ31") interviews[0].PQ31 = $scope.PQ31;
-      if (fieldName == "PQ32") interviews[0].PQ32 = $scope.PQ32;
       
       interviews.$save(0);
     })
@@ -99,11 +98,11 @@ function ($scope, $stateParams, $firebaseArray) {
   $scope.submitPit = function() {
     $scope.team = 0;
     $scope.resetFields();
-  };
+   };
    
    
    
-  $scope.resetFields = function() {
+   $scope.resetFields = function() {
     $scope.PQ3 = 0;
     $scope.PQ6 = 0;
     $scope.PQ10 = 0;
@@ -116,9 +115,8 @@ function ($scope, $stateParams, $firebaseArray) {
     $scope.PQ27B = "false";
     $scope.PQ27C = "false";
     $scope.PQ30 = 0;
-    $scope.PQ31 = 0;
-    $scope.PQ32 = "";
-  }
+    $scope.PQ31 = 0;     
+   }
 }])
 
 
@@ -175,11 +173,10 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   $scope.allIdFieldsSelected = function() {
     return (($scope.teamSelected == true) && ($scope.scoutSelected == true) && ($scope.matchNumSelected == true));
   }
-  
+
   
   
   $scope.textEntered = function(fieldName) {
-    //$scope[fieldName].replace(/[\n\r]/, '');
     $scope.EQ17.replace(/[\n\r]/, '');
   }
   
@@ -199,6 +196,22 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         $scope.TQ1 = $scope.TQ1 - 1;
       }
       $scope.updateField('TQ1');
+  }
+  
+  
+  
+  $scope.inckPaCount = function() {
+      if (!$scope.EQ18) $scope.EQ18 = 0;
+      $scope.EQ18 = $scope.EQ18 + 1;
+      $scope.updateField('EQ18');
+  }
+  
+  
+  
+  $scope.deckPaCount = function() {
+      if (!$scope.EQ18) $scope.EQ18 = 0;
+      $scope.EQ18 = $scope.EQ18 - 1;
+      $scope.updateField('EQ18');
   }
   
   
@@ -224,22 +237,66 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
             matches[0].AQ2 = "0";
             matches[0].AQ3 = "0";
             matches[0].AQ5 = "0";
-            matches[0].AQ10 = "0";
+            matches[0].AQ10A = "0";
+            matches[0].AQ10B = "0";
+            matches[0].AQ10C = "0";
             $scope.AQ2 = "0";
             $scope.AQ3 = "0";
             $scope.AQ5 = "0";
-            $scope.AQ10 = "0";
+            $scope.AQ10A = "0";
+            $scope.AQ10B = "0";
+            $scope.AQ10C = "0";
           }
         }
-        if (fieldName == "AQ2") matches[0].AQ2 = $scope.AQ2;
+        
+        if (fieldName == "AQ2") {
+          matches[0].AQ2 = $scope.AQ2;
+          if (matches[0].AQ2 == 1) {
+            //if the answer to AQ2 is yes, then the same is true for AQ3
+            matches[0].AQ3 = "1";
+            $scope.AQ3 = "1";
+          }
+        }
+        
         if (fieldName == "AQ3") matches[0].AQ3 = $scope.AQ3;
         if (fieldName == "AQ5") matches[0].AQ5 = $scope.AQ5;
-        if (fieldName == "AQ10") matches[0].AQ10 = $scope.AQ10;
+        if (fieldName == "AQ8") matches[0].AQ8 = $scope.AQ8;
+        if (fieldName == "AQ10A") {
+          matches[0].AQ10A = $scope.AQ10A;
+          matches[0].AQ10B = 0;
+          matches[0].AQ10C = 0;
+          //reset other checkboxes if this one is marked
+          if ($scope.AQ10A == 1) {
+            $scope.AQ10B = null;
+            $scope.AQ10C = null;
+          }
+        }
+        if (fieldName == "AQ10B") {
+          matches[0].AQ10A = 0;
+          matches[0].AQ10B = $scope.AQ10B;
+          matches[0].AQ10C = 0;
+          //reset other checkboxes if this one is marked
+          if ($scope.AQ10B == 1) {
+            $scope.AQ10A = null;
+            $scope.AQ10C = null;
+          }
+        }
+        if (fieldName == "AQ10C") {
+          matches[0].AQ10A = 0;
+          matches[0].AQ10B = 0;
+          matches[0].AQ10C = $scope.AQ10C;
+          //reset other checkboxes if this one is marked
+          if ($scope.AQ10C == 1) {
+            $scope.AQ10A = null;
+            $scope.AQ10B = null;
+          }
+        }
   
         if (fieldName == "TQ1") matches[0].TQ1 = $scope.TQ1;
 
         if (fieldName == "EQ11") matches[0].EQ11 = $scope.EQ11;
         if (fieldName == "EQ17") matches[0].EQ17 = $scope.EQ17.replace(/(\r\n|\n|\r)/gm," ");
+        if (fieldName == "EQ18") matches[0].EQ18 = $scope.EQ18;
   
         if (fieldName == "HQ12") matches[0].HQ12 = $scope.HQ12;
       }
@@ -247,9 +304,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     }).catch(function(error) {
       console.log("Error:", error);
     });
+    
   }
-  
-  
   
   $scope.selectTeamMatchScout = function() {
     //Do something about a team/match#/scout having been selected
@@ -271,23 +327,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     } else {
       $scope.matchNumSelected = false;
     }
+    
   }
-  
-  
-  
-  $scope.submitData = function() {
-    $scope.updateField("AQ1");
-    $scope.updateField("AQ2");
-    $scope.updateField("AQ3");
-    $scope.updateField("AQ5");
-    $scope.updateField("AQ10");
-    $scope.updateField("TQ1");
-    $scope.updateField("EQ11");
-    $scope.updateField("EQ17");
-    $scope.updateField("HQ12");
-  }
-  
-  
    
   /*
     Clear all fields and hide all of those except the team and match after a match
@@ -301,11 +342,13 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     $scope.AQ2 = 0;
     $scope.AQ3 = 0;
     $scope.AQ5 = 0;
-    $scope.AQ8 = 0;
-    $scope.AQ10 = 0;
+    $scope.AQ10A = 0;
+    $scope.AQ10B = 0;
+    $scope.AQ10C = 0;
     $scope.TQ1 = 0;
     $scope.EQ11 = 0;
     $scope.EQ17 = "";
+    $scope.EQ18 = 0;
     $scope.HQ12 = 0;
   };
 }])
@@ -341,19 +384,43 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
             exportPitData += "\t";
             if (interview.PQ13) exportPitData += interview.PQ13;
             exportPitData += "\t";
-            if (interview.PQ14A) exportPitData += interview.PQ14A;
+            if (interview.PQ14A) {
+              exportPitData += "1";
+            } else {
+              exportPitData += "0";
+            }
             exportPitData += "\t";
-            if (interview.PQ14B) exportPitData += interview.PQ14B;
+            if (interview.PQ14B) {
+              exportPitData += "1";
+            } else {
+              exportPitData += "0";
+            }
             exportPitData += "\t";
-            if (interview.PQ14C) exportPitData += interview.PQ14C;
+            if (interview.PQ14C) {
+              exportPitData += "1";
+            } else {
+              exportPitData += "0";
+            }
             exportPitData += "\t";
             if (interview.PQ15) exportPitData += interview.PQ15;
             exportPitData += "\t";
-            if (interview.PQ27A) exportPitData += interview.PQ27A;
+            if (interview.PQ27A) {
+              exportPitData += "1";
+            } else {
+              exportPitData += "0";
+            }
             exportPitData += "\t";
-            if (interview.PQ27B) exportPitData += interview.PQ27B;
+            if (interview.PQ27B) {
+              exportPitData += "1";
+            } else {
+              exportPitData += "0";
+            }
             exportPitData += "\t";
-            if (interview.PQ27C) exportPitData += interview.PQ27C;
+            if (interview.PQ27C) {
+              exportPitData += "1";
+            } else {
+              exportPitData += "0";
+            }
             exportPitData += "\t";
             if (interview.PQ30) exportPitData += interview.PQ30;
             exportPitData += "\t";
@@ -366,7 +433,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     
     
     var exportMatchData = "Team #\tMatch #\tScout\tAQ1\tAQ2\tAQ3\tAQ5\t";
-    exportMatchData += "AQ8\tAQ10\tTQ1\tEQ11\tEQ17\tHQ12\r\n";
+    exportMatchData += "AQ10A\tAQ10B\tAQ10C\tTQ1\tEQ11\tEQ17\tEQ18\tHQ12\r\n";
 
     var refMatches = firebase.database().ref().child("Events/0/Matches");
     var matches = $firebaseArray(refMatches);
@@ -390,15 +457,31 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
             exportMatchData += "\t";
             if (robotMatch["AQ5"]) exportMatchData += robotMatch["AQ5"];
             exportMatchData += "\t";
-            if (robotMatch["AQ8"]) exportMatchData += robotMatch["AQ8"];
+            if (robotMatch["AQ10A"]) {
+              exportMatchData += "1";
+            } else {
+              exportMatchData += "0";
+            }
             exportMatchData += "\t";
-            if (robotMatch["AQ10"]) exportMatchData += robotMatch["AQ10"];
+            if (robotMatch["AQ10B"]) {
+              exportMatchData += "1";
+            } else {
+              exportMatchData += "0";
+            }
+            exportMatchData += "\t";
+            if (robotMatch["AQ10C"]) {
+              exportMatchData += "1";
+            } else {
+              exportMatchData += "0";
+            }
             exportMatchData += "\t";
             if (robotMatch["TQ1"]) exportMatchData += robotMatch["TQ1"];
             exportMatchData += "\t";
             if (robotMatch["EQ11"]) exportMatchData += robotMatch["EQ11"];
             exportMatchData += "\t";
             if (robotMatch["EQ17"]) exportMatchData += robotMatch["EQ17"];
+            exportMatchData += "\t";
+            if (robotMatch["EQ18"]) exportMatchData += robotMatch["EQ18"];
             exportMatchData += "\t";
             if (robotMatch["HQ12"]) exportMatchData += robotMatch["HQ12"];
             exportMatchData += "\r\n";
@@ -428,7 +511,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     
   /* This method will pull together an overview for each match, including the
    * match number, team number, scout name, and the % of the following questions
-   * that have been answered: AQ1, AQ2, AQ3, AQ5, AQ8, AQ10, TQ1, EQ11, and HQ12 
+   * that have been answered: AQ1, AQ2, AQ3, AQ5, AQ10A, AQ10B, AQ10C, TQ1, 
+   * EQ11, and HQ12 
    */
    
 
@@ -455,76 +539,71 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
               scoutRecord.teamNum = robotMatch['Team Number'];
               
               //determine the % of critical questions answered
-              var pctAnswered = 0;
-              var unanswered = ["AQ1", "AQ2", "AQ3", "AQ5", "AQ8", "AQ10", "TQ1", "EQ11", "HQ12"];
+              var unanswered = ["AQ1", "AQ2", "AQ3", "AQ5", "AQ10 A/B/C", "TQ1", "EQ11", "EQ18", "HQ12"];
               if (robotMatch.AQ1 != null) {
                 var index = unanswered.indexOf("AQ1");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 20;
               }
               if (robotMatch.AQ2 != null) {
                 var index = unanswered.indexOf("AQ2");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
               }
               if (robotMatch.AQ3 != null) {
                 var index = unanswered.indexOf("AQ3");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
               }
               if (robotMatch.AQ5 != null) {
                 var index = unanswered.indexOf("AQ5");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
               }
-              if (robotMatch.AQ8 != null) {
-                var index = unanswered.indexOf("AQ8");
+              //if one of the checkboxes is marked, or AQ2 is false
+              if ((robotMatch.AQ10A != null) || 
+                  (robotMatch.AQ10B != null) || 
+                  (robotMatch.AQ10C != null) ||
+                  (robotMatch.AQ2 == 0)) {
+                var index = unanswered.indexOf("AQ10 A/B/C");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
-              }
-              if (robotMatch.AQ10 != null) {
-                var index = unanswered.indexOf("AQ10");
-                if (index > -1) {
-                  unanswered.splice(index, 1);
-                }
-                pctAnswered += 10;
               }
               if (robotMatch.TQ1 != null) {
                 var index = unanswered.indexOf("TQ1");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
               }
               if (robotMatch.EQ11 != null) {
                 var index = unanswered.indexOf("EQ11");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
+              }
+              //If EQ18 is answered, or AQ5 is false
+              if ((robotMatch.EQ18 != null) ||
+                  (robotMatch.AQ5 == 0)) {
+                var index = unanswered.indexOf("EQ18");
+                if (index > -1) {
+                  unanswered.splice(index, 1);
+                }
               }
               if (robotMatch.HQ12 != null) {
                 var index = unanswered.indexOf("HQ12");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
-                pctAnswered += 10;
               }
-
-              scoutRecord.percent = pctAnswered;
-              console.log("Unaswered questions: " + unanswered);
+              if (unanswered.length == 0) {
+                unanswered.push("None");
+              }
               scoutRecord.unanswered = unanswered;
-
               thisMatchOverview['scouts'].push(scoutRecord);
             }
           })

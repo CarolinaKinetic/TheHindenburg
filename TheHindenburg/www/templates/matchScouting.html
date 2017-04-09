@@ -37,7 +37,7 @@
         <div class="item item-divider">Autonomous</div>
         
         <label class="item item-select">
-          <span class="input-label"><!--Did the robot have -->Autonomous?</span>
+          <span class="input-label">Autonomous?</span>
           <select
             id="AQ1"
             ng-model="AQ1"
@@ -48,7 +48,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label"><!-- Did the robot place -->Hang gears?</span>
+          <span class="input-label">Hang gears?</span>
           <select
             id="AQ2"
             ng-model="AQ2"
@@ -59,21 +59,14 @@
         </label>
         
         <div ng-show="AQ2 == 1">
-          <label class="item item-select">
-            <span class="input-label">Which post?</span>
-            <select
-              id="AQ10"
-              ng-model="AQ10"
-              ng-change="updateField('AQ10')">
-              <option value="0">Load Zone</option>
-              <option value="1">Middle</option>
-              <option value="2">Boiler</option>
-            </select>
-          </label>
+          <div class="item item-divider">Which post?</div>
+          <ion-checkbox ng-model="AQ10A" ng-change="updateField('AQ10A')">Boiler</ion-checkbox>
+          <ion-checkbox ng-model="AQ10B" ng-change="updateField('AQ10B')">Middle</ion-checkbox>
+          <ion-checkbox ng-model="AQ10C" ng-change="updateField('AQ10C')">Load zone</ion-checkbox>
         </div>
         
         <label class="item item-select">
-          <span class="input-label"><!--Did the robot -->Cross the line?</span>
+          <span class="input-label">Cross line?</span>
           <select
             id="AQ3"
             ng-model="AQ3"
@@ -84,7 +77,7 @@
         </label>
         
         <label class="item item-select">
-          <span class="input-label"><!-- Did the robot score -->High boiler?</span>
+          <span class="input-label">Score in boiler?</span>
           <select
             id="AQ5"
             ng-model="AQ5"
@@ -97,7 +90,7 @@
         <div class="item item-divider">Teleop</div>
       
         <div class="item item-input">
-          <span class="input-label">Gear hung?</span>
+          <span class="input-label">Gears hung?</span>
           <button
             class="button button-small button-assertive icon ion-minus"
             ng-click="decGearCount()"></button>
@@ -110,7 +103,7 @@
         <div class="item item-divider">Post-game</div>
         
         <label class="item item-select" id="EQ11" name="EQ11">
-          <span class="input-label">Did they scale?</span>
+          <span class="input-label">Scale?</span>
           <select
             id="EQ11"
             ng-model="EQ11"
@@ -120,6 +113,17 @@
           </select>
         </label>
         
+        <div class="item item-input" ng-show="AQ5 == 1">
+          <span class="input-label">kPa scored in Autonomous?</span>
+          <button
+            class="button button-small button-assertive icon ion-minus"
+            ng-click="deckPaCount()"></button>
+          &nbsp;&nbsp;{{EQ18}}&nbsp;&nbsp;
+          <button
+            class="button button-small button-balanced icon ion-plus"
+            ng-click="inckPaCount()"></button>
+        </div>
+
         <label class="item item-input" id="EQ17" name="EQ17">
           <span class="input-label">Notes</span>
           <textarea 
@@ -129,7 +133,7 @@
             placeholder=""
             rows="5"></textarea>
         </label>
-
+        
         <div class="item item-divider">Human Player</div>
         
         <label class="item item-select">
@@ -143,7 +147,7 @@
           </select>
         </label>
         
-        <label class="item">Jared, pay attention!</label>
+        <label class="item">{{scout.name}}, pay attention!&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/einstein.jpg" width="40" /></label>
         
         <div style="float:left">
           <button
