@@ -65,6 +65,17 @@
           <ion-checkbox ng-model="AQ10C" ng-change="updateField('AQ10C')">Load zone</ion-checkbox>
         </div>
         
+        <div class="item item-input">
+          <span class="input-label">Autonomous kPa?</span>
+          <button
+            class="button button-small button-assertive icon ion-minus"
+            ng-click="deckPaCount('Auto')"></button>
+          &nbsp;&nbsp;{{AQ11}}&nbsp;&nbsp;
+          <button
+            class="button button-small button-balanced icon ion-plus"
+            ng-click="inckPaCount('Auto')"></button>
+        </div>
+        
         <label class="item item-select">
           <span class="input-label">Cross line?</span>
           <select
@@ -113,15 +124,15 @@
           </select>
         </label>
         
-        <div class="item item-input" ng-show="AQ5 == 1">
-          <span class="input-label">kPa scored in Autonomous?</span>
+        <div class="item item-input">
+          <span class="input-label">kPa scored for Match?</span>
           <button
             class="button button-small button-assertive icon ion-minus"
-            ng-click="deckPaCount()"></button>
+            ng-click="deckPaCount('Match')"></button>
           &nbsp;&nbsp;{{EQ18}}&nbsp;&nbsp;
           <button
             class="button button-small button-balanced icon ion-plus"
-            ng-click="inckPaCount()"></button>
+            ng-click="inckPaCount('Match')"></button>
         </div>
 
         <label class="item item-input" id="EQ17" name="EQ17">
