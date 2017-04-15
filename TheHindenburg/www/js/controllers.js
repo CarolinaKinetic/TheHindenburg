@@ -192,26 +192,45 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
   $scope.decGearCount = function() {
       if (!$scope.TQ1) $scope.TQ1 = 0;
-      if ($scope.TQ1 > 0) {
-        $scope.TQ1 = $scope.TQ1 - 1;
-      }
+      if ($scope.TQ1 > 0) $scope.TQ1 = $scope.TQ1 - 1;
       $scope.updateField('TQ1');
   }
   
   
   
-  $scope.inckPaCount = function() {
+  $scope.inckPaCount = function(matchOrAuto) {
+    if (matchOrAuto == 'Auto') {
+      if (!$scope.AQ11) $scope.AQ11 = 0;
+      $scope.AQ11 = $scope.AQ11 + 1;
+      $scope.updateField('AQ11');
+      
+      //increment the Match value if the Auto value < Match value
+      if (!$scope.EQ18) $scope.EQ18 = 0;
+      if ($scope.AQ11 > $scope.EQ18) {
+        $scope.EQ18 = $scope.AQ11;
+        $scope.updateField('EQ18');
+      }
+    }
+    if (matchOrAuto == 'Match') {
       if (!$scope.EQ18) $scope.EQ18 = 0;
       $scope.EQ18 = $scope.EQ18 + 1;
       $scope.updateField('EQ18');
+    }
   }
   
   
   
-  $scope.deckPaCount = function() {
+  $scope.deckPaCount = function(matchOrAuto) {
+    if (matchOrAuto == 'Auto') {
+      if (!$scope.AQ11) $scope.AQ11 = 0;
+      if ($scope.AQ11 > 0) $scope.AQ11 = $scope.AQ11 - 1;
+      $scope.updateField('AQ11');
+    }
+    if (matchOrAuto == 'Match') {
       if (!$scope.EQ18) $scope.EQ18 = 0;
-      $scope.EQ18 = $scope.EQ18 - 1;
+      if ($scope.EQ18 > 0) $scope.EQ18 = $scope.EQ18 - 1;
       $scope.updateField('EQ18');
+    }
   }
   
   
@@ -240,12 +259,14 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
             matches[0].AQ10A = "0";
             matches[0].AQ10B = "0";
             matches[0].AQ10C = "0";
+            matches[0].AQ11 = 0;
             $scope.AQ2 = "0";
             $scope.AQ3 = "0";
             $scope.AQ5 = "0";
             $scope.AQ10A = "0";
             $scope.AQ10B = "0";
             $scope.AQ10C = "0";
+            $scope.AQ11 = 0;
           }
         }
         
@@ -290,6 +311,9 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
             $scope.AQ10A = null;
             $scope.AQ10B = null;
           }
+        }
+        if (fieldName == "AQ11") {
+          matches[0].AQ11 = $scope.AQ11;
         }
   
         if (fieldName == "TQ1") matches[0].TQ1 = $scope.TQ1;
@@ -345,6 +369,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     $scope.AQ10A = 0;
     $scope.AQ10B = 0;
     $scope.AQ10C = 0;
+    $scope.AQ11 = 0;
     $scope.TQ1 = 0;
     $scope.EQ11 = 0;
     $scope.EQ17 = "";
@@ -433,7 +458,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     
     
     var exportMatchData = "Team #\tMatch #\tScout\tAQ1\tAQ2\tAQ3\tAQ5\t";
-    exportMatchData += "AQ10A\tAQ10B\tAQ10C\tTQ1\tEQ11\tEQ17\tEQ18\tHQ12\r\n";
+    exportMatchData += "AQ10A\tAQ10B\tAQ10C\tAQ11\tTQ1\tEQ11\tEQ17\tEQ18\tHQ12\r\n";
 
     var refMatches = firebase.database().ref().child("Events/0/Matches");
     var matches = $firebaseArray(refMatches);
@@ -475,6 +500,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
               exportMatchData += "0";
             }
             exportMatchData += "\t";
+            if (robotMatch["AQ11"]) exportMatchData += robotMatch["AQ11"];
+            exportMatchData += "\t";
             if (robotMatch["TQ1"]) exportMatchData += robotMatch["TQ1"];
             exportMatchData += "\t";
             if (robotMatch["EQ11"]) exportMatchData += robotMatch["EQ11"];
@@ -511,8 +538,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     
   /* This method will pull together an overview for each match, including the
    * match number, team number, scout name, and the % of the following questions
-   * that have been answered: AQ1, AQ2, AQ3, AQ5, AQ10A, AQ10B, AQ10C, TQ1, 
-   * EQ11, and HQ12 
+   * that have been answered: AQ1, AQ2, AQ3, AQ5, AQ10A, AQ10B, AQ10C, AQ11, 
+   * TQ1, EQ11, and HQ12 
    */
    
 
@@ -539,7 +566,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
               scoutRecord.teamNum = robotMatch['Team Number'];
               
               //determine the % of critical questions answered
-              var unanswered = ["AQ1", "AQ2", "AQ3", "AQ5", "AQ10 A/B/C", "TQ1", "EQ11", "EQ18", "HQ12"];
+              var unanswered = ["AQ1", "AQ2", "AQ3", "AQ5", "AQ10 A/B/C", "AQ11", "TQ1", "EQ11", "EQ18", "HQ12"];
               if (robotMatch.AQ1 != null) {
                 var index = unanswered.indexOf("AQ1");
                 if (index > -1) {
@@ -570,6 +597,12 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
                   (robotMatch.AQ10C != null) ||
                   (robotMatch.AQ2 == 0)) {
                 var index = unanswered.indexOf("AQ10 A/B/C");
+                if (index > -1) {
+                  unanswered.splice(index, 1);
+                }
+              }
+              if (robotMatch.AQ11 != null) {
+                var index = unanswered.indexOf("AQ11");
                 if (index > -1) {
                   unanswered.splice(index, 1);
                 }
