@@ -4,8 +4,8 @@ angular.module('app.controllers', ['firebase', 'ngCordova'])
 function ($scope, $stateParams, $firebaseArray) {
 
   $scope.loadTeamsIntoMemory = function() {
-    var refTeams = firebase.database().ref().child("Events/0/Teams/");
-    $scope.teams = $firebaseArray(refTeams);   
+    var refTeams = firebase.database().ref().child("Events/0/Teams");
+    $scope.teams = $firebaseArray(refTeams);
   };
   $scope.loadTeamsIntoMemory();
 
@@ -71,19 +71,45 @@ function ($scope, $stateParams, $firebaseArray) {
         })
       }
       
-      if (fieldName == "PQ3") interviews[0].PQ3 = $scope.PQ3;
-      if (fieldName == "PQ6") interviews[0].PQ6 = $scope.PQ6;
-      if (fieldName == "PQ10") interviews[0].PQ10 = $scope.PQ10;
-      if (fieldName == "PQ13") interviews[0].PQ13 = $scope.PQ13;
-      if (fieldName == "PQ14A") interviews[0].PQ14A = $scope.PQ14A;
-      if (fieldName == "PQ14B") interviews[0].PQ14B = $scope.PQ14B;
-      if (fieldName == "PQ14C") interviews[0].PQ14C = $scope.PQ14C;
-      if (fieldName == "PQ15") interviews[0].PQ15 = $scope.PQ15;
-      if (fieldName == "PQ27A") interviews[0].PQ27A = $scope.PQ27A;
-      if (fieldName == "PQ27B") interviews[0].PQ27B = $scope.PQ27B;
-      if (fieldName == "PQ27C") interviews[0].PQ27C = $scope.PQ27C;
-      if (fieldName == "PQ30") interviews[0].PQ30 = $scope.PQ30;
-      if (fieldName == "PQ31") interviews[0].PQ31 = $scope.PQ31;
+      if (fieldName == "PQ3") {
+        if ($scope.PQ3) interviews[0].PQ3 = $scope.PQ3;
+      }
+      if (fieldName == "PQ6") {
+        if ($scope.PQ6) interviews[0].PQ6 = $scope.PQ6;
+      }
+      if (fieldName == "PQ10") {
+        if ($scope.PQ10) interviews[0].PQ10 = $scope.PQ10;
+      }
+      if (fieldName == "PQ13") {
+        if ($sopce.PQ13) interviews[0].PQ13 = $scope.PQ13;
+      }
+      if (fieldName == "PQ14A") {
+        if ($scope.PQ14A) interviews[0].PQ14A = $scope.PQ14A;
+      }
+      if (fieldName == "PQ14B") {
+        if ($scope.PQ14B) interviews[0].PQ14B = $scope.PQ14B;
+      }
+      if (fieldName == "PQ14C") {
+        if ($scope.PQ14C) interviews[0].PQ14C = $scope.PQ14C;
+      }
+      if (fieldName == "PQ15") {
+        if ($scope.PQ15) interviews[0].PQ15 = $scope.PQ15;
+      }
+      if (fieldName == "PQ27A") {
+        if ($scope.PQ27A) interviews[0].PQ27A = $scope.PQ27A;
+      }
+      if (fieldName == "PQ27B") {
+        if ($scope.PQ27B) interviews[0].PQ27B = $scope.PQ27B;
+      }
+      if (fieldName == "PQ27C") {
+        if ($scope.PQ27C) interviews[0].PQ27C = $scope.PQ27C;
+      }
+      if (fieldName == "PQ30") {
+        if ($scope.PQ30) interviews[0].PQ30 = $scope.PQ30;
+      }
+      if (fieldName == "PQ31") {
+        if ($scope.PQ31) interviews[0].PQ31 = $scope.PQ31;
+      }
       
       interviews.$save(0);
     })
@@ -281,7 +307,6 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         
         if (fieldName == "AQ3") matches[0].AQ3 = $scope.AQ3;
         if (fieldName == "AQ5") matches[0].AQ5 = $scope.AQ5;
-        if (fieldName == "AQ8") matches[0].AQ8 = $scope.AQ8;
         if (fieldName == "AQ10A") {
           matches[0].AQ10A = $scope.AQ10A;
           matches[0].AQ10B = 0;
@@ -328,8 +353,28 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
     }).catch(function(error) {
       console.log("Error:", error);
     });
-    
   }
+  
+  
+  
+  $scope.submitData = function() {
+    //resends all of the data collected to ensure all adds/updates are captured
+    $scope.updateField("AQ1");
+    $scope.updateField("AQ2");
+    $scope.updateField("AQ3");
+    $scope.updateField("AQ5");
+    $scope.updateField("AQ10A");
+    $scope.updateField("AQ10B");
+    $scope.updateField("AQ10C");
+    $scope.updateField("AQ11");
+    $scope.updateField("TQ1");
+    $scope.updateField("EQ11");
+    $scope.updateField("EQ17");
+    $scope.updateField("EQ18");
+    $scope.updateField("HQ12");
+  }
+  
+  
   
   $scope.selectTeamMatchScout = function() {
     //Do something about a team/match#/scout having been selected
@@ -390,6 +435,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   }
   
   $scope.exportData = function() {
+    var filePath = "file:///storage/emulated/0/";
     var exportPitData = "Team #\tPQ3\tPQ6\tPQ10\tPQ13\tPQ14A\tPQ14B\tPQ14C\t";
     exportPitData += "PQ15\tPQ27A\tPQ27B\tPQ27C\tPQ30\tPQ31\r\n";
     
@@ -401,8 +447,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
           if (interview) {
             if (interview["Team Number"]) exportPitData += interview["Team Number"];
             exportPitData += "\t";
-            if (interview.PQ3) exportPitData += interview.PQ3;
-            exportPitData += "\t";
+            if (interview.PQ3) exportPitData += interview.PQ3 + "\t";
             if (interview.PQ6) exportPitData += interview.PQ6;
             exportPitData += "\t";
             if (interview.PQ10) exportPitData += interview.PQ10;
@@ -452,8 +497,16 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
             if (interview.PQ31) exportPitData += interview.PQ31;
             exportPitData += "\r\n";
           }
-        })
+        });
       })
+    }).then(function() {
+      $cordovaFile.writeFile(filePath, "PitScouting.csv", exportData1, true)
+        .then(function (success) {
+          console.log("Text successfully written to Pit Scouting file");
+        }, function (error) {
+          console.log("Problem writing text to Pit file");
+          console.log("Error message: " + JSON.stringify(error));
+        });  
     });
     
     

@@ -11,9 +11,9 @@
           <span style="font-size: small;">
           [AQ1 = Autonomous?]&nbsp;&nbsp;[AQ2 = Hang gears?]&nbsp;&nbsp;
           [AQ3 = Cross line?]&nbsp;&nbsp;[AQ5 = Score in boiler?]&nbsp;&nbsp;
-          [AQ10 A/B/C = Which post?]&nbsp;&nbsp;[TQ1 = Gears hung? (+/-)]&nbsp;&nbsp;
-          [EQ11 = Scale?]&nbsp;&nbsp;[EQ18 = kPa scored in Autonomous? (+/-)]&nbsp;&nbsp;
-          [HQ12 = Is the human player good?]
+          [AQ10 A/B/C = Which post?]&nbsp;&nbsp;[AQ11 = kPa scored in Autonomous? (+/-)]&nbsp;&nbsp;
+          [TQ1 = Gears hung? (+/-)]&nbsp;&nbsp;[EQ11 = Scale?]&nbsp;&nbsp;
+          [EQ18 = kPa scored in Autonomous? (+/-)]&nbsp;&nbsp;[HQ12 = Is the human player good?]
           </span>
         </div>
       </ion-card>
@@ -26,7 +26,7 @@
             <div class="row" ng-repeat="scout in overview.scouts">
               <div class="col-33"><p><strong>Scout:</strong> {{scout.name}}</p></div>
               <div class="col-33"><p><strong>Team:</strong> {{scout.teamNum}}</p></div>
-              <div class="col-33"><p>Missing questions: {{scout.unanswered.join(', ')}}</p></div>
+              <div class="col-33"><p><strong>Missing questions:</strong> {{scout.unanswered.join(', ')}}</p></div>
               </tr>
             </div>
           </div>
