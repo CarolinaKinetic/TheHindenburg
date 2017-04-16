@@ -574,6 +574,15 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
       $scope.exportPitData = exportPitData;
       $scope.exportMatchData = exportMatchData;
     })
+    .then(function() {
+      $cordovaFile.writeFile(filePath, "MatchScouting.csv", exportMatchData, true)
+        .then(function (success) {
+          console.log("Text successfully written to Match Scouting file");
+        }, function (error) {
+          console.log("Problem writing text to Match file");
+          console.log("Error message: " + JSON.stringify(error));
+        });  
+    })
     .catch(function(error) {
       console.log("Error:", error);
     });
