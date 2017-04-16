@@ -500,7 +500,7 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
         });
       })
     }).then(function() {
-      $cordovaFile.writeFile(filePath, "PitScouting.csv", exportData1, true)
+      $cordovaFile.writeFile(filePath, "PitScouting.csv", exportPitData, true)
         .then(function (success) {
           console.log("Text successfully written to Pit Scouting file");
         }, function (error) {
