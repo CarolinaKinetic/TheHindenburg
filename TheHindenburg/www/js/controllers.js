@@ -147,8 +147,8 @@ function ($scope, $stateParams, $firebaseArray) {
 
 
    
-.controller('matchScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject', 
-function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
+.controller('matchScoutingCtrl', ['$scope', '$stateParams', '$firebaseArray', '$firebaseObject', '$cordovaFile',
+function ($scope, $stateParams, $firebaseArray, $firebaseObject, $cordovaFile) {
   
   $scope.loadNumMatches = function() {
     var ref = firebase.database().ref().child("Events/0/");
@@ -262,6 +262,21 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
   
   $scope.updateField = function(fieldName) {
+    var filePath = "file:///storage/emulated/0/";
+    var saveData = $scope.teamSelected + "\t" + $scope.matchNumSelected + "\t"; 
+    saveData += $scope.scoutSelected + "\t" + $scope.AQ1 + "\t" + $scope.AQ2;
+    saveData += "\t" + $scope.AQ3 + "\t" + $scope.AQ5 + "\t" + $scope.AQ10A;
+    saveData += "\t" + $scope.AQ10B + "\t" + $scope.AQ10C + "\t" + $scope.AQ11;
+    saveData += "\t" + $scope.TQ1 + "\t" + $scope.EQ11 + "\t" + $scope.EQ17;
+    saveData += "\t" + $scope.EQ18 + "\t" + $scope.HQ12 + "\r\n";
+    $cordovaFile.writeFile(filePath, "Match-" + $scope.matchNum + "-Team-" + $scope.teamSelected + "-Scout-" + $scope.scoutSelected + ".csv", saveData, true)
+      .then(function (success) {
+        console.log("Text successfully written to Pit Scouting file");
+      }, function (error) {
+        console.log("Problem writing text to Pit file");
+        console.log("Error message: " + JSON.stringify(error));
+      });  
+      
     var refTeams = firebase.database().ref().child("Events/0/Matches/" + $scope.matchNum + "/Teams/" + $scope.team.number);
     var matches = $firebaseArray(refTeams);
     matches.$loaded().then(function() {
@@ -359,6 +374,8 @@ function ($scope, $stateParams, $firebaseArray, $firebaseObject) {
   
   $scope.submitData = function() {
     //resends all of the data collected to ensure all adds/updates are captured
+    $scope.updateField("Scout");
+    $scope.updateField("Team");
     $scope.updateField("AQ1");
     $scope.updateField("AQ2");
     $scope.updateField("AQ3");
